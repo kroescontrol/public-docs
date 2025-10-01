@@ -5,9 +5,9 @@ const config: DocsThemeConfig = {
   logo: <span>📚 Kroescontrol Public Docs</span>,
   logoLink: '/home',
   project: {
-    link: 'https://github.com/kroescontrol'
+    link: 'https://github.com/kroescontrol/public-docs'
   },
-  docsRepositoryBase: 'https://github.com/kroescontrol/polderland/tree/main/apps/docs-public',
+  docsRepositoryBase: 'https://github.com/kroescontrol/public-docs/tree/main',
   footer: {
     content: 'Kroescontrol Public Documentation'
   },
