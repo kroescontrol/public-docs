@@ -1,8 +1,6 @@
 {
   "framework": "nextjs",
-  "rootDirectory": "apps/docs-public",
-  "installCommand": "cd ../.. && pnpm install",
-  "buildCommand": "pnpm build",
+  "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "regions": ["fra1"],
   "env": {
