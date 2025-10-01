@@ -44,13 +44,17 @@ PUBLIC_URLS=$(mktemp)
 grep -rh '\[.*\](http' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null | \
     grep -oE 'https?://[^)]+' | sort | uniq > "$EXTERNAL_URLS" || true
 
-# Scan markdown interne page links (zonder /public/)
-grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" 2>/dev/null | \
-    grep -oE '\(/[^)]+\)' | tr -d '()' | grep -v '^/public/' | sort | uniq > "$INTERNAL_URLS" || true
+# Scan static assets FIRST (PDFs, images, etc. from public/ dir served at root)
+# After flatten: public/file.pdf is served at /file.pdf
+grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null | \
+    grep -oE '\(/[^)]+\.(pdf|png|jpg|jpeg|svg|json|txt)\)' | tr -d '()' | sort | uniq > "$PUBLIC_URLS" || true
 
-# Scan /public/ static assets
-grep -rh '\[.*\](/public/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null | \
-    grep -oE '\(/public/[^)]+\)' | tr -d '()' | sort | uniq > "$PUBLIC_URLS" || true
+# Scan markdown interne page links (exclude file extensions and /public/)
+grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" 2>/dev/null | \
+    grep -oE '\(/[^)]+\)' | tr -d '()' | \
+    grep -v '^/public/' | \
+    grep -vE '\.(pdf|png|jpg|jpeg|svg|json|txt)$' | \
+    sort | uniq > "$INTERNAL_URLS" || true
 
 # Tel counts
 EXTERNAL_COUNT=$(wc -l < "$EXTERNAL_URLS" | tr -d ' ')
@@ -151,7 +155,9 @@ while IFS= read -r url; do
     [ -z "$url" ] && continue
 
     # Convert URL to file path
-    file_path="${url#/public/}"
+    # Note: Nextra serves public/ dir as static root
+    # After flatten: URL /file.pdf -> filesystem public/file.pdf
+    file_path="${url#/}"
     full_path="$PUBLIC_DIR/$file_path"
 
     status="unknown"

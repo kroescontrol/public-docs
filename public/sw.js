@@ -1,14 +1,17 @@
 // Service Worker voor Kroescontrol Docs
 // Minimale implementatie - geen opdringerige install prompts
 
-const CACHE_NAME = 'kc-docs-v1';
+const CACHE_NAME = 'kc-docs-v2';
 const urlsToCache = [
   '/',
-  '/public',
-  '/public/over-kroescontrol',
-  '/public/kennismaking',
-  '/public/werken-bij',
-  '/public/kantoor',
+  '/over-kroescontrol',
+  '/kennismaking',
+  '/werken-bij',
+  '/kantoor',
+  '/branding',
+  '/cultuur',
+  '/contact',
+  '/bezoekers',
   '/img/KC-beeldmerk-gradientKLEUR.svg'
 ];
 
