@@ -10,6 +10,10 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/kroescontrol/polderland/tree/main/apps/docs-public',
   footer: {
     content: 'Kroescontrol Public Documentation'
+  },
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
+    toggleButton: true
   }
 }
 
