@@ -1,0 +1,182 @@
+/* Kroescontrol Design Tokens for Nextra v3 Integration */
+/* Auto-generated from @kroescontrol/brand package */
+
+:root {
+  /* Kroescontrol Official Colors */
+  --kc-color-primary-50: #fef2f8;
+  --kc-color-primary-100: #fde7f3;
+  --kc-color-primary-200: #fbcfe8;
+  --kc-color-primary-300: #f9a8d4;
+  --kc-color-primary-400: #f472b6;
+  --kc-color-primary-500: #E4007C; /* Kroescontrol Pink (Official) */
+  --kc-color-primary-600: #d5006d;
+  --kc-color-primary-700: #be185d;
+  --kc-color-primary-800: #9d174d;
+  --kc-color-primary-900: #831843;
+  --kc-color-primary-950: #500724;
+
+  /* Navy Blue */
+  --kc-color-navy-50: #f0f2ff;
+  --kc-color-navy-100: #e0e7ff;
+  --kc-color-navy-200: #c7d2fe;
+  --kc-color-navy-300: #a5b4fc;
+  --kc-color-navy-400: #818cf8;
+  --kc-color-navy-500: #222b5b; /* Deep Navy Blue (Official) */
+  --kc-color-navy-600: #1e1f4b;
+  --kc-color-navy-700: #1a1d3a;
+  --kc-color-navy-800: #151829;
+  --kc-color-navy-900: #0f1419;
+
+  /* Gradients */
+  --kc-gradient-primary: linear-gradient(90deg, #222b5b 0%, #c22757 100%);
+  --kc-gradient-primary-vertical: linear-gradient(180deg, #222b5b 0%, #c22757 100%);
+  --kc-gradient-subtle: linear-gradient(90deg, #E4007C 0%, #c22757 100%);
+
+  /* Typography */
+  --kc-font-heading: 'Poppins', system-ui, sans-serif;
+  --kc-font-sans: 'Noto Sans', system-ui, sans-serif;
+  --kc-font-mono: 'Fira Code', Consolas, monospace;
+
+  /* Spacing Scale */
+  --kc-spacing-px: 1px;
+  --kc-spacing-0: 0px;
+  --kc-spacing-1: 0.25rem;
+  --kc-spacing-2: 0.5rem;
+  --kc-spacing-3: 0.75rem;
+  --kc-spacing-4: 1rem;
+  --kc-spacing-5: 1.25rem;
+  --kc-spacing-6: 1.5rem;
+  --kc-spacing-8: 2rem;
+  --kc-spacing-10: 2.5rem;
+  --kc-spacing-12: 3rem;
+  --kc-spacing-16: 4rem;
+  --kc-spacing-20: 5rem;
+  --kc-spacing-24: 6rem;
+
+  /* Border Radius */
+  --kc-radius-sm: 0.125rem;
+  --kc-radius-md: 0.375rem;
+  --kc-radius-lg: 0.5rem;
+  --kc-radius-xl: 0.75rem;
+  --kc-radius-2xl: 1rem;
+
+  /* Shadows */
+  --kc-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --kc-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --kc-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --kc-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Nextra v3 Override Variables (Compatibility Layer) */
+  --nextra-primary-hue: 334deg; /* Based on Kroescontrol Pink */
+  --nextra-primary-saturation: 86%;
+  --nextra-primary-lightness: 44%;
+  
+  /* Custom Landing Page Variables */
+  --landing-hero-gradient: var(--kc-gradient-primary);
+  --landing-card-shadow: var(--kc-shadow-md);
+  --landing-text-primary: var(--kc-color-navy-900);
+  --landing-text-secondary: var(--kc-color-navy-600);
+  --landing-bg-primary: #ffffff;
+  --landing-bg-secondary: #fafbfc;
+}
+
+/* Dark Mode Support */
+.dark {
+  --landing-text-primary: #f8fafc;
+  --landing-text-secondary: #cbd5e1;
+  --landing-bg-primary: #0f172a;
+  --landing-bg-secondary: #1e293b;
+}
+
+/* Utility Classes for Design System */
+.kc-gradient-primary {
+  background: var(--kc-gradient-primary);
+}
+
+.kc-gradient-primary-vertical {
+  background: var(--kc-gradient-primary-vertical);
+}
+
+.kc-text-primary {
+  color: var(--kc-color-primary-500);
+}
+
+.kc-text-navy {
+  color: var(--kc-color-navy-500);
+}
+
+.kc-shadow-card {
+  box-shadow: var(--kc-shadow-lg);
+}
+
+.kc-font-heading {
+  font-family: var(--kc-font-heading);
+}
+
+.kc-font-body {
+  font-family: var(--kc-font-sans);
+}
+
+/* Component Base Styles */
+.kc-card {
+  background: var(--landing-bg-primary);
+  border-radius: var(--kc-radius-lg);
+  box-shadow: var(--kc-shadow-md);
+  transition: all 0.2s ease;
+}
+
+.kc-card:hover {
+  box-shadow: var(--kc-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.kc-button-primary {
+  background: var(--kc-color-primary-500);
+  color: white;
+  padding: var(--kc-spacing-3) var(--kc-spacing-6);
+  border-radius: var(--kc-radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.kc-button-primary:hover {
+  background: var(--kc-color-primary-600);
+  transform: translateY(-1px);
+  box-shadow: var(--kc-shadow-md);
+}
+
+/* Landing Page Specific Styles */
+.landing-hero {
+  background: var(--landing-hero-gradient);
+  color: white;
+}
+
+.landing-section {
+  background: var(--landing-bg-primary);
+  color: var(--landing-text-primary);
+}
+
+.landing-card {
+  background: var(--landing-bg-primary);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--kc-radius-lg);
+  box-shadow: var(--kc-shadow-md);
+  transition: all 0.2s ease;
+}
+
+.landing-card:hover {
+  box-shadow: var(--kc-shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--kc-color-primary-200);
+}
+
+.dark .landing-card {
+  background: var(--landing-bg-secondary);
+  border-color: #374151;
+}
+
+.dark .landing-card:hover {
+  border-color: var(--kc-color-primary-700);
+}
