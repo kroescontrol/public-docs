@@ -1,4 +1,4 @@
-export default {
+const meta = {
   home: "Welkom bij Kroescontrol",
   bezoekers: "Voor Bezoekers",
   "over-kroescontrol": "Over Kroescontrol",
@@ -11,3 +11,5 @@ export default {
   "sna-keurmerk": "SNA Keurmerk",
   contact: "Contact"
 }
+
+export default meta

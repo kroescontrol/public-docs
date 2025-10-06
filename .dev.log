@@ -7,8 +7,8 @@
 
  ✓ Starting...
    automatically enabled Fast Refresh for 5 custom loaders
- ✓ Ready in 1469ms
- ○ Compiling / ...
+ ✓ Ready in 1412ms
+ ○ Compiling /_error ...
  ⚠ ./node_modules/typescript/lib/typescript.js
 Critical dependency: the request of a dependency is an expression
 
@@ -20,31 +20,12 @@ Import trace for requested module:
 ./node_modules/nextra/dist/client/components/playground.js
 ./node_modules/nextra/dist/client/components/index.js
 ./node_modules/nextra-theme-docs/dist/index.js
- GET / 200 in 7040ms
- ⚠ ./node_modules/typescript/lib/typescript.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-./node_modules/typescript/lib/typescript.js
-./node_modules/twoslash/dist/index.mjs
-./node_modules/@shikijs/twoslash/dist/index.mjs
-./node_modules/nextra/dist/server/compile.js
-./node_modules/nextra/dist/client/components/playground.js
-./node_modules/nextra/dist/client/components/index.js
-./node_modules/nextra-theme-docs/dist/index.js
- ⚠ ./node_modules/typescript/lib/typescript.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-./node_modules/typescript/lib/typescript.js
-./node_modules/twoslash/dist/index.mjs
-./node_modules/@shikijs/twoslash/dist/index.mjs
-./node_modules/nextra/dist/server/compile.js
-./node_modules/nextra/dist/client/components/playground.js
-./node_modules/nextra/dist/client/components/index.js
-./node_modules/nextra-theme-docs/dist/index.js
- GET / 200 in 56ms
- GET /home 200 in 55ms
+ GET / 200 in 1097ms
+ GET /kantoor 200 in 224ms
+ GET /_next/static/webpack/f3d10d8cd66a33fe.webpack.hot-update.json 404 in 9152ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /kantoor 200 in 21ms
+ GET /kantoor 200 in 17ms
  ⚠ ./node_modules/typescript/lib/typescript.js
 Critical dependency: the request of a dependency is an expression
 
@@ -78,6 +59,23 @@ Import trace for requested module:
 ./node_modules/nextra/dist/client/components/playground.js
 ./node_modules/nextra/dist/client/components/index.js
 ./node_modules/nextra-theme-docs/dist/index.js
+ GET /_next/static/webpack/f3d10d8cd66a33fe.webpack.hot-update.json 404 in 249ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /kantoor 200 in 29ms
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ GET /_next/static/webpack/f3d10d8cd66a33fe.webpack.hot-update.json 404 in 248ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /kantoor 200 in 27ms
  ⚠ ./node_modules/typescript/lib/typescript.js
 Critical dependency: the request of a dependency is an expression
 
@@ -100,3 +98,34 @@ Import trace for requested module:
 ./node_modules/nextra/dist/client/components/playground.js
 ./node_modules/nextra/dist/client/components/index.js
 ./node_modules/nextra-theme-docs/dist/index.js
+ GET /_next/static/webpack/f3d10d8cd66a33fe.webpack.hot-update.json 404 in 301ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /over-kroescontrol 200 in 674ms
+ GET /kantoor 200 in 15ms
+ GET /kantoor 200 in 18ms
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ GET /_next/static/webpack/f3d10d8cd66a33fe.webpack.hot-update.json 404 in 197ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /cultuur 200 in 398ms
+ GET /kantoor 200 in 13ms
