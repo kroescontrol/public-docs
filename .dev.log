@@ -1,0 +1,102 @@
+
+> kroescontrol-docs-public@1.0.0 dev /Users/serkroes/Workspace/kroescontrol-docs-public
+> next dev -p 3010
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3010
+
+ ✓ Starting...
+   automatically enabled Fast Refresh for 5 custom loaders
+ ✓ Ready in 1469ms
+ ○ Compiling / ...
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ GET / 200 in 7040ms
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ GET / 200 in 56ms
+ GET /home 200 in 55ms
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
