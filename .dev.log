@@ -129,3 +129,45 @@ Import trace for requested module:
  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
  GET /cultuur 200 in 398ms
  GET /kantoor 200 in 13ms
+ GET /kantoor 200 in 37ms
+ ⚠ Fast Refresh had to perform a full reload when ./pages/_meta.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ GET /kantoor 200 in 395ms
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ ⚠ Fast Refresh had to perform a full reload when ./pages/_meta.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ ./node_modules/typescript/lib/typescript.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/typescript/lib/typescript.js
+./node_modules/twoslash/dist/index.mjs
+./node_modules/@shikijs/twoslash/dist/index.mjs
+./node_modules/nextra/dist/server/compile.js
+./node_modules/nextra/dist/client/components/playground.js
+./node_modules/nextra/dist/client/components/index.js
+./node_modules/nextra-theme-docs/dist/index.js
+ GET /over-kroescontrol 200 in 469ms
+ GET /kantoor 200 in 293ms
+ GET /kantoor 200 in 18ms
+ GET /kantoor 200 in 12ms
+ GET /kantoor 200 in 4ms
