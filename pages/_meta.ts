@@ -1,13 +1,13 @@
 export default {
   home: "Welkom bij Kroescontrol",
+  bezoekers: "Voor Bezoekers",
   "over-kroescontrol": "Over Kroescontrol",
   cultuur: "Cultuur",
   "werken-bij": "Werken bij",
   kennismaking: "Kennismaking",
   kantoor: "Kantoor",
-  branding: "Branding",
+  branding: "Huisstijl & Branding",
   klanten: "Klanten",
   "sna-keurmerk": "SNA Keurmerk",
-  bezoekers: "Voor Bezoekers",
   contact: "Contact"
 }
