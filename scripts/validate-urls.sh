@@ -29,7 +29,7 @@ SCAN_RESULTS=$(mktemp)
 VALIDATION_RESULTS=$(mktemp)
 
 cleanup() {
-    rm -f "$SCAN_RESULTS" "$VALIDATION_RESULTS"
+    rm -f "$SCAN_RESULTS" "$VALIDATION_RESULTS" "$EXTERNAL_URLS" "$INTERNAL_URLS" "$PUBLIC_URLS" "$RELATIVE_URLS" "$PUBLIC_PREFIX_URLS" 2>/dev/null || true
 }
 trap cleanup EXIT
 
@@ -40,28 +40,69 @@ EXTERNAL_URLS=$(mktemp)
 INTERNAL_URLS=$(mktemp)
 PUBLIC_URLS=$(mktemp)
 
-# Scan markdown externe URLs
-grep -rh '\[.*\](http' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null | \
-    grep -oE 'https?://[^)]+' | sort | uniq > "$EXTERNAL_URLS" || true
+# Scan markdown externe URLs (both [text](url) and ![alt](url) syntax)
+{
+    grep -rh '\[.*\](http' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+    grep -rh '!\[.*\](http' "$PAGES_DIR" --include="*.mdx" 2>/dev/null || true
+} | grep -oE 'https?://[^)]+' | sort | uniq > "$EXTERNAL_URLS" || true
 
-# Scan static assets FIRST (PDFs, images, etc. from public/ dir served at root)
-# After flatten: public/file.pdf is served at /file.pdf
-grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null | \
-    grep -oE '\(/[^)]+\.(pdf|png|jpg|jpeg|svg|json|txt)\)' | tr -d '()' | sort | uniq > "$PUBLIC_URLS" || true
+# Scan static assets from multiple sources:
+# 1. Markdown links: [text](/file.ext) and ![alt](/file.ext)
+# 2. HTML img tags: <img src="/file.ext" />
+# 3. HTML anchor tags: <a href="/file.ext">
+{
+    grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+    grep -rh '!\[.*\](/' "$PAGES_DIR" --include="*.mdx" 2>/dev/null || true
+    grep -rh 'src=['"'"'"]/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+    grep -rh 'href=['"'"'"]/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+} | grep -oE '(/[^)"'"'"' >]+\.(pdf|png|jpg|jpeg|svg|json|txt|eps))' | sort | uniq > "$PUBLIC_URLS" || true
 
 # Scan markdown interne page links (exclude file extensions and /public/)
-grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" 2>/dev/null | \
-    grep -oE '\(/[^)]+\)' | tr -d '()' | \
+{
+    grep -rh '\[.*\](/' "$PAGES_DIR" --include="*.mdx" 2>/dev/null || true
+    grep -rh 'href=['"'"'"]/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+} | grep -oE '(/[^)"'"'"' >]+)' | \
     grep -v '^/public/' | \
-    grep -vE '\.(pdf|png|jpg|jpeg|svg|json|txt)$' | \
+    grep -vE '\.(pdf|png|jpg|jpeg|svg|json|txt|eps)$' | \
     sort | uniq > "$INTERNAL_URLS" || true
+
+# NIEUWE CHECK: Scan relatieve links (deze werken NIET in Nextra!)
+RELATIVE_URLS=$(mktemp)
+grep -rnh '\[.*\](\.\./\|\./[^)]' "$PAGES_DIR" --include="*.mdx" 2>/dev/null | \
+    grep -oE '\((\.\./|\./)[^)]+\)' | tr -d '()' > "$RELATIVE_URLS" || true
+
+# CHECK: Scan /public/ verwijzingen (deze werken NIET - Next.js serveert public/ aan root!)
+PUBLIC_PREFIX_URLS=$(mktemp)
+{
+    grep -rnh '"/public/' "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+    grep -rnh "'/public/" "$PAGES_DIR" --include="*.mdx" --include="*.tsx" 2>/dev/null || true
+    grep -rnh '(/public/' "$PAGES_DIR" --include="*.mdx" 2>/dev/null || true
+} | grep -oE '(/public/[^"'"'"' )>]+)' | sort | uniq > "$PUBLIC_PREFIX_URLS" || true
 
 # Tel counts
 EXTERNAL_COUNT=$(wc -l < "$EXTERNAL_URLS" | tr -d ' ')
 INTERNAL_COUNT=$(wc -l < "$INTERNAL_URLS" | tr -d ' ')
 PUBLIC_COUNT=$(wc -l < "$PUBLIC_URLS" | tr -d ' ')
+RELATIVE_COUNT=$(wc -l < "$RELATIVE_URLS" | tr -d ' ')
+PUBLIC_PREFIX_COUNT=$(wc -l < "$PUBLIC_PREFIX_URLS" | tr -d ' ')
 
 echo -e "${YELLOW}  Found: $EXTERNAL_COUNT external, $INTERNAL_COUNT internal, $PUBLIC_COUNT public assets${NC}" >&2
+echo -e "${YELLOW}         $RELATIVE_COUNT relative, $PUBLIC_PREFIX_COUNT /public/ prefix${NC}" >&2
+
+# Waarschuwing voor relatieve links
+if [ "$RELATIVE_COUNT" -gt 0 ]; then
+    echo -e "${RED}  ⚠️  WARNING: Found $RELATIVE_COUNT relative links (./file or ../file) - these do NOT work in Nextra!${NC}" >&2
+    echo -e "${YELLOW}  Relative links found in:${NC}" >&2
+    grep -rnh '\[.*\](\.\./\|\./[^)]' "$PAGES_DIR" --include="*.mdx" 2>/dev/null | head -10 >&2
+fi
+
+# Waarschuwing voor /public/ prefix
+if [ "$PUBLIC_PREFIX_COUNT" -gt 0 ]; then
+    echo -e "${RED}  ⚠️  WARNING: Found $PUBLIC_PREFIX_COUNT URLs with /public/ prefix - Next.js serves public/ at root!${NC}" >&2
+    echo -e "${YELLOW}  Should be: /file.png instead of /public/file.png${NC}" >&2
+    echo -e "${YELLOW}  /public/ URLs found (first 10):${NC}" >&2
+    head -10 "$PUBLIC_PREFIX_URLS" | sed 's|^|    |' >&2
+fi
 
 # Stap 2: Valideer interne page links
 echo -e "${YELLOW}📝 Step 2: Validating internal page links...${NC}" >&2
