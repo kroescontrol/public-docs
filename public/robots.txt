@@ -1,0 +1,12 @@
+# robots.txt voor docs.kroescontrol.nl
+# Publieke documentatie - alle bots welkom
+
+User-agent: *
+Allow: /
+
+# Sitemap locatie
+Sitemap: https://docs.kroescontrol.nl/sitemap.xml
+
+# Crawl rate optimalisatie
+# Specifieke bots kunnen deze respecteren
+Crawl-delay: 1
