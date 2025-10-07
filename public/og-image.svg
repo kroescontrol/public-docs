@@ -31,8 +31,8 @@
 
   <!-- Logo gecentreerd (scaled en positioned voor OG image) -->
   <!-- Origineel: 1906.35 x 595.28 -->
-  <!-- Target: ~600px breedte, gecentreerd -->
-  <g transform="translate(300, 165) scale(0.31)">
+  <!-- Target: ~900px breedte (1.5x groter), gecentreerd -->
+  <g transform="translate(155, 85) scale(0.465)">
     <!-- Beeldmerk (3 K's) -->
     <path d="M385.84,309.4l-75,126.12a19.83,19.83,0,0,1-15.85,7.9h-67.4a19.75,19.75,0,0,0,13.84-7.79L260.24,404l56.2-94.44a19.83,19.83,0,0,0,0-23.88l-56.2-94.48-18.85-31.69a19.83,19.83,0,0,0-15.84-7.9l34.69-.05,10.48,0,24.23,0a19.86,19.86,0,0,1,15.85,7.9L319,173.11l66.86,112.41A19.85,19.85,0,0,1,385.84,309.4Z" fill="url(#logoGrad1)"/>
     <path d="M321.56,177.47c-1.36-2.16-10.49-8.78-20.87-8.9l-28.34.42,3.74-9.54c3.74-5,12.63-8,18.86-8a19.86,19.86,0,0,1,15.85,7.9Z" fill="url(#logoGrad2)"/>
@@ -56,8 +56,8 @@
     <path d="M1477.53,291.91v44.38q0,5.55,2.78,8.11c1.84,1.71,4.55,2.67,8.1,2.88a119.07,119.07,0,0,0,13.23-.11v25q-27.95,3.19-39.79-5.23T1450,336.29V291.91h-18.56V265.45H1450V243.9a19.93,19.93,0,0,1,27.51-8.32h0v29.87h24.11v26.46Z" fill="#252a57"/>
   </g>
 
-  <!-- Subtitle -->
-  <text x="600" y="530" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#252a57" text-anchor="middle">
+  <!-- Subtitle (lager gepositioneerd vanwege groter logo) -->
+  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#252a57" text-anchor="middle">
     Publieke Documentatie
   </text>
 </svg>
