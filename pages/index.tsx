@@ -1,8 +1,14 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const HomePage: NextPage = () => {
   return (
+    <>
+      <Head>
+        <title>Kroescontrol - Publieke Documentatie</title>
+        <meta name="description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur, kantoorlocaties en wat we te bieden hebben. Publieke documentatie voor iedereen." />
+      </Head>
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -119,6 +125,7 @@ const HomePage: NextPage = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
