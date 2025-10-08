@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import 'nextra-theme-docs/style.css'
+import '../styles/globals.css'
 import '../styles/kroescontrol-design-tokens.css'
 import { useSharedTheme } from '../hooks/useSharedTheme'
 

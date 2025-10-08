@@ -2,31 +2,44 @@ import { useEffect } from 'react'
 import { useTheme } from 'nextra-theme-docs'
 
 /**
- * Shared theme hook - synceert theme preference via cookie over alle *.kroescontrol.nl subdomains
+ * Shared theme hook - synceert theme preference via cookie over alle subdomains
  *
  * Mechanisme:
  * 1. Luistert naar theme changes in Nextra (localStorage)
- * 2. Schrijft naar cookie met domain=.kroescontrol.nl
+ * 2. Schrijft naar cookie met dynamische domain detectie
  * 3. Bij mount: leest cookie en sync naar localStorage indien nodig
  *
  * Sync gedrag:
- * - Cross-subdomain: internal.docs ↔ operations.docs ↔ docs.kroescontrol.nl
+ * - Cross-subdomain: internal.docs ↔ operations.docs ↔ docs (prod/dev)
  * - Instant bij nieuwe tab/refresh
  * - Cookie fallback als localStorage leeg is
+ * - Environment-aware: .kroescontrol.nl (prod) of .polderland.local (dev)
  *
  * Limitatie: geen real-time sync tussen open tabs (pas bij refresh)
  */
 export function useSharedTheme() {
   const { theme, setTheme } = useTheme()
 
+  // Detecteer root domain voor cookie
+  const getRootDomain = (): string => {
+    const hostname = window.location.hostname
+
+    if (hostname.includes('.kroescontrol.nl')) return '.kroescontrol.nl'
+    if (hostname.includes('.polderland.local')) return '.polderland.local'
+
+    // Localhost fallback (geen domain prefix)
+    return hostname
+  }
+
   // Cookie helper functions
   const setCookie = (name: string, value: string, days: number = 365) => {
     const date = new Date()
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
     const expires = `expires=${date.toUTCString()}`
+    const domain = getRootDomain()
 
-    // domain=.kroescontrol.nl maakt cookie beschikbaar voor alle subdomains
-    document.cookie = `${name}=${value}; ${expires}; path=/; domain=.kroescontrol.nl; SameSite=Lax`
+    // Dynamic domain maakt cookie beschikbaar voor alle subdomains (prod + dev)
+    document.cookie = `${name}=${value}; ${expires}; path=/; domain=${domain}; SameSite=Lax`
   }
 
   const getCookie = (name: string): string | null => {

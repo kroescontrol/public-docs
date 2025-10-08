@@ -9,7 +9,9 @@ const HomePage: NextPage = () => {
         <title>Kroescontrol - Publieke Documentatie</title>
         <meta name="description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur, kantoorlocaties en wat we te bieden hebben. Publieke documentatie voor iedereen." />
       </Head>
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden" style={{
+      background: 'linear-gradient(135deg, #222b5b 0%, #c22757 100%)'
+    }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -21,31 +23,12 @@ const HomePage: NextPage = () => {
       <div className="max-w-6xl mx-auto px-6 py-20 relative z-10">
         {/* Hero */}
         <div className="text-center mb-20">
-          <div className="inline-block mb-6">
-            <div className="text-8xl mb-4 animate-bounce">📚</div>
-          </div>
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
             Kroescontrol
           </h1>
           <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Publieke documentatie, bedrijfsinformatie en alles over werken bij Kroescontrol
           </p>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-12">
-            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white">10+</div>
-              <div className="text-sm text-white/80">Secties</div>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white">100%</div>
-              <div className="text-sm text-white/80">Open</div>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 border border-white/30">
-              <div className="text-3xl font-bold text-white">24/7</div>
-              <div className="text-sm text-white/80">Toegang</div>
-            </div>
-          </div>
         </div>
 
         {/* Main Categories */}
@@ -119,8 +102,7 @@ const HomePage: NextPage = () => {
         {/* Footer */}
         <div className="text-center">
           <div className="inline-block bg-white/20 backdrop-blur-lg rounded-2xl px-8 py-6 border-2 border-white/30">
-            <p className="text-white font-semibold mb-3 text-lg">Kroescontrol - Publieke Documentatie</p>
-            <p className="text-white/90">Voor interne documentatie, zie <a href="https://internal.docs.kroescontrol.nl" className="text-white font-bold underline hover:text-white/80 transition">internal.docs.kroescontrol.nl</a></p>
+            <p className="text-white font-semibold text-lg">Kroescontrol - Publieke Documentatie</p>
           </div>
         </div>
       </div>
