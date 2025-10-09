@@ -3,7 +3,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
-  logo: <span>📚 Kroescontrol Public Docs</span>,
+  logo: <span>📚 Kroescontrol Publieke Documentatie</span>,
   logoLink: '/home',
   project: {
     link: 'https://github.com/kroescontrol/public-docs'
