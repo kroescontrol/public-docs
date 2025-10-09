@@ -32,7 +32,7 @@ html[class~="dark"] {
 /* Dark mode adjustments */
 html[class~="dark"] [data-nextra-theme] {
   --shiki-color-text: theme('colors.navy.400');
-  --shiki-color-background: theme('colors.navy.950');
+  --shiki-color-background: theme('colors.gray.900');
   --shiki-token-constant: theme('colors.navy.300');
   --shiki-token-string: theme('colors.primary.300');
   --shiki-token-comment: theme('colors.navy.500');
