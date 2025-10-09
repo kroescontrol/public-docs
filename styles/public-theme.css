@@ -1,17 +1,17 @@
-/* Public docs Kroescontrol theming - Navy + Magenta */
+/* Public docs Kroescontrol theming - Magenta + Navy */
 
-/* Navy Blue primary color (#222b5b) */
+/* Crimson Magenta primary color (#c22757) */
 :root {
-  --nextra-primary-hue: 233deg;
-  --nextra-primary-saturation: 45%;
-  --nextra-primary-lightness: 25%;
+  --nextra-primary-hue: 344deg;
+  --nextra-primary-saturation: 70%;
+  --nextra-primary-lightness: 50%;
 }
 
 /* Dark mode adjustments */
 html[class~="dark"] {
-  --nextra-primary-hue: 233deg;
-  --nextra-primary-saturation: 45%;
-  --nextra-primary-lightness: 32%;
+  --nextra-primary-hue: 344deg;
+  --nextra-primary-saturation: 70%;
+  --nextra-primary-lightness: 55%;
 }
 
 /* Custom Kroescontrol code highlighting - Navy + Magenta theme */
