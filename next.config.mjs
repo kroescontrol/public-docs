@@ -24,6 +24,11 @@ export default withNextra({
         source: '/over-kroescontrol/bedrijfsgegevens',
         destination: '/juridisch/bedrijfsgegevens',
         permanent: true // 301 redirect for SEO
+      },
+      {
+        source: '/sna-keurmerk',
+        destination: '/juridisch/sna-keurmerk',
+        permanent: true // 301 redirect for SEO
       }
     ]
   },

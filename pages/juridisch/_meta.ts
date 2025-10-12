@@ -1,4 +1,5 @@
 export default {
   index: 'Juridisch',
-  bedrijfsgegevens: 'Bedrijfsgegevens'
+  bedrijfsgegevens: 'Bedrijfsgegevens',
+  'sna-keurmerk': 'SNA Keurmerk'
 }

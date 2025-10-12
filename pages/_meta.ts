@@ -8,7 +8,6 @@ const meta = {
   kantoor: "Kantoor",
   branding: "Huisstijl & Branding",
   klanten: "Klanten",
-  "sna-keurmerk": "SNA Keurmerk",
   juridisch: "Juridisch",
   contact: "Contact"
 }
