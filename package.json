@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "dev": "next dev -p 3010",
+    "dev": "next dev -p 3010 > .dev.log 2>&1",
     "prebuild": "node scripts/generate-meta.js",
     "build": "pnpm run validate && next build",
     "start": "next start -p 3010",

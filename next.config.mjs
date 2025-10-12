@@ -13,6 +13,21 @@ export default withNextra({
     unoptimized: true
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/over-kroescontrol/team',
+        destination: '/over-kroescontrol/management-team',
+        permanent: true // 301 redirect for SEO
+      },
+      {
+        source: '/over-kroescontrol/bedrijfsgegevens',
+        destination: '/juridisch/bedrijfsgegevens',
+        permanent: true // 301 redirect for SEO
+      }
+    ]
+  },
+
   async headers() {
     return [
       {
