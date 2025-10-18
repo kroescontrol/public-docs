@@ -13,6 +13,15 @@ export default withNextra({
     unoptimized: true
   },
 
+  async rewrites() {
+    return [
+      {
+        source: '/en/legal/:path*',
+        destination: '/en/legal/:path*'
+      }
+    ]
+  },
+
   async redirects() {
     return [
       {
