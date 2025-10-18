@@ -2,16 +2,16 @@
 
 /* Crimson Magenta primary color (#c22757) */
 :root {
-  --nextra-primary-hue: 344deg;
-  --nextra-primary-saturation: 70%;
-  --nextra-primary-lightness: 50%;
+  --nextra-primary-hue: 348deg;
+  --nextra-primary-saturation: 66%;
+  --nextra-primary-lightness: 46%;
 }
 
 /* Dark mode adjustments */
 html[class~="dark"] {
-  --nextra-primary-hue: 344deg;
-  --nextra-primary-saturation: 70%;
-  --nextra-primary-lightness: 55%;
+  --nextra-primary-hue: 348deg;
+  --nextra-primary-saturation: 66%;
+  --nextra-primary-lightness: 52%;
 }
 
 /* Custom Kroescontrol code highlighting - Navy + Magenta theme */
@@ -66,4 +66,18 @@ html[class~="dark"] .nextra-nav-container a:hover {
 /* Focus ring magenta */
 .focus\:ring-primary-500:focus {
   --tw-ring-color: theme('colors.primary.500');
+}
+
+/* Heading colors - Magenta accent */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  color: #c22757 !important;
+}
+
+html[class~="dark"] article h1,
+html[class~="dark"] article h2,
+html[class~="dark"] article h3,
+html[class~="dark"] article h4,
+html[class~="dark"] article h5,
+html[class~="dark"] article h6 {
+  color: #e63974 !important;
 }
