@@ -80,7 +80,7 @@ const config: DocsThemeConfig = {
         <meta property="og:site_name" content="Kroescontrol Docs" />
         <meta property="og:title" content="Kroescontrol - Publieke Documentatie" />
         <meta property="og:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben." />
-        <meta property="og:image" content="https://docs.kroescontrol.nl/og-image.svg" />
+        <meta property="og:image" content="https://docs.kroescontrol.nl/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Kroescontrol logo met gradient background" />
@@ -89,7 +89,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kroescontrol - Publieke Documentatie" />
         <meta name="twitter:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben." />
-        <meta name="twitter:image" content="https://docs.kroescontrol.nl/og-image.svg" />
+        <meta name="twitter:image" content="https://docs.kroescontrol.nl/og-image.png" />
 
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.png" />
