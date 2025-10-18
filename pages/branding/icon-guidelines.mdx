@@ -39,75 +39,30 @@ Richtlijnen voor consistent en toegankelijk icon gebruik in Kroescontrol documen
 - Informele tone (💡 tips)
 - Persoonlijke expressies (❤️ appreciation)
 
-## Toegangsniveaus & Kleuren
+## Kleurenschema's
 
-Kroescontrol documentatie heeft verschillende toegangsniveaus met eigen primary kleuren:
+Kroescontrol gebruikt verschillende kleurenschema's voor documentatie secties. Elk schema heeft een eigen primary kleur die gebruikt wordt voor `variant="primary"` icons.
 
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginTop: '1rem', marginBottom: '2rem' }}>
-  <div style={{ padding: '1.5rem', border: '2px solid #E4007C', borderRadius: '0.5rem', background: '#fef2f8' }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-      <KCIcon icon={Users} variant="primary" size={32} />
-      <strong style={{ fontSize: '1.25rem' }}>Public</strong>
-    </div>
-    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
-      Openbare documentatie voor iedereen toegankelijk
-    </p>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <div style={{ width: '1rem', height: '1rem', background: '#E4007C', borderRadius: '0.25rem' }}></div>
-      <code style={{ fontSize: '0.75rem' }}>#E4007C Pink</code>
-    </div>
+<div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#fef2f8', border: '1px solid #E4007C', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#E4007C', borderRadius: '0.25rem' }}></div>
+    <code style={{ fontSize: '0.875rem' }}>Pink #E4007C</code>
   </div>
-
-  <div style={{ padding: '1.5rem', border: '2px solid #222b5b', borderRadius: '0.5rem', background: '#f0f2ff' }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-      <KCIcon icon={Building} variant="secondary" size={32} />
-      <strong style={{ fontSize: '1.25rem' }}>Internal</strong>
-    </div>
-    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
-      Team resources en interne procedures
-    </p>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <div style={{ width: '1rem', height: '1rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
-      <code style={{ fontSize: '0.75rem' }}>#222b5b Navy</code>
-    </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#f0f2ff', border: '1px solid #222b5b', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
+    <code style={{ fontSize: '0.875rem' }}>Navy #222b5b</code>
   </div>
-
-  <div style={{ padding: '1.5rem', border: '2px solid #222b5b', borderRadius: '0.5rem', background: '#f0f2ff' }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-      <KCIcon icon={Settings} variant="secondary" size={32} />
-      <strong style={{ fontSize: '1.25rem' }}>Operations</strong>
-    </div>
-    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
-      Technische operaties en infrastructuur
-    </p>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <div style={{ width: '1rem', height: '1rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
-      <code style={{ fontSize: '0.75rem' }}>#222b5b Navy</code>
-    </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#f0f2ff', border: '1px solid #222b5b', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
+    <code style={{ fontSize: '0.875rem' }}>Navy #222b5b</code>
   </div>
-
-  <div style={{ padding: '1.5rem', border: '2px solid #059669', borderRadius: '0.5rem', background: '#f0fdf4' }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-      <div style={{ color: '#059669' }}>
-        <DollarSign size={32} strokeWidth={2} />
-      </div>
-      <strong style={{ fontSize: '1.25rem' }}>Finance</strong>
-    </div>
-    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
-      Financiële data en administratie (toekomstig)
-    </p>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <div style={{ width: '1rem', height: '1rem', background: '#059669', borderRadius: '0.25rem' }}></div>
-      <code style={{ fontSize: '0.75rem' }}>#059669 Green</code>
-    </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#f0fdf4', border: '1px solid #059669', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#059669', borderRadius: '0.25rem' }}></div>
+    <code style={{ fontSize: '0.875rem' }}>Green #059669</code>
   </div>
 </div>
 
-**Huidige status:**
-- ✅ **Public** - Live op docs.kroescontrol.nl (Pink icons)
-- ✅ **Internal** - Live op internal.docs.kroescontrol.nl (Navy icons)
-- ✅ **Operations** - Live op operations.docs.kroescontrol.nl (Navy icons)
-- 🔜 **Finance** - Toekomstige uitbreiding (Green icons gereserveerd)
+Dit zorgt voor kleurenuance tussen verschillende secties zonder dat het te druk wordt.
 
 ## Component Gebruik
 
@@ -130,77 +85,121 @@ import { KCIcon } from '@/components/icons/KCIcon'
 | `className` | `string` | `''` | Additional CSS classes |
 | `aria-label` | `string` | - | Accessibility label (verplicht voor standalone icons) |
 
-## Variant Voorbeelden (met Live Icons)
+## Variant Voorbeelden (Light & Dark Theme)
 
 ### Primary (Brand Color)
 
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
-  <KCIcon icon={Rocket} variant="primary" size={24} />
-  <KCIcon icon={Sparkles} variant="primary" size={24} />
-  <KCIcon icon={Shield} variant="primary" size={24} />
-  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Public: Pink | Internal: Navy</span>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <KCIcon icon={Rocket} variant="primary" size={24} />
+      <KCIcon icon={Sparkles} variant="primary" size={24} />
+      <KCIcon icon={Shield} variant="primary" size={24} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <KCIcon icon={Rocket} variant="primary" size={24} />
+      <KCIcon icon={Sparkles} variant="primary" size={24} />
+      <KCIcon icon={Shield} variant="primary" size={24} />
+    </div>
+  </div>
 </div>
 
 ```tsx
 <KCIcon icon={Rocket} variant="primary" size={24} />
 ```
 
-Gebruik voor: Belangrijke acties, brand elements, CTAs, feature highlights
+**Gebruik voor:** Belangrijke acties, brand elements, CTAs, feature highlights
+
+**Kleuren:** Pink (#E4007C) in public docs | Navy (#222b5b) in andere secties
 
 ---
 
 ### Secondary (Navy Muted)
 
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
-  <KCIcon icon={FileText} variant="secondary" size={24} />
-  <KCIcon icon={Settings} variant="secondary" size={24} />
-  <KCIcon icon={User} variant="secondary" size={24} />
-  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Altijd Navy (muted)</span>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <KCIcon icon={FileText} variant="secondary" size={24} />
+      <KCIcon icon={Settings} variant="secondary" size={24} />
+      <KCIcon icon={User} variant="secondary" size={24} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <KCIcon icon={FileText} variant="secondary" size={24} />
+      <KCIcon icon={Settings} variant="secondary" size={24} />
+      <KCIcon icon={User} variant="secondary" size={24} />
+    </div>
+  </div>
 </div>
 
 ```tsx
 <KCIcon icon={FileText} variant="secondary" size={20} />
 ```
 
-Gebruik voor: Ondersteunende elementen, minder prominente UI, sectie headers
+**Gebruik voor:** Ondersteunende elementen, minder prominente UI, sectie headers
+
+**Kleuren:** Altijd Navy (muted) in beide themes
 
 ---
 
 ### Gradient (Kroescontrol Gradient)
 
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
-  <KCIcon icon={Sparkles} variant="gradient" size={32} />
-  <KCIcon icon={Rocket} variant="gradient" size={32} />
-  <KCIcon icon={TrendingUp} variant="gradient" size={32} />
-  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Navy → Pink gradient</span>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <KCIcon icon={Sparkles} variant="gradient" size={32} />
+      <KCIcon icon={Rocket} variant="gradient" size={32} />
+      <KCIcon icon={TrendingUp} variant="gradient" size={32} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <KCIcon icon={Sparkles} variant="gradient" size={32} />
+      <KCIcon icon={Rocket} variant="gradient" size={32} />
+      <KCIcon icon={TrendingUp} variant="gradient" size={32} />
+    </div>
+  </div>
 </div>
 
 ```tsx
 <KCIcon icon={Sparkles} variant="gradient" size={32} />
 ```
 
-Gebruik voor: Special features, premium content, unique highlights, marketing
+**Gebruik voor:** Special features, premium content, unique highlights, marketing
+
+**Kleuren:** Navy → Pink gradient (zelfde in beide themes)
 
 ---
 
 ### Success, Warning, Error
 
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-    <KCIcon icon={CheckCircle} variant="success" size={24} />
-    <span style={{ fontSize: '0.875rem' }}>Success</span>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem', flexWrap: 'wrap' }}>
+      <KCIcon icon={CheckCircle} variant="success" size={24} />
+      <KCIcon icon={AlertTriangle} variant="warning" size={24} />
+      <KCIcon icon={XCircle} variant="error" size={24} />
+      <KCIcon icon={Info} variant="neutral" size={24} />
+    </div>
   </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-    <KCIcon icon={AlertTriangle} variant="warning" size={24} />
-    <span style={{ fontSize: '0.875rem' }}>Warning</span>
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-    <KCIcon icon={XCircle} variant="error" size={24} />
-    <span style={{ fontSize: '0.875rem' }}>Error</span>
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-    <KCIcon icon={Info} variant="neutral" size={24} />
-    <span style={{ fontSize: '0.875rem' }}>Info</span>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem', flexWrap: 'wrap' }}>
+      <KCIcon icon={CheckCircle} variant="success" size={24} />
+      <KCIcon icon={AlertTriangle} variant="warning" size={24} />
+      <KCIcon icon={XCircle} variant="error" size={24} />
+      <KCIcon icon={Info} variant="neutral" size={24} />
+    </div>
   </div>
 </div>
 
@@ -210,24 +209,44 @@ Gebruik voor: Special features, premium content, unique highlights, marketing
 <KCIcon icon={XCircle} variant="error" size={20} />
 ```
 
-Gebruik voor: Status feedback, alerts, notifications, form validation
+**Gebruik voor:** Status feedback, alerts, notifications, form validation
+
+**Kleuren:**
+- Success: Green-600 (light) / Green-400 (dark)
+- Warning: Orange-500 (light) / Orange-400 (dark)
+- Error: Red-600 (light) / Red-400 (dark)
+- Neutral: Gray-600 (light) / Gray-400 (dark)
 
 ---
 
 ### Neutral (Gray)
 
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
-  <KCIcon icon={Search} variant="neutral" size={24} />
-  <KCIcon icon={Settings} variant="neutral" size={24} />
-  <KCIcon icon={Download} variant="neutral" size={24} />
-  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Universal gray</span>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <KCIcon icon={Search} variant="neutral" size={24} />
+      <KCIcon icon={Settings} variant="neutral" size={24} />
+      <KCIcon icon={Download} variant="neutral" size={24} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <KCIcon icon={Search} variant="neutral" size={24} />
+      <KCIcon icon={Settings} variant="neutral" size={24} />
+      <KCIcon icon={Download} variant="neutral" size={24} />
+    </div>
+  </div>
 </div>
 
 ```tsx
 <KCIcon icon={Settings} variant="neutral" size={20} />
 ```
 
-Gebruik voor: Algemene UI, navigation, settings, filters, search
+**Gebruik voor:** Algemene UI, navigation, settings, filters, search
+
+**Kleuren:** Gray-600 (light) / Gray-400 (dark)
 
 ## Size Guidelines
 
