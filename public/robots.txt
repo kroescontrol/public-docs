@@ -1,12 +1,17 @@
-# robots.txt voor docs.kroescontrol.nl
-# Publieke documentatie - alle bots welkom
-
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
-# Sitemap locatie
+# Dynamic sitemap location
 Sitemap: https://docs.kroescontrol.nl/sitemap.xml
 
-# Crawl rate optimalisatie
-# Specifieke bots kunnen deze respecteren
+# Rate limiting for respectful crawling
 Crawl-delay: 1
+
+# Block AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
