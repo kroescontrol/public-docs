@@ -102,6 +102,25 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [])
 
+  // HubSpot tracking script (conditional loading based on opt-out)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Check localStorage for opt-out preference
+    const hasOptedOut = localStorage.getItem('analytics-opt-out') === 'true'
+
+    // Only load HubSpot if not opted out and script not already present
+    if (!hasOptedOut && !(window as any)._hsq) {
+      const script = document.createElement('script')
+      script.id = 'hs-script-loader'
+      script.type = 'text/javascript'
+      script.async = true
+      script.defer = true
+      script.src = '//js-na1.hs-scripts.com/48140960.js'
+      document.body.appendChild(script)
+    }
+  }, [])
+
   return (
     <>
       <Head>
