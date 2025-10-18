@@ -18,7 +18,25 @@ const config: DocsThemeConfig = {
   },
   head: () => {
     const { asPath } = useRouter()
-    const url = `https://docs.kroescontrol.nl${asPath}`
+    const baseUrl = 'https://docs.kroescontrol.nl'
+    const url = `${baseUrl}${asPath}`
+
+    // Hreflang map: NL ↔ EN paths (ONLY juridisch pages with translations)
+    const hreflangMap: Record<string, string> = {
+      '/juridisch/algemene-voorwaarden': '/en/legal/terms-and-conditions',
+      '/juridisch/privacy': '/en/legal/privacy',
+      '/juridisch/spam': '/en/legal/spam',
+      '/juridisch/notice-and-takedown': '/en/legal/notice-and-takedown',
+      '/en/legal/terms-and-conditions': '/juridisch/algemene-voorwaarden',
+      '/en/legal/privacy': '/juridisch/privacy',
+      '/en/legal/spam': '/juridisch/spam',
+      '/en/legal/notice-and-takedown': '/juridisch/notice-and-takedown'
+    }
+
+    const altPath = hreflangMap[asPath]
+    const isNL = asPath.startsWith('/juridisch')
+    const isEN = asPath.startsWith('/en/legal')
+    const hasTranslation = Boolean(altPath)
 
     return (
       <>
@@ -27,6 +45,30 @@ const config: DocsThemeConfig = {
         <meta name="description" content="Publieke documentatie van Kroescontrol - informatie over werken bij ons, bedrijfscultuur, kantoor en alles wat je moet weten." />
         <meta name="keywords" content="Kroescontrol, documentatie, werken bij, software development, Amsterdam, Rotterdam" />
         <meta name="author" content="Kroescontrol" />
+
+        {/* Hreflang ONLY for pages with translations */}
+        {hasTranslation && (
+          <>
+            <link
+              rel="alternate"
+              hrefLang="nl"
+              href={`${baseUrl}${isNL ? asPath : altPath}`}
+            />
+            <link
+              rel="alternate"
+              hrefLang="en"
+              href={`${baseUrl}${isEN ? asPath : altPath}`}
+            />
+            <link
+              rel="alternate"
+              hrefLang="x-default"
+              href={`${baseUrl}${isNL ? asPath : altPath}`}
+            />
+          </>
+        )}
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={url} />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -44,9 +86,6 @@ const config: DocsThemeConfig = {
         <meta name="twitter:title" content="Kroescontrol - Publieke Documentatie" />
         <meta name="twitter:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben." />
         <meta name="twitter:image" content="https://docs.kroescontrol.nl/og-image.svg" />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href={url} />
 
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.png" />
