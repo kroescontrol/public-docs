@@ -8,6 +8,14 @@ const HomePage: NextPage = () => {
       <Head>
         <title>Kroescontrol - Publieke Documentatie</title>
         <meta name="description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur, kantoorlocaties en wat we te bieden hebben. Publieke documentatie voor iedereen." />
+
+        {/* Favicon - Magenta accent (public docs) */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="192x192" href="/logo-icon-192.png" />
+        <link rel="apple-touch-icon" sizes="512x512" href="/logo-icon-512.png" />
       </Head>
     <div className="min-h-screen relative overflow-hidden" style={{
       background: 'linear-gradient(135deg, #c22757 0%, #222b5b 100%)'
