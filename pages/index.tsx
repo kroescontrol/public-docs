@@ -9,6 +9,14 @@ const HomePage: NextPage = () => {
         <title>Kroescontrol - Publieke Documentatie</title>
         <meta name="description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur, kantoorlocaties en wat we te bieden hebben. Publieke documentatie voor iedereen." />
 
+        {/* Open Graph / Social Media Preview (PNG for compatibility) */}
+        <meta property="og:title" content="Kroescontrol - Publieke Documentatie" />
+        <meta property="og:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben" />
+        <meta property="og:image" content="https://docs.kroescontrol.nl/logo-icon-512.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="https://docs.kroescontrol.nl/logo-icon-512.png" />
+
         {/* Favicon - Magenta accent (public docs) */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
