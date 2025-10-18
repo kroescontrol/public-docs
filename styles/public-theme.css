@@ -68,16 +68,11 @@ html[class~="dark"] .nextra-nav-container a:hover {
   --tw-ring-color: theme('colors.primary.500');
 }
 
-/* Heading colors - Magenta accent */
-article h1, article h2, article h3, article h4, article h5, article h6 {
+/* Heading colors - Magenta accent alleen voor h2 */
+article h2 {
   color: #c22757 !important;
 }
 
-html[class~="dark"] article h1,
-html[class~="dark"] article h2,
-html[class~="dark"] article h3,
-html[class~="dark"] article h4,
-html[class~="dark"] article h5,
-html[class~="dark"] article h6 {
+html[class~="dark"] article h2 {
   color: #e63974 !important;
 }
