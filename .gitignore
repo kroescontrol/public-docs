@@ -44,3 +44,4 @@ next-env.d.ts
 # OS
 Thumbs.db/.dev.log
 build.log
+/public/meta.json

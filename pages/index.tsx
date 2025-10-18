@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
         <meta name="description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur, kantoorlocaties en wat we te bieden hebben. Publieke documentatie voor iedereen." />
       </Head>
     <div className="min-h-screen relative overflow-hidden" style={{
-      background: 'linear-gradient(135deg, #222b5b 0%, #c22757 100%)'
+      background: 'linear-gradient(135deg, #c22757 0%, #222b5b 100%)'
     }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -81,21 +81,21 @@ const HomePage: NextPage = () => {
 
         {/* Secondary Links */}
         <div className="grid md:grid-cols-4 gap-6 mb-20">
-          <Link href="/kantoor" className="group p-6 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">🏛️</div>
-            <div className="font-bold text-gray-900 text-lg">Kantoor</div>
+          <Link href="/kantoor" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
+            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🏛️</div>
+            <div className="font-bold text-gray-900">Kantoor</div>
           </Link>
-          <Link href="/branding" className="group p-6 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">🎨</div>
-            <div className="font-bold text-gray-900 text-lg">Branding</div>
+          <Link href="/branding" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
+            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🎨</div>
+            <div className="font-bold text-gray-900">Branding</div>
           </Link>
-          <Link href="/cultuur" className="group p-6 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">✨</div>
-            <div className="font-bold text-gray-900 text-lg">Cultuur</div>
+          <Link href="/cultuur" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
+            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">✨</div>
+            <div className="font-bold text-gray-900">Cultuur</div>
           </Link>
-          <Link href="/contact" className="group p-6 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">📧</div>
-            <div className="font-bold text-gray-900 text-lg">Contact</div>
+          <Link href="/contact" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
+            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">📧</div>
+            <div className="font-bold text-gray-900">Contact</div>
           </Link>
         </div>
 
