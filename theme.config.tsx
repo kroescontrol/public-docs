@@ -83,7 +83,7 @@ const config: DocsThemeConfig = {
         <meta property="og:image" content="https://docs.kroescontrol.nl/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Kroescontrol logo met gradient background" />
+        <meta property="og:image:alt" content="Kroescontrol logo" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
