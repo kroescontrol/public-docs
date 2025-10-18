@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3010 > .dev.log 2>&1",
     "prebuild": "node scripts/generate-meta.js",
-    "build": "pnpm run validate && next build",
+    "build": "node scripts/smart-build.js",
     "start": "next start -p 3010",
     "lint": "next lint",
     "lint:mdx": "next lint --ext .mdx",
