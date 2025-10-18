@@ -1,0 +1,304 @@
+# Icon Usage Guidelines
+
+Richtlijnen voor consistent en toegankelijk icon gebruik in Kroescontrol documentatie.
+
+## Quick Reference
+
+**Gebruik Lucide Icons voor:**
+- UI elementen (knoppen, menu's, navigatie)
+- Status indicatoren (success, warning, error)
+- Actions (zoeken, filteren, downloaden)
+- Documentatie structuur (secties, categorieën)
+
+**Gebruik Emoji voor:**
+- Celebratory content (🎉 launches)
+- Informele tone (💡 tips)
+- Persoonlijke expressies (❤️ appreciation)
+
+## Component Gebruik
+
+### Basis Syntax
+
+```tsx
+import { IconName } from 'lucide-react'
+import { KCIcon } from '@/components/icons/KCIcon'
+
+<KCIcon icon={IconName} variant="primary" size={24} />
+```
+
+### Props
+
+| Prop | Type | Default | Beschrijving |
+|------|------|---------|--------------|
+| `icon` | `LucideIcon` | required | Lucide icon component |
+| `variant` | `primary \| secondary \| gradient \| success \| warning \| error \| neutral` | `primary` | Color variant |
+| `size` | `16 \| 20 \| 24 \| 32 \| 40` | `24` | Icon size in pixels |
+| `className` | `string` | `''` | Additional CSS classes |
+| `aria-label` | `string` | - | Accessibility label (verplicht voor standalone icons) |
+
+## Variant Guidelines
+
+### Primary (Brand Color)
+**Public:** Pink #E4007C | **Internal:** Navy #222b5b
+
+Gebruik voor:
+- Belangrijke acties
+- Brand-related elementen
+- Call-to-actions
+- Feature highlights
+
+```tsx
+<KCIcon icon={Rocket} variant="primary" size={24} />
+```
+
+### Secondary (Navy Muted)
+Gebruik voor:
+- Ondersteunende elementen
+- Minder prominente UI
+- Documentatie sectie headers
+
+```tsx
+<KCIcon icon={FileText} variant="secondary" size={20} />
+```
+
+### Gradient (Kroescontrol Gradient)
+Gebruik voor:
+- Special features
+- Premium content
+- Unique highlights
+- Marketing sections
+
+```tsx
+<KCIcon icon={Sparkles} variant="gradient" size={32} />
+```
+
+### Success, Warning, Error
+Gebruik voor:
+- Status feedback
+- Alerts en notifications
+- Form validation
+
+```tsx
+<KCIcon icon={CheckCircle} variant="success" size={20} />
+<KCIcon icon={AlertTriangle} variant="warning" size={20} />
+<KCIcon icon={XCircle} variant="error" size={20} />
+```
+
+### Neutral (Gray)
+Gebruik voor:
+- Algemene UI elementen
+- Navigation
+- Settings, filters, search
+
+```tsx
+<KCIcon icon={Settings} variant="neutral" size={20} />
+```
+
+## Size Guidelines
+
+| Size | Context | Example |
+|------|---------|---------|
+| 16px | Small inline | Breadcrumb separators |
+| 20px | Menu items | Navigation, lists |
+| 24px | Buttons, cards | Standard UI elements |
+| 32px | Section headers | Page titles |
+| 40px | Feature highlights | Landing pages |
+
+**Vuistregel:** Icon size = text size + 4px
+
+## Accessibility
+
+### Standalone Icons (VERPLICHT aria-label)
+
+```tsx
+<button>
+  <KCIcon
+    icon={Search}
+    variant="primary"
+    size={20}
+    aria-label="Zoeken in documentatie"
+  />
+</button>
+```
+
+### Icons met Tekst
+
+```tsx
+<div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+  <KCIcon icon={Mail} variant="primary" size={20} />
+  <span>secretariaat@kroescontrol.nl</span>
+</div>
+```
+
+Icon is decoratief, `aria-label` niet nodig.
+
+## Common Patterns
+
+### Navigation Link met Icon
+
+```tsx
+<a href="/docs" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+  <KCIcon icon={FileText} variant="neutral" size={20} />
+  <span>Documentation</span>
+  <KCIcon icon={ExternalLink} variant="neutral" size={16} />
+</a>
+```
+
+### Status Alert
+
+```tsx
+<div className="alert alert-success">
+  <KCIcon icon={CheckCircle} variant="success" size={24} />
+  <div>
+    <strong>Success!</strong>
+    <p>Your changes have been saved.</p>
+  </div>
+</div>
+```
+
+### Card Header
+
+```tsx
+<div className="card">
+  <div className="card-header">
+    <KCIcon icon={Shield} variant="primary" size={24} />
+    <h3>Security & Privacy</h3>
+  </div>
+  <div className="card-body">
+    <p>Content...</p>
+  </div>
+</div>
+```
+
+### Button met Icon
+
+```tsx
+<button>
+  <KCIcon icon={Download} variant="neutral" size={20} aria-label="Download" />
+  <span>Download PDF</span>
+</button>
+```
+
+## Emoji → Lucide Migraties
+
+### UI Elements (VERVANGEN)
+
+| Emoji | Lucide | Variant |
+|-------|--------|---------|
+| ✅ | `CheckCircle` | success |
+| ❌ | `XCircle` | error |
+| ⚠️ | `AlertTriangle` | warning |
+| 📁 | `FileText` | neutral |
+| 🔒 | `Lock` | neutral |
+| 🔑 | `Key` | neutral |
+| 📧 | `Mail` | primary |
+| 📱 | `Phone` | primary |
+| 📍 | `MapPin` | primary |
+| 🏢 | `Building` | primary |
+| 👥 | `Users` | primary |
+| ⚙️ | `Settings` | neutral |
+| 🔍 | `Search` | neutral |
+
+### Behoud Emoji
+
+| Emoji | Context | Waarom |
+|-------|---------|--------|
+| 🎉 | Launch announcements | Celebratory, marketing |
+| 💡 | "Aha" moments | Informal, friendly |
+| 🚀 | Releases, new features | Excitement, momentum |
+| ❤️ | Appreciation, passion | Personal, emotional |
+| 🔥 | Hot topics | Marketing, emphasis |
+
+## Wat NIET te Doen
+
+### ❌ Icon Overload
+
+```tsx
+// FOUT: Te veel icons
+<div>
+  <KCIcon icon={File} /> <KCIcon icon={Code} /> Document <KCIcon icon={Check} />
+</div>
+
+// GOED: 1 duidelijke icon
+<div>
+  <KCIcon icon={FileCode} /> Document
+</div>
+```
+
+### ❌ Random Sizes
+
+```tsx
+// FOUT: Inconsistente sizes
+<KCIcon icon={User} size={18} />
+<KCIcon icon={Settings} size={22} />
+
+// GOED: Standaard sizes
+<KCIcon icon={User} size={20} />
+<KCIcon icon={Settings} size={20} />
+```
+
+### ❌ Verkeerde Variant
+
+```tsx
+// FOUT: Semantisch incorrect
+<KCIcon icon={XCircle} variant="success" />
+
+// GOED: Juiste variant voor betekenis
+<KCIcon icon={XCircle} variant="error" />
+```
+
+### ❌ Geen Accessibility
+
+```tsx
+// FOUT: Standalone zonder label
+<button>
+  <KCIcon icon={Search} variant="primary" size={20} />
+</button>
+
+// GOED: Met aria-label
+<button>
+  <KCIcon icon={Search} variant="primary" size={20} aria-label="Zoeken" />
+</button>
+```
+
+### ❌ Lucide voor Branding
+
+```tsx
+// FOUT: Generic icon voor Kroescontrol
+<KCIcon icon={Building} variant="primary" size={40} />
+
+// GOED: Gebruik Kroescontrol logo
+<img src="/branding/logo.svg" alt="Kroescontrol" />
+```
+
+## Best Practices Checklist
+
+- [ ] **Consistentie**: Zelfde icon voor zelfde concept
+- [ ] **Accessibility**: aria-label bij standalone icons
+- [ ] **Spacing**: Min. 0.5rem gap tussen icon en tekst
+- [ ] **Variant**: Juiste semantic variant (success/warning/error)
+- [ ] **Size**: Passende size voor context
+- [ ] **Performance**: Alleen importeren wat je gebruikt
+
+## Icon Browser
+
+Browse alle 1000+ Lucide icons:
+[lucide.dev/icons](https://lucide.dev/icons)
+
+## Voorbeelden
+
+Uitgebreide voorbeelden en demos:
+[Lucide Icons Demo](/branding/lucide-icons)
+
+## Vragen?
+
+Voor complexe use cases of nieuwe patterns:
+1. Check [PRD: Icon Implementation Strategy](/branding/icon-implementation-prd)
+2. Browse Lucide icon library
+3. Overleg met design team
+
+---
+
+**Laatste update:** 2025-10-18
+**Versie:** 1.0
+**Eigenaar:** Serge Kroes

@@ -117,6 +117,15 @@
   font-family: var(--kc-font-sans);
 }
 
+/* Icon Gradient Support */
+.kc-gradient-icon {
+  background: var(--kc-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* Component Base Styles */
 .kc-card {
   background: var(--landing-bg-primary);
