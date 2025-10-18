@@ -4,10 +4,17 @@ import { useRouter } from 'next/router'
 import { LanguageToggle } from './components/LanguageToggle'
 
 const config: DocsThemeConfig = {
-  logo: <span>📚 Kroescontrol Publieke Documentatie</span>,
+  logo: (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <img src="/KC-beeldmerk-gradientKLEUR.svg" alt="KC" style={{ height: '32px', width: 'auto' }} />
+      <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '18px' }}>
+        kroescontrol
+      </span>
+    </div>
+  ),
   logoLink: '/home',
   project: {
-    link: 'https://github.com/kroescontrol/public-docs'
+    link: 'https://docs.kroescontrol.nl'
   },
   docsRepositoryBase: 'https://github.com/kroescontrol/public-docs/tree/main',
   footer: {
