@@ -3,7 +3,11 @@ const meta = {
   logo: "Logo",
   beeldmerk: "Beeldmerk",
   kleuren: "Kleuren",
-  downloads: "Downloads"
+  downloads: "Downloads",
+  "icon-guidelines": "Icon Guidelines",
+  "lucide-icons": {
+    display: "hidden"
+  }
 }
 
 export default meta
