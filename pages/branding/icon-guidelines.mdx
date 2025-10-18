@@ -1,3 +1,27 @@
+import { KCIcon } from '@/components/icons/KCIcon'
+import {
+  Rocket,
+  Sparkles,
+  CheckCircle,
+  AlertTriangle,
+  XCircle,
+  Info,
+  FileText,
+  Settings,
+  Mail,
+  Search,
+  Download,
+  ExternalLink,
+  Shield,
+  Lock,
+  Users,
+  Building,
+  Key,
+  DollarSign,
+  TrendingUp,
+  User
+} from 'lucide-react'
+
 # Icon Usage Guidelines
 
 Richtlijnen voor consistent en toegankelijk icon gebruik in Kroescontrol documentatie.
@@ -14,6 +38,76 @@ Richtlijnen voor consistent en toegankelijk icon gebruik in Kroescontrol documen
 - Celebratory content (🎉 launches)
 - Informele tone (💡 tips)
 - Persoonlijke expressies (❤️ appreciation)
+
+## Toegangsniveaus & Kleuren
+
+Kroescontrol documentatie heeft verschillende toegangsniveaus met eigen primary kleuren:
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginTop: '1rem', marginBottom: '2rem' }}>
+  <div style={{ padding: '1.5rem', border: '2px solid #E4007C', borderRadius: '0.5rem', background: '#fef2f8' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+      <KCIcon icon={Users} variant="primary" size={32} />
+      <strong style={{ fontSize: '1.25rem' }}>Public</strong>
+    </div>
+    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
+      Openbare documentatie voor iedereen toegankelijk
+    </p>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ width: '1rem', height: '1rem', background: '#E4007C', borderRadius: '0.25rem' }}></div>
+      <code style={{ fontSize: '0.75rem' }}>#E4007C Pink</code>
+    </div>
+  </div>
+
+  <div style={{ padding: '1.5rem', border: '2px solid #222b5b', borderRadius: '0.5rem', background: '#f0f2ff' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+      <KCIcon icon={Building} variant="secondary" size={32} />
+      <strong style={{ fontSize: '1.25rem' }}>Internal</strong>
+    </div>
+    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
+      Team resources en interne procedures
+    </p>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ width: '1rem', height: '1rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
+      <code style={{ fontSize: '0.75rem' }}>#222b5b Navy</code>
+    </div>
+  </div>
+
+  <div style={{ padding: '1.5rem', border: '2px solid #222b5b', borderRadius: '0.5rem', background: '#f0f2ff' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+      <KCIcon icon={Settings} variant="secondary" size={32} />
+      <strong style={{ fontSize: '1.25rem' }}>Operations</strong>
+    </div>
+    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
+      Technische operaties en infrastructuur
+    </p>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ width: '1rem', height: '1rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
+      <code style={{ fontSize: '0.75rem' }}>#222b5b Navy</code>
+    </div>
+  </div>
+
+  <div style={{ padding: '1.5rem', border: '2px solid #059669', borderRadius: '0.5rem', background: '#f0fdf4' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+      <div style={{ color: '#059669' }}>
+        <DollarSign size={32} strokeWidth={2} />
+      </div>
+      <strong style={{ fontSize: '1.25rem' }}>Finance</strong>
+    </div>
+    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
+      Financiële data en administratie (toekomstig)
+    </p>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ width: '1rem', height: '1rem', background: '#059669', borderRadius: '0.25rem' }}></div>
+      <code style={{ fontSize: '0.75rem' }}>#059669 Green</code>
+    </div>
+  </div>
+</div>
+
+**Huidige status:**
+- ✅ **Public** - Live op docs.kroescontrol.nl (Pink icons)
+- ✅ **Internal** - Live op internal.docs.kroescontrol.nl (Navy icons)
+- ✅ **Operations** - Live op operations.docs.kroescontrol.nl (Navy icons)
+- 🔜 **Finance** - Toekomstige uitbreiding (Green icons gereserveerd)
 
 ## Component Gebruik
 
@@ -36,47 +130,79 @@ import { KCIcon } from '@/components/icons/KCIcon'
 | `className` | `string` | `''` | Additional CSS classes |
 | `aria-label` | `string` | - | Accessibility label (verplicht voor standalone icons) |
 
-## Variant Guidelines
+## Variant Voorbeelden (met Live Icons)
 
 ### Primary (Brand Color)
-**Public:** Pink #E4007C | **Internal:** Navy #222b5b
 
-Gebruik voor:
-- Belangrijke acties
-- Brand-related elementen
-- Call-to-actions
-- Feature highlights
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <KCIcon icon={Rocket} variant="primary" size={24} />
+  <KCIcon icon={Sparkles} variant="primary" size={24} />
+  <KCIcon icon={Shield} variant="primary" size={24} />
+  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Public: Pink | Internal: Navy</span>
+</div>
 
 ```tsx
 <KCIcon icon={Rocket} variant="primary" size={24} />
 ```
 
+Gebruik voor: Belangrijke acties, brand elements, CTAs, feature highlights
+
+---
+
 ### Secondary (Navy Muted)
-Gebruik voor:
-- Ondersteunende elementen
-- Minder prominente UI
-- Documentatie sectie headers
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <KCIcon icon={FileText} variant="secondary" size={24} />
+  <KCIcon icon={Settings} variant="secondary" size={24} />
+  <KCIcon icon={User} variant="secondary" size={24} />
+  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Altijd Navy (muted)</span>
+</div>
 
 ```tsx
 <KCIcon icon={FileText} variant="secondary" size={20} />
 ```
 
+Gebruik voor: Ondersteunende elementen, minder prominente UI, sectie headers
+
+---
+
 ### Gradient (Kroescontrol Gradient)
-Gebruik voor:
-- Special features
-- Premium content
-- Unique highlights
-- Marketing sections
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <KCIcon icon={Sparkles} variant="gradient" size={32} />
+  <KCIcon icon={Rocket} variant="gradient" size={32} />
+  <KCIcon icon={TrendingUp} variant="gradient" size={32} />
+  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Navy → Pink gradient</span>
+</div>
 
 ```tsx
 <KCIcon icon={Sparkles} variant="gradient" size={32} />
 ```
 
+Gebruik voor: Special features, premium content, unique highlights, marketing
+
+---
+
 ### Success, Warning, Error
-Gebruik voor:
-- Status feedback
-- Alerts en notifications
-- Form validation
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+    <KCIcon icon={CheckCircle} variant="success" size={24} />
+    <span style={{ fontSize: '0.875rem' }}>Success</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+    <KCIcon icon={AlertTriangle} variant="warning" size={24} />
+    <span style={{ fontSize: '0.875rem' }}>Warning</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+    <KCIcon icon={XCircle} variant="error" size={24} />
+    <span style={{ fontSize: '0.875rem' }}>Error</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+    <KCIcon icon={Info} variant="neutral" size={24} />
+    <span style={{ fontSize: '0.875rem' }}>Info</span>
+  </div>
+</div>
 
 ```tsx
 <KCIcon icon={CheckCircle} variant="success" size={20} />
@@ -84,17 +210,49 @@ Gebruik voor:
 <KCIcon icon={XCircle} variant="error" size={20} />
 ```
 
+Gebruik voor: Status feedback, alerts, notifications, form validation
+
+---
+
 ### Neutral (Gray)
-Gebruik voor:
-- Algemene UI elementen
-- Navigation
-- Settings, filters, search
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <KCIcon icon={Search} variant="neutral" size={24} />
+  <KCIcon icon={Settings} variant="neutral" size={24} />
+  <KCIcon icon={Download} variant="neutral" size={24} />
+  <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: '#64748b' }}>Universal gray</span>
+</div>
 
 ```tsx
 <KCIcon icon={Settings} variant="neutral" size={20} />
 ```
 
+Gebruik voor: Algemene UI, navigation, settings, filters, search
+
 ## Size Guidelines
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem' }}>
+    <KCIcon icon={Sparkles} variant="primary" size={16} />
+    <span style={{ fontSize: '0.75rem', color: '#64748b' }}>16px</span>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem' }}>
+    <KCIcon icon={Sparkles} variant="primary" size={20} />
+    <span style={{ fontSize: '0.75rem', color: '#64748b' }}>20px</span>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem' }}>
+    <KCIcon icon={Sparkles} variant="primary" size={24} />
+    <span style={{ fontSize: '0.75rem', color: '#64748b' }}>24px</span>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem' }}>
+    <KCIcon icon={Sparkles} variant="primary" size={32} />
+    <span style={{ fontSize: '0.75rem', color: '#64748b' }}>32px</span>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem' }}>
+    <KCIcon icon={Sparkles} variant="primary" size={40} />
+    <span style={{ fontSize: '0.75rem', color: '#64748b' }}>40px</span>
+  </div>
+</div>
 
 | Size | Context | Example |
 |------|---------|---------|
@@ -106,35 +264,17 @@ Gebruik voor:
 
 **Vuistregel:** Icon size = text size + 4px
 
-## Accessibility
-
-### Standalone Icons (VERPLICHT aria-label)
-
-```tsx
-<button>
-  <KCIcon
-    icon={Search}
-    variant="primary"
-    size={20}
-    aria-label="Zoeken in documentatie"
-  />
-</button>
-```
-
-### Icons met Tekst
-
-```tsx
-<div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-  <KCIcon icon={Mail} variant="primary" size={20} />
-  <span>secretariaat@kroescontrol.nl</span>
-</div>
-```
-
-Icon is decoratief, `aria-label` niet nodig.
-
-## Common Patterns
+## Common Patterns (met Live Demos)
 
 ### Navigation Link met Icon
+
+<div style={{ padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <a href="/branding/lucide-icons" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+    <KCIcon icon={FileText} variant="neutral" size={20} />
+    <span>Lucide Icons Demo</span>
+    <KCIcon icon={ExternalLink} variant="neutral" size={16} />
+  </a>
+</div>
 
 ```tsx
 <a href="/docs" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
@@ -144,7 +284,19 @@ Icon is decoratief, `aria-label` niet nodig.
 </a>
 ```
 
+---
+
 ### Status Alert
+
+<div style={{ padding: '1rem', background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+    <KCIcon icon={CheckCircle} variant="success" size={24} />
+    <div>
+      <strong>Success!</strong>
+      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem' }}>Your changes have been saved.</p>
+    </div>
+  </div>
+</div>
 
 ```tsx
 <div className="alert alert-success">
@@ -156,7 +308,21 @@ Icon is decoratief, `aria-label` niet nodig.
 </div>
 ```
 
+---
+
 ### Card Header
+
+<div style={{ padding: '0', border: '1px solid #e2e8f0', borderRadius: '0.5rem', marginTop: '1rem', overflow: 'hidden' }}>
+  <div style={{ padding: '1rem', borderBottom: '1px solid #e2e8f0', background: '#fafbfc', display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+    <KCIcon icon={Shield} variant="primary" size={24} />
+    <h3 style={{ margin: 0, fontSize: '1.125rem' }}>Security & Privacy</h3>
+  </div>
+  <div style={{ padding: '1rem' }}>
+    <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b' }}>
+      Kroescontrol documentatie gebruikt HubSpot Analytics voor website statistieken.
+    </p>
+  </div>
+</div>
 
 ```tsx
 <div className="card">
@@ -170,36 +336,95 @@ Icon is decoratief, `aria-label` niet nodig.
 </div>
 ```
 
+---
+
 ### Button met Icon
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+  <button style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem', border: '1px solid #e2e8f0', borderRadius: '0.375rem', background: 'white', cursor: 'pointer' }}>
+    <KCIcon icon={Download} variant="neutral" size={20} />
+    <span>Download PDF</span>
+  </button>
+  <button style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem', border: '1px solid #e2e8f0', borderRadius: '0.375rem', background: 'white', cursor: 'pointer' }}>
+    <KCIcon icon={Search} variant="neutral" size={20} />
+    <span>Zoeken</span>
+  </button>
+</div>
 
 ```tsx
 <button>
-  <KCIcon icon={Download} variant="neutral" size={20} aria-label="Download" />
+  <KCIcon icon={Download} variant="neutral" size={20} />
   <span>Download PDF</span>
 </button>
 ```
 
 ## Emoji → Lucide Migraties
 
-### UI Elements (VERVANGEN)
+### UI Elements (VERVANGEN met Lucide)
 
-| Emoji | Lucide | Variant |
-|-------|--------|---------|
-| ✅ | `CheckCircle` | success |
-| ❌ | `XCircle` | error |
-| ⚠️ | `AlertTriangle` | warning |
-| 📁 | `FileText` | neutral |
-| 🔒 | `Lock` | neutral |
-| 🔑 | `Key` | neutral |
-| 📧 | `Mail` | primary |
-| 📱 | `Phone` | primary |
-| 📍 | `MapPin` | primary |
-| 🏢 | `Building` | primary |
-| 👥 | `Users` | primary |
-| ⚙️ | `Settings` | neutral |
-| 🔍 | `Search` | neutral |
+<div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto 1fr', gap: '0.5rem 1rem', padding: '1rem', background: '#fafbfc', borderRadius: '0.5rem', marginTop: '1rem', fontSize: '0.875rem' }}>
+  <strong>Emoji</strong>
+  <strong>Icon</strong>
+  <strong>Variant</strong>
+  <strong>Lucide Name</strong>
 
-### Behoud Emoji
+  <span>✅</span>
+  <KCIcon icon={CheckCircle} variant="success" size={20} />
+  <code>success</code>
+  <code>CheckCircle</code>
+
+  <span>❌</span>
+  <KCIcon icon={XCircle} variant="error" size={20} />
+  <code>error</code>
+  <code>XCircle</code>
+
+  <span>⚠️</span>
+  <KCIcon icon={AlertTriangle} variant="warning" size={20} />
+  <code>warning</code>
+  <code>AlertTriangle</code>
+
+  <span>📁</span>
+  <KCIcon icon={FileText} variant="neutral" size={20} />
+  <code>neutral</code>
+  <code>FileText</code>
+
+  <span>🔒</span>
+  <KCIcon icon={Lock} variant="neutral" size={20} />
+  <code>neutral</code>
+  <code>Lock</code>
+
+  <span>🔑</span>
+  <KCIcon icon={Key} variant="neutral" size={20} />
+  <code>neutral</code>
+  <code>Key</code>
+
+  <span>📧</span>
+  <KCIcon icon={Mail} variant="primary" size={20} />
+  <code>primary</code>
+  <code>Mail</code>
+
+  <span>🏢</span>
+  <KCIcon icon={Building} variant="primary" size={20} />
+  <code>primary</code>
+  <code>Building</code>
+
+  <span>👥</span>
+  <KCIcon icon={Users} variant="primary" size={20} />
+  <code>primary</code>
+  <code>Users</code>
+
+  <span>⚙️</span>
+  <KCIcon icon={Settings} variant="neutral" size={20} />
+  <code>neutral</code>
+  <code>Settings</code>
+
+  <span>🔍</span>
+  <KCIcon icon={Search} variant="neutral" size={20} />
+  <code>neutral</code>
+  <code>Search</code>
+</div>
+
+### Behoud Emoji (voor informele content)
 
 | Emoji | Context | Waarom |
 |-------|---------|--------|
@@ -213,63 +438,40 @@ Icon is decoratief, `aria-label` niet nodig.
 
 ### ❌ Icon Overload
 
-```tsx
-// FOUT: Te veel icons
-<div>
-  <KCIcon icon={File} /> <KCIcon icon={Code} /> Document <KCIcon icon={Check} />
+<div style={{ padding: '1rem', background: '#fef2f2', border: '1px solid #fca5a5', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <strong style={{ color: '#dc2626' }}>FOUT:</strong>
+  <div style={{ marginTop: '0.5rem' }}>
+    <KCIcon icon={FileText} variant="neutral" size={20} /> <KCIcon icon={Settings} variant="neutral" size={20} /> Document <KCIcon icon={CheckCircle} variant="success" size={20} />
+  </div>
 </div>
 
-// GOED: 1 duidelijke icon
-<div>
-  <KCIcon icon={FileCode} /> Document
+<div style={{ padding: '1rem', background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '0.5rem', marginTop: '0.5rem' }}>
+  <strong style={{ color: '#16a34a' }}>GOED:</strong>
+  <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+    <KCIcon icon={FileText} variant="neutral" size={20} />
+    <span>Document</span>
+  </div>
 </div>
-```
+
+---
 
 ### ❌ Random Sizes
 
-```tsx
-// FOUT: Inconsistente sizes
-<KCIcon icon={User} size={18} />
-<KCIcon icon={Settings} size={22} />
+<div style={{ padding: '1rem', background: '#fef2f2', border: '1px solid #fca5a5', borderRadius: '0.5rem', marginTop: '1rem' }}>
+  <strong style={{ color: '#dc2626' }}>FOUT:</strong>
+  <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+    <KCIcon icon={User} variant="neutral" size={18} />
+    <KCIcon icon={Settings} variant="neutral" size={22} />
+  </div>
+</div>
 
-// GOED: Standaard sizes
-<KCIcon icon={User} size={20} />
-<KCIcon icon={Settings} size={20} />
-```
-
-### ❌ Verkeerde Variant
-
-```tsx
-// FOUT: Semantisch incorrect
-<KCIcon icon={XCircle} variant="success" />
-
-// GOED: Juiste variant voor betekenis
-<KCIcon icon={XCircle} variant="error" />
-```
-
-### ❌ Geen Accessibility
-
-```tsx
-// FOUT: Standalone zonder label
-<button>
-  <KCIcon icon={Search} variant="primary" size={20} />
-</button>
-
-// GOED: Met aria-label
-<button>
-  <KCIcon icon={Search} variant="primary" size={20} aria-label="Zoeken" />
-</button>
-```
-
-### ❌ Lucide voor Branding
-
-```tsx
-// FOUT: Generic icon voor Kroescontrol
-<KCIcon icon={Building} variant="primary" size={40} />
-
-// GOED: Gebruik Kroescontrol logo
-<img src="/branding/logo.svg" alt="Kroescontrol" />
-```
+<div style={{ padding: '1rem', background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '0.5rem', marginTop: '0.5rem' }}>
+  <strong style={{ color: '#16a34a' }}>GOED:</strong>
+  <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+    <KCIcon icon={User} variant="neutral" size={20} />
+    <KCIcon icon={Settings} variant="neutral" size={20} />
+  </div>
+</div>
 
 ## Best Practices Checklist
 
@@ -277,28 +479,22 @@ Icon is decoratief, `aria-label` niet nodig.
 - [ ] **Accessibility**: aria-label bij standalone icons
 - [ ] **Spacing**: Min. 0.5rem gap tussen icon en tekst
 - [ ] **Variant**: Juiste semantic variant (success/warning/error)
-- [ ] **Size**: Passende size voor context
+- [ ] **Size**: Passende size voor context (16/20/24/32/40)
 - [ ] **Performance**: Alleen importeren wat je gebruikt
 
-## Icon Browser
+## Meer Informatie
 
-Browse alle 1000+ Lucide icons:
-[lucide.dev/icons](https://lucide.dev/icons)
+**Uitgebreide voorbeelden:**
+[Lucide Icons Demo](/branding/lucide-icons) - Alle variants, sizes en use cases
 
-## Voorbeelden
+**Icon library:**
+[lucide.dev/icons](https://lucide.dev/icons) - Browse 1000+ icons
 
-Uitgebreide voorbeelden en demos:
-[Lucide Icons Demo](/branding/lucide-icons)
-
-## Vragen?
-
-Voor complexe use cases of nieuwe patterns:
-1. Check [PRD: Icon Implementation Strategy](/branding/icon-implementation-prd)
-2. Browse Lucide icon library
-3. Overleg met design team
+**Implementatie strategie:**
+[Icon Implementation PRD](/branding/icon-implementation-prd) - Complete PRD
 
 ---
 
 **Laatste update:** 2025-10-18
-**Versie:** 1.0
+**Versie:** 1.1
 **Eigenaar:** Serge Kroes
