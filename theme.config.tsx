@@ -1,6 +1,7 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
+import { LanguageToggle } from './components/LanguageToggle'
 
 const config: DocsThemeConfig = {
   logo: <span>📚 Kroescontrol Publieke Documentatie</span>,
@@ -15,6 +16,9 @@ const config: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: 1,
     toggleButton: true
+  },
+  navbar: {
+    extraContent: () => <LanguageToggle />
   },
   head: () => {
     const { asPath } = useRouter()
