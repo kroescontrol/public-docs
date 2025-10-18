@@ -40,7 +40,7 @@ const HomePage: NextPage = () => {
               Werken bij
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-              Ontdek carrièremogelijkheden, onze cultuur en hoe je onderdeel wordt van ons team
+              Ontdek onze cultuur en hoe je onderdeel wordt van ons team
             </p>
             <span className="inline-flex items-center gap-2 text-purple-600 font-semibold group-hover:gap-4 transition-all">
               Meer info

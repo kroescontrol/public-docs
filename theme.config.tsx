@@ -11,7 +11,14 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/kroescontrol/public-docs/tree/main',
   footer: {
-    content: 'Kroescontrol Public Documentation'
+    content: (
+      <span>
+        Kroescontrol Public Documentation •{' '}
+        <a href="/opt-out" style={{ textDecoration: 'underline' }}>
+          Analytics opt-out
+        </a>
+      </span>
+    )
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
