@@ -44,6 +44,10 @@ const config: DocsThemeConfig = {
 
     return (
       <>
+        {/* Performance: DNS prefetch for HubSpot */}
+        <link rel="dns-prefetch" href="//js-na1.hs-scripts.com" />
+        <link rel="preconnect" href="https://js-na1.hs-scripts.com" crossOrigin="anonymous" />
+
         {/* Basic Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Publieke documentatie van Kroescontrol - informatie over werken bij ons, bedrijfscultuur, kantoor en alles wat je moet weten." />

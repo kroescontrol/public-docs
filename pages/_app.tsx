@@ -102,15 +102,16 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [])
 
-  // HubSpot tracking script (conditional loading based on opt-out)
+  // HubSpot tracking script (conditional loading with idle-time optimization)
   useEffect(() => {
     if (typeof window === 'undefined') return
 
     // Check localStorage for opt-out preference
     const hasOptedOut = localStorage.getItem('analytics-opt-out') === 'true'
+    if (hasOptedOut || (window as any)._hsq) return
 
-    // Only load HubSpot if not opted out and script not already present
-    if (!hasOptedOut && !(window as any)._hsq) {
+    // Load HubSpot script during browser idle time for optimal performance
+    const loadHubSpot = () => {
       const script = document.createElement('script')
       script.id = 'hs-script-loader'
       script.type = 'text/javascript'
@@ -118,6 +119,14 @@ export default function App({ Component, pageProps }: AppProps) {
       script.defer = true
       script.src = '//js-na1.hs-scripts.com/48140960.js'
       document.body.appendChild(script)
+    }
+
+    // Wait for browser to be idle (better pageload performance)
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadHubSpot, { timeout: 2000 })
+    } else {
+      // Fallback for browsers without requestIdleCallback (Safari)
+      setTimeout(loadHubSpot, 2000)
     }
   }, [])
 
