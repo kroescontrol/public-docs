@@ -89,9 +89,23 @@ article h4 .subheading-anchor {
   text-decoration: none;
   color: transparent;
   font-size: 0;
+  display: inline-block;
+}
+
+/* Proportional sizing */
+article h2 .subheading-anchor {
+  width: 24px;
+  height: 24px;
+}
+
+article h3 .subheading-anchor {
   width: 20px;
   height: 20px;
-  display: inline-block;
+}
+
+article h4 .subheading-anchor {
+  width: 18px;
+  height: 18px;
 }
 
 /* Icon container injected by client script */
@@ -105,8 +119,21 @@ article h4 .subheading-anchor .anchor-icon {
   color: currentColor;
 }
 
-article h2 .subheading-anchor .anchor-icon svg,
-article h3 .subheading-anchor .anchor-icon svg,
+/* H2: Larger icons */
+article h2 .subheading-anchor .anchor-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #c22757;
+}
+
+/* H3: Medium icons */
+article h3 .subheading-anchor .anchor-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #c22757;
+}
+
+/* H4: Smaller icons */
 article h4 .subheading-anchor .anchor-icon svg {
   width: 18px;
   height: 18px;
