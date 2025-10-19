@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
   logo: (
     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <img src="/KC-beeldmerk-gradientKLEUR.svg" alt="KC" style={{ height: '32px', width: 'auto' }} />
-      <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '18px' }}>
+      <span className="max-md:hidden" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '18px' }}>
         kroescontrol
       </span>
     </div>

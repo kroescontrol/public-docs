@@ -194,3 +194,21 @@ html[class~="dark"] article h3:target .subheading-anchor .anchor-icon,
 html[class~="dark"] article h4:target .subheading-anchor .anchor-icon {
   color: #e63974;
 }
+
+/* Download badge styling */
+.download-badge:hover {
+  background-color: rgba(194, 39, 87, 0.05) !important;
+  border-color: rgba(194, 39, 87, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+html[class~="dark"] .download-badge {
+  background-color: rgba(230, 57, 116, 0.1) !important;
+  border-color: rgba(230, 57, 116, 0.2) !important;
+  color: #e63974 !important;
+}
+
+html[class~="dark"] .download-badge:hover {
+  background-color: rgba(230, 57, 116, 0.15) !important;
+  border-color: rgba(230, 57, 116, 0.3) !important;
+}
