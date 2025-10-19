@@ -102,6 +102,7 @@ article h4 .subheading-anchor .anchor-icon {
   align-items: center;
   font-size: 1rem;
   line-height: 1;
+  color: currentColor;
 }
 
 article h2 .subheading-anchor .anchor-icon svg,
@@ -109,6 +110,13 @@ article h3 .subheading-anchor .anchor-icon svg,
 article h4 .subheading-anchor .anchor-icon svg {
   width: 18px;
   height: 18px;
+  color: #6b7280;
+}
+
+html[class~="dark"] article h2 .subheading-anchor .anchor-icon svg,
+html[class~="dark"] article h3 .subheading-anchor .anchor-icon svg,
+html[class~="dark"] article h4 .subheading-anchor .anchor-icon svg {
+  color: #9ca3af;
 }
 
 /* Show on hover */
