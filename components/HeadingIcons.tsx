@@ -59,6 +59,13 @@ export function HeadingIcons() {
             }
           })
 
+          // Clean up heading ID and anchor href (remove trailing dashes from emoji slugs)
+          if (heading.id) {
+            const cleanId = heading.id.replace(/-+$/, '') // Remove trailing dashes
+            heading.id = cleanId
+            anchor.href = `#${cleanId}`
+          }
+
           // Use emoji as anchor icon - always visible
           anchor.textContent = ''
           anchor.classList.add('has-emoji')
