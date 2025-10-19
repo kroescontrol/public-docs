@@ -51,7 +51,7 @@ export function KCIcon({
   return (
     <Icon
       size={size}
-      className={`${colorClass} ${className}`.trim()}
+      className={`inline-block align-middle ${colorClass} ${className}`.trim()}
       aria-label={ariaLabel}
       aria-hidden={!ariaLabel}
     />
