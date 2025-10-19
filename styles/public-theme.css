@@ -110,13 +110,20 @@ article h3 .subheading-anchor .anchor-icon svg,
 article h4 .subheading-anchor .anchor-icon svg {
   width: 18px;
   height: 18px;
-  color: #6b7280;
+  color: #c22757;
 }
 
 html[class~="dark"] article h2 .subheading-anchor .anchor-icon svg,
 html[class~="dark"] article h3 .subheading-anchor .anchor-icon svg,
 html[class~="dark"] article h4 .subheading-anchor .anchor-icon svg {
-  color: #9ca3af;
+  color: #e63974;
+}
+
+/* Emoji icons inherit font color */
+article h2 .subheading-anchor .anchor-icon,
+article h3 .subheading-anchor .anchor-icon,
+article h4 .subheading-anchor .anchor-icon {
+  color: inherit;
 }
 
 /* Show on hover */
