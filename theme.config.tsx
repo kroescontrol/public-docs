@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
   ),
   logoLink: '/home',
   project: {
-    link: 'https://docs.kroescontrol.nl'
+    link: 'https://github.com/kroescontrol/public-docs'
   },
   docsRepositoryBase: 'https://github.com/kroescontrol/public-docs/tree/main',
   footer: {
