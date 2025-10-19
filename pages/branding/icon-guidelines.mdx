@@ -755,9 +755,103 @@ const DynamicIcon = ({ name }) => {
 
 **Let op:** Dynamic import verhindert tree-shaking. Gebruik alleen waar echt nodig.
 
+## Heading Icons Pattern
+
+Vanaf oktober 2025 gebruiken we **branded Lucide icons** in headings in plaats van functionele emoji's.
+
+### Implementatie
+
+```mdx
+---
+title: 'Example Page'
+---
+
+import { Target, Building, Lock } from 'lucide-react'
+
+## Perfect voor <Target className="heading-icon" size={20} />
+
+Content here...
+
+## Faciliteiten <Building className="heading-icon" size={20} />
+
+Content here...
+```
+
+### CSS Styling
+
+```css
+/* styles/globals.css */
+.heading-icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+  color: var(--kc-color-primary-500); /* Instance accent */
+}
+
+h2:hover .heading-icon,
+h3:hover .heading-icon {
+  opacity: 1;
+}
+```
+
+### Design Beslissingen
+
+| Aspect | Keuze | Rationale |
+|--------|-------|-----------|
+| **Positie** | Achteraan | SEO optimaal (tekst eerst) |
+| **Mobile** | Altijd zichtbaar | Visual consistency |
+| **Import** | Direct Lucide | Tree-shaking, lichtgewicht |
+| **Size** | 20px | Passend bij heading text |
+| **Opacity** | 0.7 → 1.0 hover | Subtiel accent |
+
+### Special Emoji's (behouden)
+
+Deze emoji's hebben emotionele waarde en blijven behouden:
+
+| Emoji | Gebruik | Waarom |
+|-------|---------|--------|
+| 👋 | Welkom | Menselijk, warm |
+| 🚀 | Journey/Growth | Inspirerend |
+| ✨ | Beste practices | Quality sparkle |
+| 🏖️ | Verlof | Blijdschap, emotie |
+| 🎉 | Celebration | Feestelijk |
+
+### Voorbeelden
+
+**Before (emoji vooraan):**
+```mdx
+## 🎯 Perfect voor
+```
+
+**After (icon achteraan):**
+```mdx
+import { Target } from 'lucide-react'
+
+## Perfect voor <Target className="heading-icon" size={20} />
+```
+
+### Common Heading Icons
+
+| Icon | Gebruik | Import |
+|------|---------|--------|
+| `<Target />` | Doelgroep, focus | `import { Target } from 'lucide-react'` |
+| `<Building />` | Faciliteiten, organisatie | `import { Building } from 'lucide-react'` |
+| `<Lock />` | Security, toegang | `import { Lock } from 'lucide-react'` |
+| `<Wrench />` | Tools, troubleshooting | `import { Wrench } from 'lucide-react'` |
+| `<Lightbulb />` | Tips, pro tips | `import { Lightbulb } from 'lucide-react'` |
+| `<AlertTriangle />` | Waarschuwingen | `import { AlertTriangle } from 'lucide-react'` |
+| `<Zap />` | Energy, snelle acties | `import { Zap } from 'lucide-react'` |
+| `<Users />` | Team, samenwerking | `import { Users } from 'lucide-react'` |
+| `<Star />` | Pro tips, highlights | `import { Star } from 'lucide-react'` |
+
+---
+
 ## Quick Reference
 
 **Gebruik Lucide Icons voor:**
+- **Heading accents** (achteraan, 20px, instance kleur)
 - UI elementen (knoppen, menu's, navigatie)
 - Status indicatoren (success, warning, error)
 - Actions (zoeken, filteren, downloaden)
@@ -765,8 +859,9 @@ const DynamicIcon = ({ name }) => {
 
 **Gebruik Emoji voor:**
 - Celebratory content (🎉 launches)
-- Informele tone (💡 tips)
+- Informele tone (💡 tips - waar emotioneel)
 - Persoonlijke expressies (❤️ appreciation)
+- Special headings (👋 welkom, 🚀 journey)
 
 ## Component Gebruik
 
