@@ -26,9 +26,10 @@ interface KCIconProps {
  * Wraps Lucide React icons with consistent styling and color scheme.
  *
  * Color Strategy:
- * - Public docs: Primary = Pink (#E4007C)
- * - Internal docs: Primary = Navy (#222b5b)
- * - Operations docs: Primary = Navy (#222b5b)
+ * - Public docs: Primary = Crimson Magenta (#c22757)
+ * - Internal docs: Primary = Royal Blue (#2050a3)
+ * - Operations docs: Primary = Teal (#1c9c8e)
+ * - Finance docs: Primary = Amber (#f59e0b)
  *
  * @example
  * ```tsx
@@ -59,7 +60,7 @@ export function KCIcon({
 
 function getColorClass(variant: IconVariant): string {
   const colors: Record<IconVariant, string> = {
-    primary: 'text-[var(--kc-color-primary-500)]',      // Pink #E4007C (public) or Navy #222b5b (internal)
+    primary: 'text-[var(--kc-color-primary-500)]',      // Per instance: Public=#c22757, Internal=#2050a3, Operations=#1c9c8e, Finance=#f59e0b
     secondary: 'text-[var(--kc-color-navy-600)]',       // Navy muted
     gradient: 'kc-gradient-icon',                       // Custom gradient class
     success: 'text-green-600 dark:text-green-400',

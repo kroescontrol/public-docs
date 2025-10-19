@@ -9,7 +9,10 @@ const meta = {
   branding: "Huisstijl & Branding",
   klanten: "Klanten",
   juridisch: "Juridisch",
-  contact: "Contact"
+  contact: "Contact",
+  "opt-out": {
+    display: "hidden"
+  }
 }
 
 export default meta

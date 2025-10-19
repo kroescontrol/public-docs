@@ -3,17 +3,17 @@
 
 :root {
   /* Kroescontrol Official Colors */
-  --kc-color-primary-50: #fef2f8;
-  --kc-color-primary-100: #fde7f3;
-  --kc-color-primary-200: #fbcfe8;
-  --kc-color-primary-300: #f9a8d4;
-  --kc-color-primary-400: #f472b6;
-  --kc-color-primary-500: #E4007C; /* Kroescontrol Pink (Official) */
-  --kc-color-primary-600: #d5006d;
-  --kc-color-primary-700: #be185d;
-  --kc-color-primary-800: #9d174d;
-  --kc-color-primary-900: #831843;
-  --kc-color-primary-950: #500724;
+  --kc-color-primary-50: #fdf2f5;
+  --kc-color-primary-100: #fce7ed;
+  --kc-color-primary-200: #facfe0;
+  --kc-color-primary-300: #f7a8c6;
+  --kc-color-primary-400: #f272a0;
+  --kc-color-primary-500: #c22757; /* Crimson Magenta (Official) */
+  --kc-color-primary-600: #a9204a;
+  --kc-color-primary-700: #8f1a3e;
+  --kc-color-primary-800: #751638;
+  --kc-color-primary-900: #5e1330;
+  --kc-color-primary-950: #360a1c;
 
   /* Navy Blue */
   --kc-color-navy-50: #f0f2ff;
@@ -67,9 +67,9 @@
   --kc-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* Nextra v3 Override Variables (Compatibility Layer) */
-  --nextra-primary-hue: 334deg; /* Based on Kroescontrol Pink */
-  --nextra-primary-saturation: 86%;
-  --nextra-primary-lightness: 44%;
+  --nextra-primary-hue: 348deg; /* Based on Crimson Magenta */
+  --nextra-primary-saturation: 66%;
+  --nextra-primary-lightness: 46%;
   
   /* Custom Landing Page Variables */
   --landing-hero-gradient: var(--kc-gradient-primary);

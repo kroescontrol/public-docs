@@ -26,95 +26,102 @@ import {
 
 Richtlijnen voor consistent en toegankelijk icon gebruik in Kroescontrol documentatie.
 
-## Quick Reference
-
-**Gebruik Lucide Icons voor:**
-- UI elementen (knoppen, menu's, navigatie)
-- Status indicatoren (success, warning, error)
-- Actions (zoeken, filteren, downloaden)
-- Documentatie structuur (secties, categorieën)
-
-**Gebruik Emoji voor:**
-- Celebratory content (🎉 launches)
-- Informele tone (💡 tips)
-- Persoonlijke expressies (❤️ appreciation)
-
-## Kleurenschema's
-
-Kroescontrol gebruikt verschillende kleurenschema's voor documentatie secties. Elk schema heeft een eigen primary kleur die gebruikt wordt voor `variant="primary"` icons.
-
-<div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
-  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#fef2f8', border: '1px solid #E4007C', borderRadius: '0.375rem' }}>
-    <div style={{ width: '0.75rem', height: '0.75rem', background: '#E4007C', borderRadius: '0.25rem' }}></div>
-    <code style={{ fontSize: '0.875rem' }}>Pink #E4007C</code>
-  </div>
-  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#f0f2ff', border: '1px solid #222b5b', borderRadius: '0.375rem' }}>
-    <div style={{ width: '0.75rem', height: '0.75rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
-    <code style={{ fontSize: '0.875rem' }}>Navy #222b5b</code>
-  </div>
-  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#f0f2ff', border: '1px solid #222b5b', borderRadius: '0.375rem' }}>
-    <div style={{ width: '0.75rem', height: '0.75rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
-    <code style={{ fontSize: '0.875rem' }}>Navy #222b5b</code>
-  </div>
-  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: '#f0fdf4', border: '1px solid #059669', borderRadius: '0.375rem' }}>
-    <div style={{ width: '0.75rem', height: '0.75rem', background: '#059669', borderRadius: '0.25rem' }}></div>
-    <code style={{ fontSize: '0.875rem' }}>Green #059669</code>
-  </div>
-</div>
-
-Dit zorgt voor kleurenuance tussen verschillende secties zonder dat het te druk wordt.
-
-## Component Gebruik
-
-### Basis Syntax
-
-```tsx
-import { IconName } from 'lucide-react'
-import { KCIcon } from '@/components/icons/KCIcon'
-
-<KCIcon icon={IconName} variant="primary" size={24} />
-```
-
-### Props
-
-| Prop | Type | Default | Beschrijving |
-|------|------|---------|--------------|
-| `icon` | `LucideIcon` | required | Lucide icon component |
-| `variant` | `primary \| secondary \| gradient \| success \| warning \| error \| neutral` | `primary` | Color variant |
-| `size` | `16 \| 20 \| 24 \| 32 \| 40` | `24` | Icon size in pixels |
-| `className` | `string` | `''` | Additional CSS classes |
-| `aria-label` | `string` | - | Accessibility label (verplicht voor standalone icons) |
-
 ## Variant Voorbeelden (Light & Dark Theme)
 
-### Primary (Brand Color)
+### Primary (Brand Color) - Per Instance
 
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary"` icons. Hieronder zie je hoe de primaire variant eruitziet per instance:
+
+#### Public Docs (Crimson Magenta #c22757)
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
   <div>
-    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme (Public)</div>
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
-      <KCIcon icon={Rocket} variant="primary" size={24} />
-      <KCIcon icon={Sparkles} variant="primary" size={24} />
-      <KCIcon icon={Shield} variant="primary" size={24} />
+      <Rocket size={24} style={{ color: '#c22757' }} />
+      <Sparkles size={24} style={{ color: '#c22757' }} />
+      <Shield size={24} style={{ color: '#c22757' }} />
     </div>
   </div>
   <div>
-    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme (Public)</div>
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
-      <KCIcon icon={Rocket} variant="primary" size={24} />
-      <KCIcon icon={Sparkles} variant="primary" size={24} />
-      <KCIcon icon={Shield} variant="primary" size={24} />
+      <Rocket size={24} style={{ color: '#c22757' }} />
+      <Sparkles size={24} style={{ color: '#c22757' }} />
+      <Shield size={24} style={{ color: '#c22757' }} />
+    </div>
+  </div>
+</div>
+
+#### Internal Docs (Royal Blue #2050a3)
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme (Internal)</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <Users size={24} style={{ color: '#2050a3' }} />
+      <FileText size={24} style={{ color: '#2050a3' }} />
+      <Building size={24} style={{ color: '#2050a3' }} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme (Internal)</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <Users size={24} style={{ color: '#2050a3' }} />
+      <FileText size={24} style={{ color: '#2050a3' }} />
+      <Building size={24} style={{ color: '#2050a3' }} />
+    </div>
+  </div>
+</div>
+
+#### Operations Docs (Teal #1c9c8e)
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme (Operations)</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <Settings size={24} style={{ color: '#1c9c8e' }} />
+      <TrendingUp size={24} style={{ color: '#1c9c8e' }} />
+      <Mail size={24} style={{ color: '#1c9c8e' }} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme (Operations)</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <Settings size={24} style={{ color: '#1c9c8e' }} />
+      <TrendingUp size={24} style={{ color: '#1c9c8e' }} />
+      <Mail size={24} style={{ color: '#1c9c8e' }} />
+    </div>
+  </div>
+</div>
+
+#### Finance Docs (Amber #f59e0b)
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme (Finance)</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <DollarSign size={24} style={{ color: '#f59e0b' }} />
+      <TrendingUp size={24} style={{ color: '#f59e0b' }} />
+      <FileText size={24} style={{ color: '#f59e0b' }} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme (Finance)</div>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <DollarSign size={24} style={{ color: '#f59e0b' }} />
+      <TrendingUp size={24} style={{ color: '#f59e0b' }} />
+      <FileText size={24} style={{ color: '#f59e0b' }} />
     </div>
   </div>
 </div>
 
 ```tsx
+// Gebruik automatisch de juiste kleur per instance met variant="primary"
 <KCIcon icon={Rocket} variant="primary" size={24} />
 ```
 
 **Gebruik voor:** Belangrijke acties, brand elements, CTAs, feature highlights
-
-**Kleuren:** Pink (#E4007C) in public docs | Navy (#222b5b) in andere secties
 
 ---
 
@@ -329,7 +336,7 @@ import { KCIcon } from '@/components/icons/KCIcon'
         <KCIcon icon={CheckCircle} variant="success" size={24} />
         <div>
           <strong style={{ color: '#166534' }}>Success!</strong>
-          <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#166534' }}>Your changes have been saved.</p>
+          <div style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#166534' }}>Your changes have been saved.</div>
         </div>
       </div>
     </div>
@@ -341,7 +348,7 @@ import { KCIcon } from '@/components/icons/KCIcon'
         <KCIcon icon={CheckCircle} variant="success" size={24} />
         <div>
           <strong style={{ color: '#d1fae5' }}>Success!</strong>
-          <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#d1fae5' }}>Your changes have been saved.</p>
+          <div style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#d1fae5' }}>Your changes have been saved.</div>
         </div>
       </div>
     </div>
@@ -366,14 +373,14 @@ import { KCIcon } from '@/components/icons/KCIcon'
   <div>
     <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
     <div style={{ padding: '0', border: '1px solid #e2e8f0', borderRadius: '0.5rem', overflow: 'hidden', background: '#ffffff' }}>
-      <div style={{ padding: '1rem', borderBottom: '1px solid #e2e8f0', background: '#fafbfc', display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+      <div style={{ padding: '1rem', borderBottom: '1px solid #e2e8f0', background: '#f1f5f9', display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
         <KCIcon icon={Shield} variant="primary" size={24} />
-        <h4 style={{ margin: 0, fontSize: '1rem' }}>Security</h4>
+        <h4 style={{ margin: 0, fontSize: '1rem', color: '#0f172a' }}>Security</h4>
       </div>
       <div style={{ padding: '1rem' }}>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#64748b' }}>
+        <div style={{ margin: 0, fontSize: '0.875rem', color: '#64748b' }}>
           HubSpot Analytics tracking.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -385,9 +392,9 @@ import { KCIcon } from '@/components/icons/KCIcon'
         <h4 style={{ margin: 0, fontSize: '1rem', color: '#f8fafc' }}>Security</h4>
       </div>
       <div style={{ padding: '1rem' }}>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#cbd5e1' }}>
+        <div style={{ margin: 0, fontSize: '0.875rem', color: '#cbd5e1' }}>
           HubSpot Analytics tracking.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -445,7 +452,7 @@ import { KCIcon } from '@/components/icons/KCIcon'
 </button>
 ```
 
-## Emoji → Lucide Migraties (Light & Dark Theme)
+## Emoji vs Lucide (Light & Dark Theme)
 
 ### UI Elements (VERVANGEN met Lucide)
 
@@ -460,58 +467,58 @@ import { KCIcon } from '@/components/icons/KCIcon'
 
       <span>✅</span>
       <KCIcon icon={CheckCircle} variant="success" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>success</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>CheckCircle</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>success</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>CheckCircle</code>
 
       <span>❌</span>
       <KCIcon icon={XCircle} variant="error" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>error</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>XCircle</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>error</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>XCircle</code>
 
       <span>⚠️</span>
       <KCIcon icon={AlertTriangle} variant="warning" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>warning</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>AlertTriangle</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>warning</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>AlertTriangle</code>
 
       <span>📁</span>
       <KCIcon icon={FileText} variant="neutral" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>neutral</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>FileText</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>neutral</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>FileText</code>
 
       <span>🔒</span>
       <KCIcon icon={Lock} variant="neutral" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>neutral</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Lock</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>neutral</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Lock</code>
 
       <span>🔑</span>
       <KCIcon icon={Key} variant="neutral" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>neutral</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Key</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>neutral</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Key</code>
 
       <span>📧</span>
       <KCIcon icon={Mail} variant="primary" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>primary</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Mail</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>primary</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Mail</code>
 
       <span>🏢</span>
       <KCIcon icon={Building} variant="primary" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>primary</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Building</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>primary</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Building</code>
 
       <span>👥</span>
       <KCIcon icon={Users} variant="primary" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>primary</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Users</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>primary</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Users</code>
 
       <span>⚙️</span>
       <KCIcon icon={Settings} variant="neutral" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>neutral</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Settings</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>neutral</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Settings</code>
 
       <span>🔍</span>
       <KCIcon icon={Search} variant="neutral" size={20} />
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>neutral</code>
-      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem' }}>Search</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>neutral</code>
+      <code style={{ background: '#f1f5f9', padding: '0.125rem 0.25rem', borderRadius: '0.25rem', color: '#0f172a' }}>Search</code>
     </div>
   </div>
   <div>
@@ -590,44 +597,252 @@ import { KCIcon } from '@/components/icons/KCIcon'
 | ❤️ | Appreciation, passion | Personal, emotional |
 | 🔥 | Hot topics | Marketing, emphasis |
 
-## Wat NIET te Doen
+## Documentatie Instances
 
-### ❌ Icon Overload
+Elk docs platform gebruikt eigen accent kleur voor `variant="primary"`:
 
-<div style={{ padding: '1rem', background: '#fef2f2', border: '1px solid #fca5a5', borderRadius: '0.5rem', marginTop: '1rem' }}>
-  <strong style={{ color: '#dc2626' }}>FOUT:</strong>
-  <div style={{ marginTop: '0.5rem' }}>
-    <KCIcon icon={FileText} variant="neutral" size={20} /> <KCIcon icon={Settings} variant="neutral" size={20} /> Document <KCIcon icon={CheckCircle} variant="success" size={20} />
+| Instance | Icon Voorbeeld | Accent Kleur | Hex Code |
+|----------|----------------|--------------|----------|
+| Public Docs | <FileText size={24} style={{ color: '#c22757' }} /> | Crimson Magenta | `#c22757` |
+| Internal Docs | <Users size={24} style={{ color: '#2050a3' }} /> | Royal Blue | `#2050a3` |
+| Operations Docs | <Settings size={24} style={{ color: '#1c9c8e' }} /> | Teal | `#1c9c8e` |
+| Finance Docs | <DollarSign size={24} style={{ color: '#f59e0b' }} /> | Amber | `#f59e0b` |
+
+**Gebruik:** `variant="primary"` past zich automatisch aan per instance. Geen handmatige kleur configuratie nodig!
+
+**Volledige kleuren referentie:** Zie [Branding Kleuren pagina](/branding/kleuren) voor het complete Kroescontrol kleurenpalet.
+
+## Accessibility Best Practices
+
+Gebaseerd op [Lucide accessibility guidelines](https://lucide.dev/guide/advanced/accessibility):
+
+### 1. Altijd Zichtbare Labels
+
+Gebruik NOOIT alleen een icon zonder tekst. Voeg altijd een text label toe (inline of via screen reader).
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', marginBottom: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>✅ GOED (Light)</div>
+    <div style={{ padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
+      <button style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem', border: '1px solid #e2e8f0', borderRadius: '0.375rem', background: 'white', cursor: 'pointer', color: '#0f172a' }}>
+        <KCIcon icon={Download} variant="neutral" size={20} />
+        <span>Download PDF</span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>✅ GOED (Dark)</div>
+    <div style={{ padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
+      <button style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem', border: '1px solid #1e293b', borderRadius: '0.375rem', background: '#1e293b', cursor: 'pointer', color: '#f8fafc' }}>
+        <KCIcon icon={Download} variant="neutral" size={20} />
+        <span>Download PDF</span>
+      </button>
+    </div>
   </div>
 </div>
 
-<div style={{ padding: '1rem', background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '0.5rem', marginTop: '0.5rem' }}>
-  <strong style={{ color: '#16a34a' }}>GOED:</strong>
-  <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-    <KCIcon icon={FileText} variant="neutral" size={20} />
-    <span>Document</span>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '0.5rem', marginBottom: '1rem' }}>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>❌ FOUT (Light)</div>
+    <div style={{ padding: '1rem', background: '#fef2f2', border: '1px solid #fca5a5', borderRadius: '0.5rem' }}>
+      <button style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem', border: '1px solid #e2e8f0', borderRadius: '0.375rem', background: 'white', cursor: 'pointer' }}>
+        <KCIcon icon={Download} variant="neutral" size={20} />
+      </button>
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>❌ FOUT (Dark)</div>
+    <div style={{ padding: '1rem', background: '#450a0a', border: '1px solid #991b1b', borderRadius: '0.5rem' }}>
+      <button style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '0.5rem 1rem', border: '1px solid #1e293b', borderRadius: '0.375rem', background: '#1e293b', cursor: 'pointer', color: '#f8fafc' }}>
+        <KCIcon icon={Download} variant="neutral" size={20} />
+      </button>
+    </div>
   </div>
 </div>
 
----
+```tsx
+// ✅ GOED: Icon met zichtbare tekst
+<button>
+  <KCIcon icon={Download} variant="neutral" size={20} />
+  <span>Download PDF</span>
+</button>
 
-### ❌ Random Sizes
+// ❌ FOUT: Alleen icon
+<button>
+  <KCIcon icon={Download} variant="neutral" size={20} />
+</button>
+```
 
-<div style={{ padding: '1rem', background: '#fef2f2', border: '1px solid #fca5a5', borderRadius: '0.5rem', marginTop: '1rem' }}>
-  <strong style={{ color: '#dc2626' }}>FOUT:</strong>
-  <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-    <KCIcon icon={User} variant="neutral" size={18} />
-    <KCIcon icon={Settings} variant="neutral" size={22} />
+### 2. Screen Reader Support
+Voor standalone icons (zonder zichtbare tekst):
+
+```tsx
+// Optie 1: Visually hidden span
+<button>
+  <KCIcon icon={Download} variant="neutral" size={20} />
+  <span className="sr-only">Download PDF</span>
+</button>
+
+// Optie 2: aria-label op button
+<button aria-label="Download PDF">
+  <KCIcon icon={Download} variant="neutral" size={20} />
+</button>
+```
+
+### 3. Contrast & Kleur
+- **Minimum contrast ratio:** 4.5:1 (WCAG 2.1 SC 1.4.3)
+- **Communiceer niet alleen met kleur** - gebruik ook vorm/tekst
+- Test contrast met tools zoals [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+### 4. Interactive Elements
+- **Minimum touch target:** 44x44 pixels
+- **Keyboard navigatie:** Zorg dat icon buttons focusable zijn
+- **Focus ring:** Maak focus state duidelijk zichtbaar
+
+```tsx
+// Keyboard-friendly icon button
+<button className="focus:ring-2 focus:ring-primary">
+  <KCIcon icon={Settings} variant="neutral" size={20} />
+  <span>Instellingen</span>
+</button>
+```
+
+## Lucide React Best Practices
+
+Gebaseerd op [Lucide React documentatie](https://lucide.dev/guide/packages/lucide-react):
+
+### Tree-Shaking & Performance
+Import alleen de icons die je nodig hebt:
+
+```tsx
+// ✅ GOED: Direct import (tree-shakable)
+import { Camera, Settings, Download } from 'lucide-react'
+
+// ❌ FOUT: Default import (bundelt alles)
+import lucide from 'lucide-react'
+```
+
+### Props & Styling
+Lucide icons ondersteunen alle SVG presentatie attributes:
+
+```tsx
+<KCIcon
+  icon={Camera}
+  variant="primary"
+  size={24}
+  strokeWidth={2}
+  className="custom-class"
+/>
+```
+
+**Available props:**
+- `size` - Number (default: 24)
+- `color` - String (default: currentColor)
+- `strokeWidth` - Number (default: 2)
+- `absoluteStrokeWidth` - Boolean (default: false)
+
+### Dynamic Icons (gebruik zuinig!)
+Voor dynamic icon rendering (niet aanbevolen voor static use):
+
+```tsx
+import { icons } from 'lucide-react'
+
+const DynamicIcon = ({ name }) => {
+  const LucideIcon = icons[name]
+  return <LucideIcon size={24} />
+}
+```
+
+**Let op:** Dynamic import verhindert tree-shaking. Gebruik alleen waar echt nodig.
+
+## Quick Reference
+
+**Gebruik Lucide Icons voor:**
+- UI elementen (knoppen, menu's, navigatie)
+- Status indicatoren (success, warning, error)
+- Actions (zoeken, filteren, downloaden)
+- Documentatie structuur (secties, categorieën)
+
+**Gebruik Emoji voor:**
+- Celebratory content (🎉 launches)
+- Informele tone (💡 tips)
+- Persoonlijke expressies (❤️ appreciation)
+
+## Kleurenschema's
+
+Kroescontrol heeft een officieel kleurenpalet dat consistent gebruikt wordt over alle platforms. Documentatie instances gebruiken verschillende primaire kleuren om visuele scheiding te creëren.
+
+### Primaire Kleuren
+
+De twee hoofdkleuren van Kroescontrol:
+
+<div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(194, 39, 87, 0.15)', border: '1px solid #c22757', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#c22757', borderRadius: '0.25rem' }}></div>
+    <code className="text-slate-900 dark:text-slate-100" style={{ fontSize: '0.875rem' }}>Crimson Magenta #c22757</code>
+  </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(34, 43, 91, 0.15)', border: '1px solid #222b5b', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#222b5b', borderRadius: '0.25rem' }}></div>
+    <code className="text-slate-900 dark:text-slate-100" style={{ fontSize: '0.875rem' }}>Deep Navy Blue #222b5b</code>
   </div>
 </div>
 
-<div style={{ padding: '1rem', background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '0.5rem', marginTop: '0.5rem' }}>
-  <strong style={{ color: '#16a34a' }}>GOED:</strong>
-  <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-    <KCIcon icon={User} variant="neutral" size={20} />
-    <KCIcon icon={Settings} variant="neutral" size={20} />
+### Accent Kleuren
+
+Aanvullende kleuren voor specifieke use cases:
+
+<div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(230, 87, 96, 0.15)', border: '1px solid #e65760', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#e65760', borderRadius: '0.25rem' }}></div>
+    <code className="text-slate-900 dark:text-slate-100" style={{ fontSize: '0.875rem' }}>Coral Red #e65760</code>
+  </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(28, 156, 142, 0.15)', border: '1px solid #1c9c8e', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#1c9c8e', borderRadius: '0.25rem' }}></div>
+    <code className="text-slate-900 dark:text-slate-100" style={{ fontSize: '0.875rem' }}>Teal #1c9c8e</code>
+  </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(32, 80, 163, 0.15)', border: '1px solid #2050a3', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#2050a3', borderRadius: '0.25rem' }}></div>
+    <code className="text-slate-900 dark:text-slate-100" style={{ fontSize: '0.875rem' }}>Royal Blue #2050a3</code>
+  </div>
+  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(131, 147, 167, 0.15)', border: '1px solid #8393a7', borderRadius: '0.375rem' }}>
+    <div style={{ width: '0.75rem', height: '0.75rem', background: '#8393a7', borderRadius: '0.25rem' }}></div>
+    <code className="text-slate-900 dark:text-slate-100" style={{ fontSize: '0.875rem' }}>Steel Blue #8393a7</code>
   </div>
 </div>
+
+### Kleurgebruik per Documentatie Instance
+
+Elke documentatie instance gebruikt een eigen primaire kleur voor `variant="primary"` icons en UI elementen:
+
+| Instance | Kleur | Hex Code | Gebruik |
+|----------|-------|----------|---------|
+| **Public Docs** | Crimson Magenta | `#c22757` | Externe communicatie, marketing |
+| **Internal Docs** | Royal Blue | `#2050a3` | Interne team documentatie |
+| **Operations Docs** | Teal | `#1c9c8e` | Operations team (4 personen) |
+| **Finance Docs** | Amber | `#f59e0b` | Financiële documentatie |
+
+**Voordeel**: Duidelijke visuele scheiding tussen verschillende documentatie types terwijl het merk coherent blijft.
+
+## Component Gebruik
+
+### Basis Syntax
+
+```tsx
+import { IconName } from 'lucide-react'
+import { KCIcon } from '@/components/icons/KCIcon'
+
+<KCIcon icon={IconName} variant="primary" size={24} />
+```
+
+### Props
+
+| Prop | Type | Default | Beschrijving |
+|------|------|---------|--------------|
+| `icon` | `LucideIcon` | required | Lucide icon component |
+| `variant` | `primary \| secondary \| gradient \| success \| warning \| error \| neutral` | `primary` | Color variant |
+| `size` | `16 \| 20 \| 24 \| 32 \| 40` | `24` | Icon size in pixels |
+| `className` | `string` | `''` | Additional CSS classes |
+| `aria-label` | `string` | - | Accessibility label (verplicht voor standalone icons) |
 
 ## Meer Informatie
 
