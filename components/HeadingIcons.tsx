@@ -2,8 +2,9 @@
 
 import { useEffect } from 'react'
 
-// Emoji regex voor detectie (inclusief diverse Unicode emoji ranges)
-const EMOJI_REGEX = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u
+// Emoji regex voor detectie - Comprehensive emoji matching
+// Covers: emoticons, symbols, pictographs, transport, flags, etc.
+const EMOJI_REGEX = /[\u{1F300}-\u{1F9FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F1E0}-\u{1F1FF}]/u
 
 // Icon keywords - specifiek naar algemeen (volgorde = priority)
 const ICON_KEYWORDS = [
@@ -41,6 +42,10 @@ export function HeadingIcons() {
       headings.forEach(heading => {
         const anchor = heading.querySelector('.subheading-anchor') as HTMLAnchorElement
         if (!anchor) return
+
+        // Skip if already processed (prevents React StrictMode double-execution)
+        if (heading.hasAttribute('data-heading-icons-processed')) return
+        heading.setAttribute('data-heading-icons-processed', 'true')
 
         // Get heading text
         const headingText = Array.from(heading.childNodes)
@@ -95,6 +100,16 @@ export function HeadingIcons() {
         iconSpan.className = 'anchor-icon'
         iconSpan.innerHTML = getLinkIconSVG()
         anchor.appendChild(iconSpan)
+      })
+
+      // Fix TOC links with trailing dashes (caused by emoji slugs)
+      const tocLinks = document.querySelectorAll('nav a[href^="#"]')
+      tocLinks.forEach(link => {
+        const href = (link as HTMLAnchorElement).getAttribute('href')
+        if (href && href.endsWith('-')) {
+          const cleanHref = href.replace(/-+$/, '') // Remove trailing dashes
+          ;(link as HTMLAnchorElement).setAttribute('href', cleanHref)
+        }
       })
     }, 100)
 
