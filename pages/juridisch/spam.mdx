@@ -3,6 +3,9 @@ title: Anti-Spam Beleid
 description: Regels rondom verzending van bulk emails en spam preventie
 ---
 
+import { CheckCircle, XCircle, AlertTriangle, Pause, Ban } from 'lucide-react'
+import { KCIcon } from '@/components/icons/KCIcon'
+
 # Anti-Spam Beleid
 
 _Laatst bijgewerkt: 18 oktober 2025_
@@ -17,13 +20,13 @@ Dit betekent:: **elk elektronisch bericht** dat verstuurd wordt **zonder voorafg
 
 ### Voorbeelden
 
-**✅ GEEN spam (met toestemming):**
+**<KCIcon icon={CheckCircle} variant="success" size={20} /> GEEN spam (met toestemming):**
 - Marketing email naar klant die opt-in heeft gegeven
 - Nieuwsbrief naar aangemelde abonnees
 - Transactionele emails (order bevestigingen, password resets)
 - Follow-up email na expliciete toestemming
 
-**❌ WEL spam (zonder toestemming):**
+**<KCIcon icon={XCircle} variant="danger" size={20} /> WEL spam (zonder toestemming):**
 - Cold emails naar gekochte email lijsten
 - Bulk emails zonder opt-in
 - Marketing naar ontvangers die geen toestemming gaven
@@ -54,7 +57,7 @@ Als gebruiker van onze diensten is het **verboden** om:
 
 ### Toegestane email praktijken
 
-#### Met Expliciete Toestemming ✅
+#### Met Expliciete Toestemming <KCIcon icon={CheckCircle} variant="success" size={20} />
 
 Je MAG emails sturen als je:
 - **Opt-in hebt ontvangen** via aanmeldformulier met checkbox
@@ -62,14 +65,14 @@ Je MAG emails sturen als je:
 - **Schriftelijke toestemming** hebt
 - **Bewijs** kunt leveren van consent
 
-#### Soft Opt-In (bestaande klanten) ✅
+#### Soft Opt-In (bestaande klanten) <KCIcon icon={CheckCircle} variant="success" size={20} />
 
 Je MAG emails sturen aan bestaande klanten over:
 - Vergelijkbare producten of diensten
 - **Mits:** Duidelijke opt-out in elke email
 - **Mits:** Binnen redelijke termijn na aankoop/contact
 
-#### Transactionele Emails (altijd toegestaan) ✅
+#### Transactionele Emails (altijd toegestaan) <KCIcon icon={CheckCircle} variant="success" size={20} />
 
 Deze emails zijn GEEN spam:
 - Order confirmations
@@ -122,22 +125,22 @@ Klik hier om je uit te schrijven: [Unsubscribe Link]
 
 Bij overtreding van dit spam beleid nemen we progressieve maatregelen:
 
-### 1e Overtreding: Waarschuwing ⚠️
+### 1e Overtreding: Waarschuwing <KCIcon icon={AlertTriangle} variant="warning" size={24} />
 - Email notificatie van overtreding
 - Verplichting tot rectificatie binnen 48 uur
 - Documentatie van incident
 
-### 2e Overtreding: Tijdelijke Schorsing ⏸️
+### 2e Overtreding: Tijdelijke Schorsing <KCIcon icon={Pause} variant="warning" size={24} />
 - Suspension van email diensten (7-30 dagen)
 - Verplichte spam training/documentatie review
 - Monitored probation periode
 
-### 3e Overtreding: Beëindiging ❌
+### 3e Overtreding: Beëindiging <KCIcon icon={XCircle} variant="danger" size={24} />
 - Permanent beëindiging van diensten
 - Geen restitutie van kosten
 - Mogelijk juridische stappen voor schade
 
-### Ernstige Overtreding: Onmiddellijke Beëindiging 🚫
+### Ernstige Overtreding: Onmiddellijke Beëindiging <KCIcon icon={Ban} variant="danger" size={24} />
 
 Bij zeer ernstige overtredingen (bijv. grootschalige spam operatie):
 - Direct stopzetten van alle diensten
@@ -226,7 +229,7 @@ Dit beleid is gebaseerd op:
 
 ### Voor Legitieme Email Marketing
 
-**DO's ✅:**
+**DO's <KCIcon icon={CheckCircle} variant="success" size={20} />:**
 - Gebruik double opt-in
 - Bewaar opt-in bewijzen
 - Segment je lijsten (relevante content)
@@ -235,7 +238,7 @@ Dit beleid is gebaseerd op:
 - Test emails voor spam triggers
 - Warm-up nieuwe IP adressen
 
-**DON'Ts ❌:**
+**DON'Ts <KCIcon icon={XCircle} variant="danger" size={20} />:**
 - Koop email lijsten
 - Gebruik misleiding subject lines
 - Verberg afzender identiteit

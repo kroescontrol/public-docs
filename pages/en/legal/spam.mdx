@@ -3,6 +3,9 @@ title: Anti-Spam Policy
 description: Rules regarding bulk email sending and spam prevention
 ---
 
+import { CheckCircle, XCircle, AlertTriangle, Pause, Ban } from 'lucide-react'
+import { KCIcon } from '@/components/icons/KCIcon'
+
 # Anti-Spam Policy
 
 _Last updated: October 18, 2025_
@@ -17,13 +20,13 @@ This means: **any electronic message** sent **without prior consent** from the r
 
 ### Examples
 
-**✅ NOT spam (with consent):**
+**<KCIcon icon={CheckCircle} variant="success" size={20} /> NOT spam (with consent):**
 - Marketing email to customer who gave opt-in
 - Newsletter to registered subscribers
 - Transactional emails (order confirmations, password resets)
 - Follow-up email after explicit consent
 
-**❌ IS spam (without consent):**
+**<KCIcon icon={XCircle} variant="danger" size={20} /> IS spam (without consent):**
 - Cold emails to purchased email lists
 - Bulk emails without opt-in
 - Marketing to recipients who didn't give consent
@@ -54,7 +57,7 @@ As a user of our services, it is **prohibited** to:
 
 ### Permitted Email Practices
 
-#### With Explicit Consent ✅
+#### With Explicit Consent <KCIcon icon={CheckCircle} variant="success" size={20} />
 
 You MAY send emails if you have:
 - **Received opt-in** via registration form with checkbox
@@ -62,14 +65,14 @@ You MAY send emails if you have:
 - **Written consent**
 - **Proof** of consent
 
-#### Soft Opt-In (existing customers) ✅
+#### Soft Opt-In (existing customers) <KCIcon icon={CheckCircle} variant="success" size={20} />
 
 You MAY send emails to existing customers about:
 - Similar products or services
 - **Provided:** Clear opt-out in every email
 - **Provided:** Within reasonable time after purchase/contact
 
-#### Transactional Emails (always allowed) ✅
+#### Transactional Emails (always allowed) <KCIcon icon={CheckCircle} variant="success" size={20} />
 
 These emails are NOT spam:
 - Order confirmations
@@ -122,22 +125,22 @@ Click here to unsubscribe: [Unsubscribe Link]
 
 In case of violation of this spam policy, we take progressive measures:
 
-### 1st Violation: Warning ⚠️
+### 1st Violation: Warning <KCIcon icon={AlertTriangle} variant="warning" size={24} />
 - Email notification of violation
 - Obligation to rectify within 48 hours
 - Documentation of incident
 
-### 2nd Violation: Temporary Suspension ⏸️
+### 2nd Violation: Temporary Suspension <KCIcon icon={Pause} variant="warning" size={24} />
 - Suspension of email services (7-30 days)
 - Mandatory spam training/documentation review
 - Monitored probation period
 
-### 3rd Violation: Termination ❌
+### 3rd Violation: Termination <KCIcon icon={XCircle} variant="danger" size={24} />
 - Permanent termination of services
 - No refund of costs
 - Possible legal action for damages
 
-### Serious Violation: Immediate Termination 🚫
+### Serious Violation: Immediate Termination <KCIcon icon={Ban} variant="danger" size={24} />
 
 For very serious violations (e.g., large-scale spam operation):
 - Immediate termination of all services
@@ -226,7 +229,7 @@ This policy is based on:
 
 ### For Legitimate Email Marketing
 
-**DO's ✅:**
+**DO's <KCIcon icon={CheckCircle} variant="success" size={20} />:**
 - Use double opt-in
 - Keep opt-in proofs
 - Segment your lists (relevant content)
@@ -235,7 +238,7 @@ This policy is based on:
 - Test emails for spam triggers
 - Warm up new IP addresses
 
-**DON'Ts ❌:**
+**DON'Ts <KCIcon icon={XCircle} variant="danger" size={20} />:**
 - Buy email lists
 - Use misleading subject lines
 - Hide sender identity
