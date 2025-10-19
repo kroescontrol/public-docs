@@ -1,6 +1,8 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
+import { Briefcase, Building2, BookOpen, MapPin, Palette, Sparkles, Mail } from 'lucide-react'
 
 const HomePage: NextPage = () => {
   return (
@@ -39,6 +41,18 @@ const HomePage: NextPage = () => {
       <div className="max-w-6xl mx-auto px-6 py-20 relative z-10">
         {/* Hero */}
         <div className="text-center mb-20">
+          {/* Logo */}
+          <div className="flex justify-center mb-8 animate-fade-in">
+            <Image
+              src="/KC-beeldmerk-gradientKLEUR.svg"
+              alt="Kroescontrol"
+              width={80}
+              height={80}
+              className="w-16 h-16 md:w-20 md:h-20"
+              priority
+            />
+          </div>
+
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
             Kroescontrol
           </h1>
@@ -51,14 +65,16 @@ const HomePage: NextPage = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Werken bij */}
           <Link href="/werken-bij" className="group block p-10 bg-white/95 backdrop-blur rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
-            <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">💼</div>
-            <h3 className="text-3xl font-bold mb-4 text-gray-900 group-hover:text-purple-600 transition">
+            <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Briefcase className="w-16 h-16 text-[#c22757]" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-3xl font-bold mb-4 text-gray-900 group-hover:text-[#c22757] transition">
               Werken bij
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
               Ontdek onze cultuur en hoe je onderdeel wordt van ons team
             </p>
-            <span className="inline-flex items-center gap-2 text-purple-600 font-semibold group-hover:gap-4 transition-all">
+            <span className="inline-flex items-center gap-2 text-[#c22757] font-semibold group-hover:gap-4 transition-all">
               Meer info
               <span className="text-2xl">→</span>
             </span>
@@ -66,14 +82,16 @@ const HomePage: NextPage = () => {
 
           {/* Over Kroescontrol */}
           <Link href="/over-kroescontrol" className="group block p-10 bg-white/95 backdrop-blur rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
-            <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">🏢</div>
-            <h3 className="text-3xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition">
+            <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Building2 className="w-16 h-16 text-[#c22757]" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-3xl font-bold mb-4 text-gray-900 group-hover:text-[#c22757] transition">
               Over Ons
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
               Wie we zijn, wat we doen en waarom we het doen. Onze geschiedenis en visie
             </p>
-            <span className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-4 transition-all">
+            <span className="inline-flex items-center gap-2 text-[#c22757] font-semibold group-hover:gap-4 transition-all">
               Lees meer
               <span className="text-2xl">→</span>
             </span>
@@ -81,14 +99,16 @@ const HomePage: NextPage = () => {
 
           {/* Documentatie */}
           <Link href="/home" className="group block p-10 bg-white/95 backdrop-blur rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-2 border-white/50">
-            <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">📖</div>
-            <h3 className="text-3xl font-bold mb-4 text-gray-900 group-hover:text-pink-600 transition">
+            <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+              <BookOpen className="w-16 h-16 text-[#c22757]" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-3xl font-bold mb-4 text-gray-900 group-hover:text-[#c22757] transition">
               Documentatie
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
               Volledige documentatie, procedures en informatie over onze werkwijze
             </p>
-            <span className="inline-flex items-center gap-2 text-pink-600 font-semibold group-hover:gap-4 transition-all">
+            <span className="inline-flex items-center gap-2 text-[#c22757] font-semibold group-hover:gap-4 transition-all">
               Naar docs
               <span className="text-2xl">→</span>
             </span>
@@ -98,19 +118,27 @@ const HomePage: NextPage = () => {
         {/* Secondary Links */}
         <div className="grid md:grid-cols-4 gap-6 mb-20">
           <Link href="/kantoor" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🏛️</div>
+            <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform">
+              <MapPin className="w-8 h-8 text-[#c22757]" strokeWidth={1.5} />
+            </div>
             <div className="font-bold text-gray-900">Kantoor</div>
           </Link>
           <Link href="/branding" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🎨</div>
+            <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform">
+              <Palette className="w-8 h-8 text-[#c22757]" strokeWidth={1.5} />
+            </div>
             <div className="font-bold text-gray-900">Branding</div>
           </Link>
           <Link href="/cultuur" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">✨</div>
+            <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform">
+              <Sparkles className="w-8 h-8 text-[#c22757]" strokeWidth={1.5} />
+            </div>
             <div className="font-bold text-gray-900">Cultuur</div>
           </Link>
           <Link href="/contact" className="group p-5 bg-white/90 backdrop-blur rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border-2 border-white/50">
-            <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">📧</div>
+            <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform">
+              <Mail className="w-8 h-8 text-[#c22757]" strokeWidth={1.5} />
+            </div>
             <div className="font-bold text-gray-900">Contact</div>
           </Link>
         </div>
