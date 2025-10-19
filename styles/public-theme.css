@@ -159,11 +159,12 @@ html[class~="dark"] article h4 .subheading-anchor .anchor-icon svg {
   color: #e63974;
 }
 
-/* Emoji icons inherit font color */
-article h2 .subheading-anchor .anchor-icon,
-article h3 .subheading-anchor .anchor-icon,
-article h4 .subheading-anchor .anchor-icon {
-  color: inherit;
+/* Emoji icons: ensure proper sizing and visibility */
+article h2 .subheading-anchor.has-emoji .anchor-icon,
+article h3 .subheading-anchor.has-emoji .anchor-icon,
+article h4 .subheading-anchor.has-emoji .anchor-icon {
+  font-size: 1.25rem !important;
+  line-height: 1;
 }
 
 /* Show on hover */
