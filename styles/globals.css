@@ -3,6 +3,23 @@
 @import 'tailwindcss/utilities';
 @import './public-theme.css';
 
+/* Heading icons - achteraan, altijd tonen */
+.heading-icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+  color: var(--kc-color-primary-500); /* Public=#c22757 */
+}
+
+h2:hover .heading-icon,
+h3:hover .heading-icon {
+  opacity: 1;
+}
+
+/* NO mobile hiding - icons blijven zichtbaar op alle devices */
+
 /* HubSpot chat widget layout shift prevention */
 #hubspot-messages-iframe-container {
   min-height: 60px; /* Reserve space for chat button */
