@@ -212,3 +212,18 @@ html[class~="dark"] .download-badge:hover {
   background-color: rgba(230, 57, 116, 0.15) !important;
   border-color: rgba(230, 57, 116, 0.3) !important;
 }
+
+/* Sidebar expanded category border - Magenta accent */
+.nextra-sidebar-container li.open > div,
+.nextra-sidebar-container li.active > div,
+nav li.open > div,
+nav li.active > div {
+  border-left-color: #c22757 !important;
+}
+
+html[class~="dark"] .nextra-sidebar-container li.open > div,
+html[class~="dark"] .nextra-sidebar-container li.active > div,
+html[class~="dark"] nav li.open > div,
+html[class~="dark"] nav li.active > div {
+  border-left-color: #e63974 !important;
+}
