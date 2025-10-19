@@ -10,6 +10,9 @@ const meta = {
   klanten: "Klanten",
   juridisch: "Juridisch",
   contact: "Contact",
+  en: {
+    display: "hidden"
+  },
   "opt-out": {
     display: "hidden"
   }
