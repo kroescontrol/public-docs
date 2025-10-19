@@ -2,8 +2,15 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import { LanguageToggle } from './components/LanguageToggle'
+import { HeadingIcons } from '@/components/HeadingIcons'
 
 const config: DocsThemeConfig = {
+  main: ({ children }) => (
+    <>
+      <HeadingIcons />
+      {children}
+    </>
+  ),
   logo: (
     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <img src="/KC-beeldmerk-gradientKLEUR.svg" alt="KC" style={{ height: '32px', width: 'auto' }} />
