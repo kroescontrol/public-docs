@@ -83,7 +83,6 @@ html[class~="dark"] article h4 {
 article h2 .subheading-anchor,
 article h3 .subheading-anchor,
 article h4 .subheading-anchor {
-  opacity: 0;
   transition: opacity 200ms ease;
   margin-left: 0.5rem;
   text-decoration: none;
@@ -92,10 +91,17 @@ article h4 .subheading-anchor {
   display: inline-block;
 }
 
-/* Proportional sizing */
+/* H2: Always visible */
 article h2 .subheading-anchor {
+  opacity: 1;
   width: 24px;
   height: 24px;
+}
+
+/* H3/H4: Hover reveal */
+article h3 .subheading-anchor,
+article h4 .subheading-anchor {
+  opacity: 0;
 }
 
 article h3 .subheading-anchor {

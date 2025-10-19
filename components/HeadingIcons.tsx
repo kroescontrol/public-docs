@@ -52,6 +52,14 @@ export function HeadingIcons() {
         // Priority 1: Emoji in heading
         const emojiMatch = headingText.match(EMOJI_REGEX)
         if (emojiMatch) {
+          // Remove emoji from heading text
+          heading.childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent) {
+              node.textContent = node.textContent.replace(EMOJI_REGEX, '').trim()
+            }
+          })
+
+          // Use emoji as anchor icon
           anchor.textContent = ''
           const iconSpan = document.createElement('span')
           iconSpan.className = 'anchor-icon'
