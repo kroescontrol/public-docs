@@ -78,3 +78,65 @@ html[class~="dark"] article h3,
 html[class~="dark"] article h4 {
   color: #e63974 !important;
 }
+
+/* Custom heading anchor icons - Client-side enhanced */
+article h2 .subheading-anchor,
+article h3 .subheading-anchor,
+article h4 .subheading-anchor {
+  opacity: 0;
+  transition: opacity 200ms ease;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hide default # symbol */
+article h2 .subheading-anchor::before,
+article h3 .subheading-anchor::before,
+article h4 .subheading-anchor::before {
+  content: none;
+}
+
+/* Icon container injected by client script */
+article h2 .subheading-anchor .anchor-icon,
+article h3 .subheading-anchor .anchor-icon,
+article h4 .subheading-anchor .anchor-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+article h2 .subheading-anchor .anchor-icon svg,
+article h3 .subheading-anchor .anchor-icon svg,
+article h4 .subheading-anchor .anchor-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Show on hover */
+article h2:hover .subheading-anchor,
+article h3:hover .subheading-anchor,
+article h4:hover .subheading-anchor {
+  opacity: 1;
+}
+
+/* Keep visible when active */
+article h2:target .subheading-anchor,
+article h3:target .subheading-anchor,
+article h4:target .subheading-anchor {
+  opacity: 1;
+}
+
+/* Magenta accent for active anchor icon */
+article h2:target .subheading-anchor .anchor-icon,
+article h3:target .subheading-anchor .anchor-icon,
+article h4:target .subheading-anchor .anchor-icon {
+  color: #c22757;
+}
+
+html[class~="dark"] article h2:target .subheading-anchor .anchor-icon,
+html[class~="dark"] article h3:target .subheading-anchor .anchor-icon,
+html[class~="dark"] article h4:target .subheading-anchor .anchor-icon {
+  color: #e63974;
+}

@@ -5,6 +5,7 @@ import 'nextra-theme-docs/style.css'
 import '../styles/globals.css'
 import '../styles/kroescontrol-design-tokens.css'
 import { useSharedTheme } from '../hooks/useSharedTheme'
+import { HeadingIcons } from '../components/HeadingIcons'
 
 // Organization structured data (JSON-LD) for SEO
 const organizationSchema = {
@@ -138,6 +139,7 @@ export default function App({ Component, pageProps }: AppProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </Head>
+      <HeadingIcons />
       <Component {...pageProps} />
     </>
   )
