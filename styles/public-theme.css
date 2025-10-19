@@ -104,6 +104,13 @@ article h4 .subheading-anchor {
   opacity: 0;
 }
 
+/* Emoji icons: Always visible (all heading levels) */
+article h2 .subheading-anchor.has-emoji,
+article h3 .subheading-anchor.has-emoji,
+article h4 .subheading-anchor.has-emoji {
+  opacity: 1 !important;
+}
+
 article h3 .subheading-anchor {
   width: 20px;
   height: 20px;

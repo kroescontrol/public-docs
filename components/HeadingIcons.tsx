@@ -59,8 +59,9 @@ export function HeadingIcons() {
             }
           })
 
-          // Use emoji as anchor icon
+          // Use emoji as anchor icon - always visible
           anchor.textContent = ''
+          anchor.classList.add('has-emoji')
           const iconSpan = document.createElement('span')
           iconSpan.className = 'anchor-icon'
           iconSpan.textContent = emojiMatch[0]
