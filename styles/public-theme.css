@@ -87,14 +87,11 @@ article h4 .subheading-anchor {
   transition: opacity 200ms ease;
   margin-left: 0.5rem;
   text-decoration: none;
-  color: inherit;
-}
-
-/* Hide default # symbol */
-article h2 .subheading-anchor::before,
-article h3 .subheading-anchor::before,
-article h4 .subheading-anchor::before {
-  content: none;
+  color: transparent;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
 }
 
 /* Icon container injected by client script */
