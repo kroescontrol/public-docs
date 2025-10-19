@@ -2,3 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './public-theme.css';
+
+/* HubSpot chat widget layout shift prevention */
+#hubspot-messages-iframe-container {
+  min-height: 60px; /* Reserve space for chat button */
+  transition: min-height 0.3s ease; /* Smooth transition when opening */
+}
+
+/* When chat is expanded, remove reservation */
+#hubspot-messages-iframe-container[data-test-id*="expanded"],
+#hubspot-messages-iframe-container.widget-align-right {
+  min-height: 0;
+}
