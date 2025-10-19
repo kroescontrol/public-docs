@@ -86,9 +86,10 @@ article h4 .subheading-anchor {
   transition: opacity 200ms ease;
   margin-left: 0.5rem;
   text-decoration: none;
-  color: transparent;
   font-size: 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 /* H2: Always visible */
