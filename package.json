@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev -p 3013 > .dev.log 2>&1",
-    "prebuild": "node scripts/generate-meta.js",
+    "prebuild": "node scripts/generate-meta.js && node scripts/generate-llms-txt.js",
     "build": "node scripts/smart-build.js",
     "start": "next start -p 3013",
     "lint": "next lint",
