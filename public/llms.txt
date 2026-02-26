@@ -73,6 +73,7 @@
 - [Privacy Verklaring](https://docs.kroescontrol.nl/juridisch/privacy): Hoe Kroescontrol omgaat met jouw persoonlijke gegevens
 - [Notice & Takedown](https://docs.kroescontrol.nl/juridisch/notice-and-takedown): Procedure voor het melden van misbruik of inbreuk via onze diensten
 - [Spam Policy](https://docs.kroescontrol.nl/juridisch/spam): Regels rondom verzending van bulk emails en spam preventie
+- [Cookies](https://docs.kroescontrol.nl/juridisch/cookies)
 
 ## Contact
 
@@ -84,3 +85,4 @@
 - [Privacy Policy](https://docs.kroescontrol.nl/en/legal/privacy): How Kroescontrol handles your personal data
 - [Anti-Spam Policy](https://docs.kroescontrol.nl/en/legal/spam): Rules regarding bulk email sending and spam prevention
 - [Notice & Takedown](https://docs.kroescontrol.nl/en/legal/notice-and-takedown): Procedure for reporting abuse or infringement through our services
+- [Cookies](https://docs.kroescontrol.nl/en/legal/cookies)

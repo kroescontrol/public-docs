@@ -119,19 +119,29 @@ function parseMetaFile(filePath) {
 
 /**
  * Scan een directory voor MDX bestanden en return pagina-informatie.
+ * Gebruikt _meta.ts voor volgorde en titels, maar ontdekt ook
+ * MDX bestanden die niet in _meta.ts staan (filesystem fallback).
  */
 function scanSection(sectionDir, sectionSlug) {
   const metaPath = path.join(sectionDir, '_meta.ts');
   const meta = parseMetaFile(metaPath);
   const pages = [];
+  const seen = new Set();
 
+  // Eerst: pagina's uit _meta.ts (behoudt navigatievolgorde)
   for (const [slug, title] of Object.entries(meta)) {
-    if (typeof title !== 'string') continue; // Skip hidden entries
     if (slug === 'index') continue; // Section index handled separately
+
+    // Hidden entries markeren als gezien maar niet toevoegen
+    if (typeof title !== 'string') {
+      seen.add(slug);
+      continue;
+    }
 
     const mdxPath = path.join(sectionDir, `${slug}.mdx`);
     if (!fs.existsSync(mdxPath)) continue;
 
+    seen.add(slug);
     const content = fs.readFileSync(mdxPath, 'utf-8');
     const fm = parseFrontmatter(content);
     const description = fm.description && fm.description !== title
@@ -140,6 +150,24 @@ function scanSection(sectionDir, sectionSlug) {
 
     const url = `${BASE_URL}/${sectionSlug}/${slug}`;
 
+    pages.push({ title, url, description });
+  }
+
+  // Daarna: MDX bestanden die niet in _meta.ts staan (filesystem discovery)
+  const files = fs.readdirSync(sectionDir).filter(f => f.endsWith('.mdx'));
+  for (const file of files) {
+    const slug = file.replace('.mdx', '');
+    if (seen.has(slug) || slug === 'index') continue;
+
+    const mdxPath = path.join(sectionDir, file);
+    const content = fs.readFileSync(mdxPath, 'utf-8');
+    const fm = parseFrontmatter(content);
+    const title = fm.title || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const description = fm.description && fm.description !== title
+      ? fm.description
+      : '';
+
+    const url = `${BASE_URL}/${sectionSlug}/${slug}`;
     pages.push({ title, url, description });
   }
 
@@ -215,22 +243,14 @@ function generateLlmsTxt() {
     lines.push('');
   }
 
-  // English legal section
+  // English legal section (hergebruik scanSection voor filesystem discovery)
   lines.push('## Legal (English)');
   lines.push('');
   const enLegalDir = path.join(PAGES_DIR, 'en', 'legal');
   if (fs.existsSync(enLegalDir)) {
-    const enMeta = parseMetaFile(path.join(enLegalDir, '_meta.ts'));
-    for (const [slug, title] of Object.entries(enMeta)) {
-      if (typeof title !== 'string') continue;
-      const mdxPath = path.join(enLegalDir, `${slug}.mdx`);
-      if (!fs.existsSync(mdxPath)) continue;
-
-      const content = fs.readFileSync(mdxPath, 'utf-8');
-      const fm = parseFrontmatter(content);
-      const description = fm.description || '';
-
-      lines.push(`- [${title}](${BASE_URL}/en/legal/${slug})${description ? ': ' + description : ''}`);
+    const enPages = scanSection(enLegalDir, 'en/legal');
+    for (const page of enPages) {
+      lines.push(`- [${page.title}](${page.url})${page.description ? ': ' + page.description : ''}`);
     }
     lines.push('');
   }
