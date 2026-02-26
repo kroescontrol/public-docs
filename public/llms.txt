@@ -1,0 +1,88 @@
+# Kroescontrol
+
+> Publieke documentatie over Kroescontrol — cultuur, kantoren, branding, vacatures en juridische informatie.
+
+## Welkom
+
+- [Welkom bij Kroescontrol](https://docs.kroescontrol.nl/home): Publieke documentatie en informatie over Kroescontrol
+
+## Voor Bezoekers
+
+- [Voor Bezoekers](https://docs.kroescontrol.nl/bezoekers): Kom je bij Kroescontrol op bezoek? Hier staat alles wat je moet weten.
+
+## Over Kroescontrol
+
+- [Over Kroescontrol](https://docs.kroescontrol.nl/over-kroescontrol)
+- [Ons Verhaal](https://docs.kroescontrol.nl/over-kroescontrol/ons-verhaal)
+- [Wat We Doen](https://docs.kroescontrol.nl/over-kroescontrol/wat-we-doen)
+- [Management Team](https://docs.kroescontrol.nl/over-kroescontrol/management-team): Leer het management team van Kroescontrol kennen - de mensen achter onze visie en strategie
+- [Visie](https://docs.kroescontrol.nl/over-kroescontrol/visie): De visie, missie en kernwaarden van Kroescontrol - een mensgerichte technologische gemeenschap
+
+## Cultuur
+
+- [Cultuur](https://docs.kroescontrol.nl/cultuur): Kroescontrol cultuur en community activiteiten
+- [Informatieorganisatie](https://docs.kroescontrol.nl/cultuur/informatieorganisatie): Hoe Kroescontrol informatie organiseert en documenteert
+- [Werkmethode](https://docs.kroescontrol.nl/cultuur/werkmethode): Overzicht van onze open en transparante werkmethode en filosofie.
+- [Community Days](https://docs.kroescontrol.nl/cultuur/community-days): Kroescontrol Community Days - samen leren, netwerken en inspireren
+
+## Werken bij
+
+- [Werken bij](https://docs.kroescontrol.nl/werken-bij): Informatie voor potentiële medewerkers
+- [Vacatures](https://docs.kroescontrol.nl/werken-bij/vacatures): Actuele vacatures bij Kroescontrol.
+- [Bedrijfscultuur](https://docs.kroescontrol.nl/werken-bij/bedrijfscultuur): Informatie over de cultuur en waarden van Kroescontrol.
+- [Voordelen](https://docs.kroescontrol.nl/werken-bij/voordelen): Een compleet overzicht van de voordelen en secundaire arbeidsvoorwaarden bij Kroescontrol.
+- [Voorzieningen](https://docs.kroescontrol.nl/werken-bij/voorzieningen)
+- [Pensioenregelingen](https://docs.kroescontrol.nl/werken-bij/pensioenregelingen): Informatie over onze pensioenregeling via StiPP voor nieuwe medewerkers
+
+## Kennismaking
+
+- [Kennismaking](https://docs.kroescontrol.nl/kennismaking): Meer gedetailleerde informatie voor engineers in de oriëntatiefase
+- [Voorwaarden](https://docs.kroescontrol.nl/kennismaking/voorwaarden): Complete informatie over de arbeidsvoorwaarden bij Kroescontrol.
+- [Budgetten](https://docs.kroescontrol.nl/kennismaking/budgetten): Uitleg over de verschillende budgetstructuren bij Kroescontrol.
+- [Projecten](https://docs.kroescontrol.nl/kennismaking/projecten): Voorbeelden van projecten bij Kroescontrol.
+- [Engineer Hub](https://docs.kroescontrol.nl/kennismaking/engineer-hub): Introductie tot de Engineer Hub, ons transparante budgetbeheersysteem.
+
+## Kantoor
+
+- [Kantoor](https://docs.kroescontrol.nl/kantoor): Onze kantoren in Amsterdam en Klarenbeek - waar innovatie en samenwerking samenkomen
+- [Amsterdam](https://docs.kroescontrol.nl/kantoor/amsterdam): Ons Amsterdam kantoor direct naast Amsterdam Centraal
+- [Klarenbeek](https://docs.kroescontrol.nl/kantoor/klarenbeek): Ons hoofdkantoor op de Veluwe voor deep work en teamdagen
+- [Faciliteiten](https://docs.kroescontrol.nl/kantoor/faciliteiten): Alle faciliteiten in onze kantoren op een rijtje
+- [Vergaderruimtes](https://docs.kroescontrol.nl/kantoor/vergaderruimtes): Overzicht van alle meeting spaces en reserveringsmogelijkheden
+- [Productief Werken](https://docs.kroescontrol.nl/kantoor/productief-werken): Tips en richtlijnen om optimaal te presteren in onze kantoren
+- [Kantoor Etiquette](https://docs.kroescontrol.nl/kantoor/gebruik): Richtlijnen voor respectvol en productief samen werken
+
+## Huisstijl & Branding
+
+- [Huisstijl & Branding](https://docs.kroescontrol.nl/branding): Uitgebreide huisstijlgids met ontwerpfilosofie en richtlijnen voor de Kroescontrol visuele identiteit.
+- [Logo](https://docs.kroescontrol.nl/branding/logo): Het Kroescontrol logo in verschillende varianten en formaten, met richtlijnen voor gebruik.
+- [Beeldmerk](https://docs.kroescontrol.nl/branding/beeldmerk): Het Kroescontrol beeldmerk in verschillende varianten en formaten, met richtlijnen voor gebruik.
+- [Kleuren](https://docs.kroescontrol.nl/branding/kleuren): Het officiële kleurenpalet van Kroescontrol met hex-codes en CMYK-waarden.
+- [Downloads](https://docs.kroescontrol.nl/branding/downloads): Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en documentatie.
+- [Icon Guidelines](https://docs.kroescontrol.nl/branding/icon-guidelines)
+
+## Klanten
+
+- [Klanten](https://docs.kroescontrol.nl/klanten): Onze klanten en projectvoorbeelden: voor wie werken we en wat hebben we gerealiseerd.
+
+## Juridisch
+
+- [Bedrijfsgegevens](https://docs.kroescontrol.nl/juridisch/bedrijfsgegevens)
+- [SNA Keurmerk](https://docs.kroescontrol.nl/juridisch/sna-keurmerk): Kroescontrol is gecertificeerd met het SNA Keurmerk voor naleving van arbeidsvoorwaarden
+- [Algemene Voorwaarden](https://docs.kroescontrol.nl/juridisch/algemene-voorwaarden)
+- [Privacy Verklaring](https://docs.kroescontrol.nl/juridisch/privacy): Hoe Kroescontrol omgaat met jouw persoonlijke gegevens
+- [Notice & Takedown](https://docs.kroescontrol.nl/juridisch/notice-and-takedown): Procedure voor het melden van misbruik of inbreuk via onze diensten
+- [Spam Policy](https://docs.kroescontrol.nl/juridisch/spam): Regels rondom verzending van bulk emails en spam preventie
+- [Cookies](https://docs.kroescontrol.nl/juridisch/cookies)
+
+## Contact
+
+- [Contact](https://docs.kroescontrol.nl/contact): Contactinformatie van Kroescontrol.
+
+## Legal (English)
+
+- [Terms and Conditions](https://docs.kroescontrol.nl/en/legal/terms-and-conditions)
+- [Privacy Policy](https://docs.kroescontrol.nl/en/legal/privacy): How Kroescontrol handles your personal data
+- [Anti-Spam Policy](https://docs.kroescontrol.nl/en/legal/spam): Rules regarding bulk email sending and spam prevention
+- [Notice & Takedown](https://docs.kroescontrol.nl/en/legal/notice-and-takedown): Procedure for reporting abuse or infringement through our services
+- [Cookies](https://docs.kroescontrol.nl/en/legal/cookies)
