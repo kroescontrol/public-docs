@@ -25,11 +25,6 @@ export default withNextra({
   async redirects() {
     return [
       {
-        source: '/juridisch',
-        destination: '/juridisch/bedrijfsgegevens',
-        permanent: true // 301 redirect for SEO
-      },
-      {
         source: '/over-kroescontrol/team',
         destination: '/over-kroescontrol/management-team',
         permanent: true // 301 redirect for SEO
