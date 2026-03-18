@@ -1,6 +1,6 @@
 # Kroescontrol Public Docs
 
-Publieke documentatie van [Kroescontrol](https://kroescontrol.nl) — te vinden op **[docs.kroescontrol.nl](https://docs.kroescontrol.nl)**.
+Publieke documentatie van Kroescontrol — te vinden op **[docs.kroescontrol.nl](https://docs.kroescontrol.nl)**.
 
 ## Wat staat hier?
 
@@ -8,11 +8,7 @@ Bedrijfsinformatie, juridische documenten, branding richtlijnen, cultuur en alle
 
 ## Waarom op GitHub?
 
-Transparantie is een kernwaarde. Door onze documentatie open-source te beheren:
-
-- Is de volledige historie van wijzigingen zichtbaar
-- Kunnen engineers die met ons werken direct bijdragen
-- Is de bron altijd verifieerbaar
+Publiek, transparant en verifieerbaar.
 
 ## Tech stack
 
