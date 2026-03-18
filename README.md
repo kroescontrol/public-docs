@@ -40,7 +40,3 @@ pages/
 ├── kantoor/          # Locaties en faciliteiten
 └── en/legal/         # English legal pages
 ```
-
-## Licentie
-
-Content is eigendom van Kroescontrol B.V. De broncode van deze site valt onder de [MIT-licentie](https://opensource.org/licenses/MIT).
