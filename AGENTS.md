@@ -13,8 +13,8 @@
 
 1. **Onwaarheden of niet-onderbouwde claims** — "we zijn de beste", "100% veilig", specifieke percentages of rankings zonder bron.
 2. **Klantnamen / logo's zonder toestemming** — referenties naar specifieke klanten vereisen goedkeuring; niet zomaar toevoegen.
-3. **Juridisch risicovolle formulering** — "garanderen", "beloven", "gegarandeerd X% korting/prestatie" — voorzichtig, liefst juridisch eerst.
-4. **Interne terminologie lekt** — codenamen, sprint-nummers, interne projectnamen (bv. "P6", "prd278") horen niet in publieke content.
+3. **Harde financiële of prestatie-garanties** — "gegarandeerd X% korting", "100% uptime", "altijd binnen Y uur". Zachte formulering ("we garanderen bereikbaarheid tijdens kantooruren") is OK.
+4. **Interne terminologie lekt** — codenamen, sprint-nummers, interne projectnamen. Detecteer met `rg -i 'prd[0-9]{3}|task[0-9]{3}|sprint[0-9]|\bP[0-9]\b|hub-p[0-9]'` in nieuwe content.
 
 ## Aandacht (MAJOR / MINOR)
 
