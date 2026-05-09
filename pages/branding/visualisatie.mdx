@@ -1,0 +1,141 @@
+# Visualisatie-template
+
+Een Kroescontrol-branded HTML-template voor het maken van **visualisaties** bij build-plannen (modus 2) en stakeholder-overzichten (modus 3). Deze pagina laat zien hoe de template eruitziet, hoe je hem inline gebruikt, en hoe je een Claude-sessie vraagt er een te genereren.
+
+Pattern-doc: [`workspace/baseline/patterns/visualization.md`](https://github.com/skroes/workspace/blob/main/baseline/patterns/visualization.md).
+
+---
+
+## Inline-voorbeeld
+
+Het blok hieronder is precies hoe een ingevulde visualisatie eruitziet — default dark. De volledige template (mét mermaid, theme-toggle en lucide-iconen) zie je in standalone modus.
+
+<style>{`
+  .kc-visualization {
+    --kc-primary: #c22757;
+    --kc-navy: #8b95d9;
+    --kc-gradient: linear-gradient(90deg, #8b95d9 0%, #c22757 100%);
+    --kc-text: #e2e8f0;
+    --kc-text-muted: #94a3b8;
+    --kc-bg: #0f1419;
+    --kc-bg-subtle: #1a1f2e;
+    --kc-border: #334155;
+    --kc-radius: 0.5rem;
+    --kc-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+    --kc-font-heading: 'Poppins', system-ui, sans-serif;
+    --kc-font-body: 'Noto Sans', system-ui, sans-serif;
+    --kc-font-mono: 'Fira Code', Consolas, ui-monospace, monospace;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    font-family: var(--kc-font-body);
+    color: var(--kc-text);
+    background: var(--kc-bg);
+    border-radius: var(--kc-radius);
+    border: 1px solid var(--kc-border);
+    line-height: 1.6;
+  }
+  .kc-visualization * { box-sizing: border-box; }
+  .kc-visualization .kc-header { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; background: var(--kc-bg-subtle); border: 1px solid var(--kc-border); border-radius: var(--kc-radius); margin-bottom: 1.5rem; }
+  .kc-visualization .kc-meta { flex: 1; }
+  .kc-visualization .kc-modus-badge { font-family: var(--kc-font-mono); font-size: 0.7rem; color: var(--kc-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .kc-visualization h1 { font-family: var(--kc-font-heading); font-weight: 700; font-size: 1.2rem; margin: 0.25rem 0 0; background: var(--kc-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .kc-visualization h3 { font-family: var(--kc-font-heading); font-weight: 600; font-size: 0.95rem; color: var(--kc-text); margin: 0 0 0.4rem; }
+  .kc-visualization p { margin: 0 0 0.5rem; font-size: 0.9rem; }
+  .kc-visualization code, .kc-visualization .kc-path { font-family: var(--kc-font-mono); font-size: 0.82em; background: var(--kc-bg-subtle); padding: 0.1rem 0.35rem; border-radius: 0.25rem; border: 1px solid var(--kc-border); color: var(--kc-text); }
+  .kc-visualization .kc-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+  .kc-visualization .kc-card { background: var(--kc-bg-subtle); border: 1px solid var(--kc-border); border-radius: var(--kc-radius); padding: 0.85rem 1rem; }
+  .kc-visualization .kc-badge { display: inline-block; font-family: var(--kc-font-mono); font-size: 0.68rem; padding: 0.15rem 0.55rem; border-radius: 999px; background: var(--kc-primary); color: white; border: 1px solid var(--kc-primary); margin-bottom: 0.4rem; }
+`}</style>
+
+<div className="kc-visualization">
+  <div className="kc-header">
+    <div className="kc-meta">
+      <span className="kc-modus-badge">Modus 2 — Bouw</span>
+      <h1>Voorbeeld: visualisatie-template</h1>
+    </div>
+  </div>
+  <div className="kc-card-grid">
+    <div className="kc-card">
+      <span className="kc-badge">component</span>
+      <h3>Header</h3>
+      <p>Logo + modus-badge + titel + theme-toggle.</p>
+      <p><code className="kc-path">baseline/patterns/visualization-template.html</code></p>
+    </div>
+    <div className="kc-card">
+      <span className="kc-badge">component</span>
+      <h3>Diagram</h3>
+      <p>Mermaid-blok, self-hosted via docs.kroescontrol.nl/lib.</p>
+      <p><code>graph LR ...</code></p>
+    </div>
+    <div className="kc-card">
+      <span className="kc-badge">component</span>
+      <h3>Footer</h3>
+      <p>Bron, prompt, datum, modus, commit-sha.</p>
+      <p><code className="kc-path">.kc-footer-meta</code></p>
+    </div>
+  </div>
+</div>
+
+> Voor een volledige interactieve preview (mermaid + lucide + theme-toggle): open de [standalone template](https://github.com/skroes/workspace/blob/main/baseline/patterns/visualization-template.html) in browser via een raw-URL.
+
+---
+
+## Hoe je het gebruikt
+
+### Standalone HTML (modus 2 / 3)
+
+1. Kopieer `baseline/patterns/visualization-template.html` uit de workspace-repo
+2. Vul de `{{ placeholders }}` in (titel, modus, content)
+3. Zet `data-mode="2"` of `data-mode="3"` op het wrapper-`<div>`
+4. Plaats naar locatie volgens het pattern: `airflow/projects/{x}/visuals/<task-id>-plan.html`
+
+### Inline in deze docs (Nextra MDX)
+
+Kopieer alleen het blok tussen `<!-- KC_INLINE_START -->` en `<!-- KC_INLINE_END -->`. CSS is gescoped onder `.kc-visualization` — geen layout-bleed.
+
+Voor mermaid in MDX: gebruik `next/script` met de juiste init-volgorde (initialize vóór run, met fallback bij parse-errors):
+
+```jsx
+import Script from 'next/script'
+
+<Script
+  src="https://docs.kroescontrol.nl/lib/mermaid.min.js"
+  onLoad={() => {
+    if (!window.mermaid) return
+    window.mermaid.initialize({
+      startOnLoad: false,
+      theme: 'base',
+      themeVariables: { primaryColor: '#1a1f2e', primaryBorderColor: '#c22757', lineColor: '#94a3b8' }
+    })
+    Promise.resolve(window.mermaid.run({ querySelector: '.kc-visualization .mermaid' }))
+      .catch(() => {
+        document.querySelectorAll('.kc-visualization .mermaid').forEach(el => {
+          el.classList.replace('mermaid', 'mermaid-fallback')
+        })
+      })
+  }}
+/>
+```
+
+---
+
+## Aan Claude vragen
+
+Stuur de URL van deze pagina aan je Claude-sessie en zeg:
+
+> **Maak hier een visualisatie van — modus 2** voor [onderwerp]. Vul de template uit `skroes/workspace/baseline/patterns/visualization-template.html`. Bewaar de prompt naast het output-bestand (`.prompt.md`).
+
+Of gebruik de slash-command `/viz` (lokale Claude Code skill) — die vraagt modus, onderwerp en doelgroep, en schrijft direct naar de juiste output-locatie.
+
+---
+
+## Modus-keuze
+
+| Modus | Doel | Wanneer |
+|-------|------|---------|
+| **2 — Bouw** | Plan voor wat we bouwen, dev-team tijdens build | Bij start feature, PRD → task vertaling |
+| **3 — Delen** | Concept overbrengen aan stakeholders | Kickoff, review, demo |
+
+Modus 1 (Begrip) hoort in markdown, niet in deze HTML-template.
+
+Volledige uitleg + checklist: [pattern-doc op GitHub](https://github.com/skroes/workspace/blob/main/baseline/patterns/visualization.md).
