@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--
+  Visualisatie-template — Kroescontrol huisstijl
+  Bron (canonical): skroes/workspace baseline/patterns/visualization-template.html
+  Deze kopie wordt gehost op docs.kroescontrol.nl/visualization-template.html
+  zodat publiek toegankelijke preview/download werkt. Sync bij updates.
+  Pattern-doc: skroes/workspace baseline/patterns/visualization.md
+-->
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>Visualisatie — {{ TITEL }}</title>
+  <link rel="preconnect" href="https://docs.kroescontrol.nl" crossorigin>
+  <link rel="stylesheet" href="https://docs.kroescontrol.nl/visualization-fonts.css">
+  <style>
+    /* === Page-level (alleen voor standalone, niet voor MDX-inline) === */
+    body.kc-page {
+      margin: 0;
+      min-height: 100vh;
+      background: #0f1419;
+      font-family: 'Noto Sans', system-ui, sans-serif;
+    }
+    body.kc-page[data-theme="light"] { background: #ffffff; }
+
+    /* === Wrapper-scoped: alle styling onder .kc-visualization === */
+    .kc-visualization {
+      /* Dark tokens (default) */
+      --kc-primary: #c22757;
+      --kc-navy: #8b95d9;
+      --kc-gradient: linear-gradient(90deg, #8b95d9 0%, #c22757 100%);
+      --kc-text: #e2e8f0;
+      --kc-text-muted: #94a3b8;
+      --kc-bg: #0f1419;
+      --kc-bg-subtle: #1a1f2e;
+      --kc-border: #334155;
+      --kc-radius: 0.5rem;
+      --kc-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+      --kc-font-heading: 'Poppins', system-ui, sans-serif;
+      --kc-font-body: 'Noto Sans', system-ui, sans-serif;
+      --kc-font-mono: 'Fira Code', Consolas, ui-monospace, monospace;
+
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: var(--kc-font-body);
+      color: var(--kc-text);
+      line-height: 1.6;
+      box-sizing: border-box;
+    }
+    .kc-visualization *, .kc-visualization *::before, .kc-visualization *::after { box-sizing: border-box; }
+
+    .kc-visualization[data-theme="light"] {
+      --kc-navy: #222b5b;
+      --kc-gradient: linear-gradient(90deg, #222b5b 0%, #c22757 100%);
+      --kc-text: #0f1419;
+      --kc-text-muted: #475569;
+      --kc-bg: #ffffff;
+      --kc-bg-subtle: #fafbfc;
+      --kc-border: #e2e8f0;
+      --kc-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    /* === Mode visibility === */
+    .kc-visualization[data-mode="2"] [data-mode-section="3"] { display: none; }
+    .kc-visualization[data-mode="3"] [data-mode-section="2"] { display: none; }
+
+    /* === Header === */
+    .kc-visualization .kc-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--kc-bg-subtle);
+      border: 1px solid var(--kc-border);
+      border-radius: var(--kc-radius);
+      margin-bottom: 2rem;
+    }
+    .kc-visualization .kc-logo { height: 32px; flex-shrink: 0; }
+    .kc-visualization .kc-logo-text {
+      font-family: var(--kc-font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: var(--kc-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .kc-visualization .kc-meta { flex: 1; min-width: 0; }
+    .kc-visualization .kc-modus-badge {
+      display: inline-block;
+      font-family: var(--kc-font-mono);
+      font-size: 0.75rem;
+      color: var(--kc-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .kc-visualization h1 {
+      font-family: var(--kc-font-heading);
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin: 0.25rem 0 0;
+      background: var(--kc-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .kc-visualization .kc-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    .kc-visualization .kc-theme-toggle {
+      background: transparent;
+      border: 1px solid var(--kc-border);
+      color: var(--kc-text-muted);
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--kc-radius);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .kc-visualization .kc-theme-toggle:hover {
+      color: var(--kc-text);
+      border-color: var(--kc-primary);
+    }
+    .kc-visualization .kc-theme-toggle svg { width: 1rem; height: 1rem; }
+
+    /* === Sections === */
+    .kc-visualization section { margin-bottom: 2rem; }
+    .kc-visualization h2 {
+      font-family: var(--kc-font-heading);
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--kc-text);
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kc-border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .kc-visualization h2 svg { width: 1.1rem; height: 1.1rem; color: var(--kc-primary); }
+    .kc-visualization h3 {
+      font-family: var(--kc-font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--kc-text);
+      margin: 0 0 0.5rem;
+    }
+    .kc-visualization p { margin: 0 0 0.75rem; }
+    .kc-visualization a { color: var(--kc-primary); text-decoration: none; }
+    .kc-visualization a:hover { text-decoration: underline; }
+
+    /* === Code === */
+    .kc-visualization code,
+    .kc-visualization .kc-path {
+      font-family: var(--kc-font-mono);
+      font-size: 0.85em;
+      background: var(--kc-bg-subtle);
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--kc-border);
+      color: var(--kc-text);
+    }
+    .kc-visualization pre {
+      font-family: var(--kc-font-mono);
+      background: var(--kc-bg-subtle);
+      border: 1px solid var(--kc-border);
+      border-radius: var(--kc-radius);
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 0;
+    }
+
+    /* === Cards === */
+    .kc-visualization .kc-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .kc-visualization .kc-card {
+      background: var(--kc-bg-subtle);
+      border: 1px solid var(--kc-border);
+      border-radius: var(--kc-radius);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--kc-shadow);
+    }
+
+    /* === Badges === */
+    .kc-visualization .kc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--kc-font-mono);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--kc-bg-subtle);
+      border: 1px solid var(--kc-border);
+      color: var(--kc-text-muted);
+    }
+    .kc-visualization .kc-badge svg { width: 0.85rem; height: 0.85rem; }
+    .kc-visualization .kc-badge--primary {
+      background: var(--kc-primary);
+      color: white;
+      border-color: var(--kc-primary);
+    }
+
+    /* === Mode 2: stappen-tabel === */
+    .kc-visualization .kc-steps {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .kc-visualization .kc-steps th,
+    .kc-visualization .kc-steps td {
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid var(--kc-border);
+      vertical-align: top;
+    }
+    .kc-visualization .kc-steps th {
+      font-family: var(--kc-font-heading);
+      font-weight: 600;
+      color: var(--kc-text-muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .kc-visualization .kc-steps td:first-child {
+      font-family: var(--kc-font-mono);
+      color: var(--kc-primary);
+      font-weight: 600;
+      width: 2.5rem;
+    }
+
+    /* === Mode 3: verhaal-arc === */
+    .kc-visualization .kc-arc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .kc-visualization .kc-arc-card {
+      background: var(--kc-bg-subtle);
+      border: 1px solid var(--kc-border);
+      border-radius: var(--kc-radius);
+      padding: 1rem 1.25rem;
+    }
+    .kc-visualization .kc-arc-card .kc-badge { margin-bottom: 0.5rem; }
+
+    /* === Checklist === */
+    .kc-visualization .kc-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .kc-visualization .kc-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+    }
+    .kc-visualization .kc-checklist svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--kc-primary);
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    /* === Mermaid === */
+    .kc-visualization .mermaid {
+      background: var(--kc-bg-subtle);
+      border: 1px solid var(--kc-border);
+      border-radius: var(--kc-radius);
+      padding: 1.5rem;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .kc-visualization .mermaid-fallback {
+      background: var(--kc-bg-subtle);
+      border: 1px dashed var(--kc-border);
+      border-radius: var(--kc-radius);
+      padding: 1rem 1.5rem;
+      font-family: var(--kc-font-mono);
+      font-size: 0.85rem;
+      white-space: pre;
+      overflow-x: auto;
+      text-align: left;
+      color: var(--kc-text);
+    }
+    .kc-visualization .mermaid-fallback::before {
+      content: 'Mermaid kon niet laden — diagram als raw source:';
+      display: block;
+      font-family: var(--kc-font-body);
+      font-size: 0.8rem;
+      color: var(--kc-text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* === Footer === */
+    .kc-visualization .kc-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--kc-border);
+      font-size: 0.85rem;
+      color: var(--kc-text-muted);
+    }
+    .kc-visualization .kc-footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .kc-visualization .kc-footer-meta strong {
+      color: var(--kc-text);
+      font-weight: 600;
+      margin-right: 0.3rem;
+    }
+    .kc-visualization .kc-footer-pattern { font-size: 0.8rem; }
+
+    /* === Lucide placeholders (vóór render) === */
+    .kc-visualization [data-lucide]:not(svg) {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+    }
+  </style>
+</head>
+<body class="kc-page" data-theme="dark">
+
+<!-- KC_INLINE_START
+     Voor MDX-inline: kopieer alleen het <div class="kc-visualization">..</div> blok hieronder.
+     Scripts apart laden via Nextra <Script>. CSS scoped onder .kc-visualization,
+     dus geen layout-bleed naar de Nextra-pagina.
+-->
+<div class="kc-visualization" data-theme="dark" data-mode="2">
+
+  <header class="kc-header">
+    <img class="kc-logo"
+         src="https://docs.kroescontrol.nl/KC-beeldmerk-gradientKLEUR.svg"
+         alt="Kroescontrol"
+         onerror="this.outerHTML='<span class=&quot;kc-logo-text&quot;>Kroescontrol</span>'">
+    <div class="kc-meta">
+      <span class="kc-modus-badge">Modus <span data-fill="modus-num">2</span> — <span data-fill="modus-naam">Bouw</span></span>
+      <h1 data-fill="titel">{{ TITEL }}</h1>
+    </div>
+    <div class="kc-header-actions">
+      <span class="kc-badge" data-fill="datum">{{ DATUM }}</span>
+      <button class="kc-theme-toggle" type="button" aria-label="Thema wisselen" data-kc-theme-toggle>
+        <!-- Inline SVG sun-icon — fallback als Lucide niet laadt; wordt vervangen bij theme switch -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section data-mode-section="any">
+      <h2>Context</h2>
+      <p data-fill="context">{{ Wat zien we hier, voor wie, en waarom. 1-3 zinnen. }}</p>
+    </section>
+
+    <section data-mode-section="any">
+      <h2>Diagram</h2>
+      <div class="mermaid">
+graph LR
+  A[Start] --&gt; B{Beslissing}
+  B --&gt;|ja| C[Stap 1]
+  B --&gt;|nee| D[Stap 2]
+  C --&gt; E[Resultaat]
+  D --&gt; E
+      </div>
+    </section>
+
+    <!-- MODUS 2 — stappen + files + verify (vervang/voeg rijen toe) -->
+    <section data-mode-section="2">
+      <h2><i data-lucide="rocket"></i> Stappen</h2>
+      <table class="kc-steps">
+        <thead>
+          <tr><th>#</th><th>Stap</th><th>Files</th><th>Verify</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>{{ Korte beschrijving }}</td>
+            <td><code class="kc-path">{{ pad/file.ts }}</code></td>
+            <td><code>{{ npm test ... }}</code></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{ Volgende stap }}</td>
+            <td><code class="kc-path">{{ pad/andere.ts }}</code></td>
+            <td><code>{{ check }}</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- MODUS 3 — verhaal: probleem → keuze → oplossing → impact -->
+    <section data-mode-section="3">
+      <h2>Verhaal</h2>
+      <div class="kc-arc-grid">
+        <div class="kc-arc-card">
+          <span class="kc-badge kc-badge--primary"><i data-lucide="alert-triangle"></i> Probleem</span>
+          <p>{{ Wat staat in de weg? }}</p>
+        </div>
+        <div class="kc-arc-card">
+          <span class="kc-badge"><i data-lucide="git-branch"></i> Keuze</span>
+          <p>{{ Welke opties zijn er? Wat kozen we? }}</p>
+        </div>
+        <div class="kc-arc-card">
+          <span class="kc-badge"><i data-lucide="check-circle"></i> Oplossing</span>
+          <p>{{ Hoe pakken we het aan? }}</p>
+        </div>
+        <div class="kc-arc-card">
+          <span class="kc-badge"><i data-lucide="sparkles"></i> Impact</span>
+          <p>{{ Wat verandert er voor wie? }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-mode-section="any">
+      <h2>Componenten</h2>
+      <div class="kc-card-grid">
+        <div class="kc-card">
+          <span class="kc-badge kc-badge--primary"><i data-lucide="box"></i> component</span>
+          <h3>{{ Naam }}</h3>
+          <p>{{ Korte uitleg }}</p>
+          <p><code class="kc-path">{{ pad/naar/file.ts }}</code></p>
+        </div>
+      </div>
+    </section>
+
+    <section data-mode-section="any">
+      <h2>Volgende stappen</h2>
+      <ul class="kc-checklist">
+        <li><i data-lucide="chevron-right"></i> {{ Stap }} — verify: <code>{{ check }}</code></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="kc-footer">
+    <div class="kc-footer-meta">
+      <span><strong>Mode:</strong> <span data-fill="modus-num">2</span></span>
+      <span><strong>Source:</strong> <code data-fill="source">./{{ task-id }}.prompt.md</code></span>
+      <span><strong>Generated:</strong> <span data-fill="generated">{{ YYYY-MM-DD }}</span></span>
+      <span><strong>Commit:</strong> <code data-fill="commit">{{ sha }}</code></span>
+    </div>
+    <div class="kc-footer-pattern">
+      Visualization Pattern · <a href="https://github.com/skroes/workspace/blob/main/baseline/patterns/visualization.md">workspace/baseline/patterns/visualization.md</a>
+    </div>
+  </footer>
+
+</div>
+<!-- KC_INLINE_END -->
+
+<!-- ====== Standalone scripts (vervang door Nextra <Script> bij MDX-inline) ====== -->
+<script src="https://docs.kroescontrol.nl/lib/mermaid.min.js"
+        onerror="window.__kcMermaidFailed=true;"></script>
+<script src="https://docs.kroescontrol.nl/lib/lucide.min.js"
+        onerror="window.__kcLucideFailed=true;"></script>
+<script>
+(function () {
+  const root = document.querySelector('.kc-visualization');
+  if (!root) return;
+
+  const KEY = 'kcVizTheme';
+  const params = new URLSearchParams(location.search);
+  const initial = params.get('theme') || (function(){ try { return localStorage.getItem(KEY); } catch(_) { return null; } })() || 'dark';
+  applyTheme(initial);
+
+  // Theme toggle
+  const toggleBtn = root.querySelector('[data-kc-theme-toggle]');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem(KEY, next); } catch (_) {}
+      applyTheme(next);
+    });
+  }
+
+  // Auto-fill generated date als nog op placeholder
+  const gen = root.querySelector('[data-fill="generated"]');
+  if (gen && gen.textContent.indexOf('YYYY') !== -1) {
+    gen.textContent = new Date().toISOString().slice(0, 10);
+  }
+
+  // Initial Lucide render (idempotent — opnieuw bij theme switch)
+  if (window.lucide) lucide.createIcons();
+
+  // Initial Mermaid render — wacht tot DOM én scripts klaar zijn
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderMermaid);
+  } else {
+    renderMermaid();
+  }
+
+  // Inline SVG fallbacks — werken ook zonder Lucide bundle
+  const SUN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+  const MOON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  function applyTheme(t) {
+    root.dataset.theme = t;
+    if (document.body.classList.contains('kc-page')) document.body.dataset.theme = t;
+    const iconHost = root.querySelector('[data-kc-theme-toggle]');
+    if (iconHost) iconHost.innerHTML = (t === 'dark' ? SUN_SVG : MOON_SVG);
+    if (window.lucide) lucide.createIcons();
+    renderMermaid();
+  }
+
+  function getMermaidThemeVars() {
+    const dark = root.dataset.theme === 'dark';
+    return dark ? {
+      primaryColor: '#1a1f2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#c22757',
+      lineColor: '#94a3b8',
+      secondaryColor: '#0f1419',
+      tertiaryColor: '#1a1f2e',
+      fontFamily: 'Noto Sans, system-ui, sans-serif'
+    } : {
+      primaryColor: '#222b5b',
+      primaryTextColor: '#ffffff',
+      primaryBorderColor: '#c22757',
+      lineColor: '#475569',
+      secondaryColor: '#fafbfc',
+      tertiaryColor: '#ffffff',
+      fontFamily: 'Noto Sans, system-ui, sans-serif'
+    };
+  }
+
+  function renderMermaid() {
+    const nodes = root.querySelectorAll('.mermaid, .mermaid-fallback');
+    if (!nodes.length) return;
+
+    // Snapshot raw source op eerste render
+    nodes.forEach(function (el) {
+      if (!el.dataset.mermaidSource) el.dataset.mermaidSource = el.textContent.trim();
+    });
+
+    if (window.__kcMermaidFailed || !window.mermaid) {
+      nodes.forEach(function (el) {
+        el.classList.remove('mermaid');
+        el.classList.add('mermaid-fallback');
+        el.textContent = el.dataset.mermaidSource;
+      });
+      return;
+    }
+
+    nodes.forEach(function (el) {
+      el.classList.remove('mermaid-fallback');
+      el.classList.add('mermaid');
+      el.removeAttribute('data-processed');
+      el.innerHTML = '';
+      el.textContent = el.dataset.mermaidSource;
+    });
+
+    try {
+      window.mermaid.initialize({
+        startOnLoad: false,
+        theme: 'base',
+        themeVariables: getMermaidThemeVars()
+      });
+      Promise.resolve(window.mermaid.run({ nodes: root.querySelectorAll('.mermaid') }))
+        .catch(showFallback);
+    } catch (e) {
+      showFallback();
+    }
+
+    function showFallback() {
+      nodes.forEach(function (el) {
+        el.classList.remove('mermaid');
+        el.classList.add('mermaid-fallback');
+        el.textContent = el.dataset.mermaidSource;
+      });
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
