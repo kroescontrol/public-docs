@@ -30,6 +30,11 @@ export default withNextra({
         permanent: true // 301 redirect for SEO
       },
       {
+        source: '/over-kroescontrol/visie',
+        destination: '/over-kroescontrol/wat-we-doen',
+        permanent: true // 301: visie samengevoegd in wat-we-doen (snoei 2026-06)
+      },
+      {
         source: '/over-kroescontrol/bedrijfsgegevens',
         destination: '/juridisch/bedrijfsgegevens',
         permanent: true // 301 redirect for SEO

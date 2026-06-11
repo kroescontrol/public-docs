@@ -16,11 +16,10 @@
 - [Ons Verhaal](https://docs.kroescontrol.nl/over-kroescontrol/ons-verhaal)
 - [Wat We Doen](https://docs.kroescontrol.nl/over-kroescontrol/wat-we-doen)
 - [Management Team](https://docs.kroescontrol.nl/over-kroescontrol/management-team): Leer het management team van Kroescontrol kennen - de mensen achter onze visie en strategie
-- [Visie](https://docs.kroescontrol.nl/over-kroescontrol/visie): De visie, missie en kernwaarden van Kroescontrol - een mensgerichte technologische gemeenschap
 
 ## Cultuur
 
-- [Cultuur](https://docs.kroescontrol.nl/cultuur): Kroescontrol cultuur en community activiteiten
+- [Cultuur](https://docs.kroescontrol.nl/cultuur): Hoe we werken bij Kroescontrol
 - [Informatieorganisatie](https://docs.kroescontrol.nl/cultuur/informatieorganisatie): Hoe Kroescontrol informatie organiseert en documenteert
 - [Werkmethode](https://docs.kroescontrol.nl/cultuur/werkmethode): Overzicht van onze open en transparante werkmethode en filosofie.
 - [Community Days](https://docs.kroescontrol.nl/cultuur/community-days): Kroescontrol Community Days - samen leren, netwerken en inspireren
@@ -59,6 +58,7 @@
 - [Beeldmerk](https://docs.kroescontrol.nl/branding/beeldmerk): Het Kroescontrol beeldmerk in verschillende varianten en formaten, met richtlijnen voor gebruik.
 - [Kleuren](https://docs.kroescontrol.nl/branding/kleuren): Het officiële kleurenpalet van Kroescontrol met hex-codes en CMYK-waarden.
 - [Downloads](https://docs.kroescontrol.nl/branding/downloads): Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en documentatie.
+- [Visualisatie-template](https://docs.kroescontrol.nl/branding/visualisatie)
 - [Icon Guidelines](https://docs.kroescontrol.nl/branding/icon-guidelines)
 
 ## Klanten
@@ -67,13 +67,14 @@
 
 ## Juridisch
 
+- [Juridisch](https://docs.kroescontrol.nl/juridisch): Juridische informatie, voorwaarden en beleid van Kroescontrol B.V.
 - [Bedrijfsgegevens](https://docs.kroescontrol.nl/juridisch/bedrijfsgegevens)
 - [SNA Keurmerk](https://docs.kroescontrol.nl/juridisch/sna-keurmerk): Kroescontrol is gecertificeerd met het SNA Keurmerk voor naleving van arbeidsvoorwaarden
 - [Algemene Voorwaarden](https://docs.kroescontrol.nl/juridisch/algemene-voorwaarden)
 - [Privacy Verklaring](https://docs.kroescontrol.nl/juridisch/privacy): Hoe Kroescontrol omgaat met jouw persoonlijke gegevens
+- [Cookie Policy](https://docs.kroescontrol.nl/juridisch/cookies)
 - [Notice & Takedown](https://docs.kroescontrol.nl/juridisch/notice-and-takedown): Procedure voor het melden van misbruik of inbreuk via onze diensten
 - [Spam Policy](https://docs.kroescontrol.nl/juridisch/spam): Regels rondom verzending van bulk emails en spam preventie
-- [Cookies](https://docs.kroescontrol.nl/juridisch/cookies)
 
 ## Contact
 
