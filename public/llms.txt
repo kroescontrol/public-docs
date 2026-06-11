@@ -21,7 +21,6 @@
 
 - [Cultuur](https://docs.kroescontrol.nl/cultuur): Hoe we werken bij Kroescontrol
 - [Informatieorganisatie](https://docs.kroescontrol.nl/cultuur/informatieorganisatie): Hoe Kroescontrol informatie organiseert en documenteert
-- [Werkmethode](https://docs.kroescontrol.nl/cultuur/werkmethode): Overzicht van onze open en transparante werkmethode en filosofie.
 - [Community Days](https://docs.kroescontrol.nl/cultuur/community-days): Kroescontrol Community Days - samen leren, netwerken en inspireren
 
 ## Werken bij
@@ -60,10 +59,6 @@
 - [Downloads](https://docs.kroescontrol.nl/branding/downloads): Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en documentatie.
 - [Visualisatie-template](https://docs.kroescontrol.nl/branding/visualisatie)
 - [Icon Guidelines](https://docs.kroescontrol.nl/branding/icon-guidelines)
-
-## Klanten
-
-- [Klanten](https://docs.kroescontrol.nl/klanten): Onze klanten en projectvoorbeelden: voor wie werken we en wat hebben we gerealiseerd.
 
 ## Juridisch
 

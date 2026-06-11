@@ -7,7 +7,6 @@ const meta = {
   kennismaking: "Kennismaking",
   kantoor: "Kantoor",
   branding: "Huisstijl & Branding",
-  klanten: "Klanten",
   juridisch: "Juridisch",
   contact: "Contact",
   en: {

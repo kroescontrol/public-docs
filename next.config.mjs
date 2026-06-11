@@ -35,6 +35,16 @@ export default withNextra({
         permanent: true // 301: visie samengevoegd in wat-we-doen (snoei 2026-06)
       },
       {
+        source: '/cultuur/werkmethode',
+        destination: '/cultuur/informatieorganisatie',
+        permanent: true // 301: werkmethode samengevoegd in informatieorganisatie (snoei 2026-06)
+      },
+      {
+        source: '/klanten',
+        destination: '/kennismaking/projecten',
+        permanent: true // 301: klanten samengevoegd in projecten (snoei 2026-06)
+      },
+      {
         source: '/over-kroescontrol/bedrijfsgegevens',
         destination: '/juridisch/bedrijfsgegevens',
         permanent: true // 301 redirect for SEO
