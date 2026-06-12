@@ -35,7 +35,6 @@
 ## Kennismaking
 
 - [Kennismaking](https://docs.kroescontrol.nl/kennismaking): Meer gedetailleerde informatie voor engineers in de oriëntatiefase
-- [Voorwaarden](https://docs.kroescontrol.nl/kennismaking/voorwaarden): Complete informatie over de arbeidsvoorwaarden bij Kroescontrol.
 - [Budgetten](https://docs.kroescontrol.nl/kennismaking/budgetten): Uitleg over de verschillende budgetstructuren bij Kroescontrol.
 - [Projecten](https://docs.kroescontrol.nl/kennismaking/projecten): Voorbeelden van projecten bij Kroescontrol.
 - [Engineer Hub](https://docs.kroescontrol.nl/kennismaking/engineer-hub): Introductie tot de Engineer Hub, ons transparante budgetbeheersysteem.

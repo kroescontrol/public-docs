@@ -45,6 +45,11 @@ export default withNextra({
         permanent: true // 301: klanten samengevoegd in projecten (snoei 2026-06)
       },
       {
+        source: '/kennismaking/voorwaarden',
+        destination: '/werken-bij/voordelen',
+        permanent: true // 301: voorwaarden samengevoegd in voordelen (snoei 2026-06)
+      },
+      {
         source: '/over-kroescontrol/bedrijfsgegevens',
         destination: '/juridisch/bedrijfsgegevens',
         permanent: true // 301 redirect for SEO
