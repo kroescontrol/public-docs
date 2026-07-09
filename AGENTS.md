@@ -30,6 +30,17 @@ Deze mogen publiek, NIET flaggen:
 
 **Wél flaggen (FAIL):** privé-telefoonnummers van ándere medewerkers, klant-contactpersonen, privé-(woon)adressen van personen, BSN/geboortedatum/salaris van individuen, of nieuwe persoonsnamen + contactdata buiten deze set zonder expliciete toestemming.
 
+## Design-canon (KC, prd398)
+
+De KC-design-canon (`workspace/baseline/patterns/kroescontrol-design.md` in de
+workspace-meta-repo, skroes) is leidend voor tokens, kleuren, fonts en iconen.
+`styles/kroescontrol-design-tokens.css` is hier een **lokale kopie** totdat het
+`@kroescontrol/brand`-pakket bestaat (prd398 blok 9).
+
+- **FAIL**: nieuwe kleuren, fonts of icon-sets die afwijken van de canon, of wijzigingen aan
+  `kroescontrol-design-tokens.css` die niet uit de canon zijn overgenomen.
+- **FAIL**: purple/violet/indigo als UI-kleur (canon DR1).
+
 ## Aandacht (MAJOR / MINOR)
 
 - **Tone-of-voice-afwijking** van kroescontrol-stijl, getoetst aan `TONE-OF-VOICE-PUBLIC.md` (in `internal-docs`) — MAJOR. Specifiek:
