@@ -1,0 +1,74 @@
+---
+title: Kroescontrol in je AI-assistent (MCP)
+docStatus: live
+description: Koppel de publieke Kroescontrol-documentatie en kroescontrol.nl aan Claude, ChatGPT of een andere AI-assistent via onze open MCP-server. Geen login, alleen lezen.
+slug: /mcp
+tags:
+  - kroescontrol
+  - mcp
+  - model context protocol
+  - ai
+  - documentatie
+keywords:
+  - mcp server
+  - model context protocol
+  - claude connector
+  - chatgpt connector
+  - kroescontrol mcp
+  - ai assistent
+last_update:
+  date: 2026-09-21T00:00:00.000Z
+  author: Kroescontrol Team
+---
+
+# Kroescontrol in je AI-assistent (MCP)
+
+Kroescontrol heeft een publieke MCP-server. Koppel hem aan je AI-assistent en je kunt in een gesprek vragen naar onze cultuur, budgetten, werkwijze, huisstijl en blog. Het antwoord komt dan uit onze eigen pagina's, niet uit wat een model ooit over ons heeft gelezen.
+
+## Het adres
+
+```
+https://docs-mcp.kroescontrol.nl/public
+```
+
+| | |
+|---|---|
+| Protocol | Model Context Protocol (MCP), Streamable HTTP |
+| Login | geen. Iedereen mag koppelen |
+| Wat hij kan | alleen lezen. Er is geen gereedschap dat iets wijzigt |
+| Wat erin zit | deze documentatie (docs.kroescontrol.nl) en kroescontrol.nl, inclusief de blog |
+| Wat er niet in zit | alles achter een login. Interne en operationele documentatie zit op een andere ingang, voor medewerkers |
+
+## Wat je ermee kunt vragen
+
+- "Hoe werkt het Engineer Budget bij Kroescontrol?"
+- "Wat is er de laatste maanden nieuw op de blog van Kroescontrol?"
+- "Welke kleuren en logo's hoort een partner te gebruiken?" Je assistent krijgt de logo's zelf te zien, en het brandbook als link.
+- "Waar zit het kantoor en hoe kom ik er?"
+
+## Zo koppel je hem
+
+**Claude** (web of desktop, betaald abonnement): ga naar je profiel, dan Settings, Connectors, en kies Add custom connector. Plak het adres hierboven. Een login is niet nodig.
+
+**ChatGPT en andere assistenten**: voeg een eigen MCP-connector toe met hetzelfde adres. Waar die knop zit verschilt per product en verandert nog wel eens. Zoek in de instellingen naar connectors of MCP.
+
+**Eigen code of een agent**: elke MCP-client die Streamable HTTP spreekt, werkt. Er is geen sleutel en geen sessie.
+
+## De gereedschappen
+
+| gereedschap | wat het doet |
+|---|---|
+| `wie_ben_ik` | zegt via welke ingang je binnenkomt en hoe vers de inhoud is |
+| `zoeken` | zoekt in de pagina's en geeft fragmenten terug |
+| `lezen` | geeft één pagina volledig. Plaatjes op die pagina komen mee zodat je assistent ze ziet; een pdf of zip komt mee als link |
+| `recent` | wat er sinds een datum is gewijzigd, nieuwste eerst. Ook nieuwe blogberichten |
+
+De inhoud wordt opnieuw opgebouwd zodra wij iets publiceren. Meestal is hij binnen een minuut bij.
+
+## Goed om te weten
+
+- De server bewaart je vragen niet. Hij zoekt in een vaste index en geeft tekst terug.
+- Je assistent stuurt wat hij terugkrijgt naar het model dat jij gebruikt. Dat is bij elke MCP-koppeling zo, en hier gaat het om tekst die al openbaar is.
+- Klopt er iets niet op een pagina, of mis je iets? Laat het weten via [contact](/contact).
+
+Werk je bij Kroescontrol? Dan is er een tweede ingang met login, waar je ook de interne handboeken ziet. De uitleg staat in de interne documentatie.
