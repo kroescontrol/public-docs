@@ -1,0 +1,52 @@
+# prd509: na een push op main bouwt docs-mcp zijn zoekindex opnieuw, zodat de
+# docs-MCP niet achterloopt op deze site. Dezelfde workflow staat in
+# public-docs, internal-docs en operations-docs.
+#
+# De hook-URL geeft op zichzelf toegang (wie hem heeft, kan een build starten).
+# Hij staat daarom alleen in het secret DOCS_MCP_DEPLOY_HOOK en gaat via env
+# naar de stap, nooit via ${{ }} in de opdracht zelf.
+name: docs-mcp herbouwen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      proef_kapot:
+        description: "Proef: roep een kapotte URL aan. Deze run HOORT rood te worden."
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: docs-mcp-herbouw
+  cancel-in-progress: false
+
+jobs:
+  herbouw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Roep de deploy-hook van docs-mcp aan
+        env:
+          HOOK: ${{ secrets.DOCS_MCP_DEPLOY_HOOK }}
+          KAPOT: ${{ inputs.proef_kapot }}
+        run: |
+          set -euo pipefail
+          if [ -z "${HOOK}" ]; then
+            echo "::error::secret DOCS_MCP_DEPLOY_HOOK ontbreekt; docs-mcp wordt NIET herbouwd"
+            exit 1
+          fi
+          doel="${HOOK}"
+          if [ "${KAPOT}" = "true" ]; then
+            doel="${HOOK}-proef-kapot"
+            echo "Proef: kapotte URL. Deze stap hoort te falen."
+          fi
+          # --fail is de kern: zonder geeft curl exit 0 op een 404 en is groen niets waard.
+          antwoord="$(curl --fail --silent --show-error --max-time 30 -X POST "${doel}")"
+          # Geen pipe naar grep: met pipefail kan een geslaagde grep een 141 geven.
+          case "${antwoord}" in
+            *'"job"'*) echo "docs-mcp bouwt opnieuw." ;;
+            *) echo "::error::de hook antwoordde, maar zonder job; docs-mcp wordt mogelijk NIET herbouwd"; exit 1 ;;
+          esac
