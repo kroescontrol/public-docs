@@ -7,6 +7,7 @@ const meta = {
   kennismaking: "Kennismaking",
   kantoor: "Kantoor",
   branding: "Huisstijl & Branding",
+  mcp: "In je AI-assistent (MCP)",
   juridisch: "Juridisch",
   contact: "Contact",
   en: {
