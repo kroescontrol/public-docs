@@ -37,7 +37,6 @@
 - [Kennismaking](https://docs.kroescontrol.nl/kennismaking): Meer gedetailleerde informatie voor engineers in de oriëntatiefase
 - [Budgetten](https://docs.kroescontrol.nl/kennismaking/budgetten): Uitleg over de verschillende budgetstructuren bij Kroescontrol.
 - [Projecten](https://docs.kroescontrol.nl/kennismaking/projecten): Voorbeelden van projecten bij Kroescontrol.
-- [Engineer Hub](https://docs.kroescontrol.nl/kennismaking/engineer-hub): Introductie tot de Engineer Hub, ons transparante budgetbeheersysteem.
 
 ## Kantoor
 
@@ -56,7 +55,6 @@
 - [Beeldmerk](https://docs.kroescontrol.nl/branding/beeldmerk): Het Kroescontrol beeldmerk in verschillende varianten en formaten, met richtlijnen voor gebruik.
 - [Kleuren](https://docs.kroescontrol.nl/branding/kleuren): Het officiële kleurenpalet van Kroescontrol met hex-codes en CMYK-waarden.
 - [Downloads](https://docs.kroescontrol.nl/branding/downloads): Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en documentatie.
-- [Visualisatie-template](https://docs.kroescontrol.nl/branding/visualisatie)
 - [Icon Guidelines](https://docs.kroescontrol.nl/branding/icon-guidelines)
 
 ## Juridisch

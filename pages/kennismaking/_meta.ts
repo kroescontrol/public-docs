@@ -1,8 +1,7 @@
 const meta = {
   index: "Kennismaking",
   budgetten: "Budgetten",
-  projecten: "Projecten",
-  "engineer-hub": "Engineer Hub"
+  projecten: "Projecten"
 }
 
 export default meta

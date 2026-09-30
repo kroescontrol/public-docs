@@ -24,7 +24,18 @@ import {
 
 # Icon Usage Guidelines
 
-Richtlijnen voor consistent en toegankelijk icon gebruik in Kroescontrol documentatie.
+Richtlijnen voor consistent en toegankelijk icon gebruik in de Kroescontrol-documentatie.
+
+We gebruiken **Lucide Icons** als icon set: meer dan 1000 open-source iconen (MIT-licentie) met één lijndikte en stijl. Ze zijn direct als React-component te gebruiken in MDX en TSX, en je bundelt alleen wat je importeert. Voor consistente kleuren wikkel je ze in de `KCIcon`-component:
+
+```tsx
+import { Rocket } from 'lucide-react'
+import { KCIcon } from '@/components/icons/KCIcon'
+
+<KCIcon icon={Rocket} variant="primary" size={24} />
+```
+
+Alle iconen zoek je op [lucide.dev/icons](https://lucide.dev/icons).
 
 ## Variant Voorbeelden (Light & Dark Theme)
 
@@ -95,7 +106,7 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
   </div>
 </div>
 
-#### Finance Docs (Amber #f59e0b)
+#### Finance Docs (Amber #f59e0b, gereserveerd: de site bestaat nog niet)
 
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
   <div>
@@ -153,6 +164,21 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
 **Gebruik voor:** Ondersteunende elementen, minder prominente UI, sectie headers
 
 **Kleuren:** Altijd Navy (muted) in beide themes
+
+---
+
+### Gradient (Kroescontrol Gradient)
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '1rem' }}>
+  <KCIcon icon={Sparkles} variant="gradient" size={40} />
+  <KCIcon icon={Rocket} variant="gradient" size={40} />
+</div>
+
+```tsx
+<KCIcon icon={Sparkles} variant="gradient" size={40} />
+```
+
+**Gebruik voor:** Grote feature-iconen op landingspagina's, spaarzaam
 
 ---
 
@@ -297,7 +323,7 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
   <div>
     <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Light Theme</div>
     <div style={{ padding: '1rem', background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.5rem' }}>
-      <a href="/branding/lucide-icons" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', textDecoration: 'none', color: '#0f172a' }}>
+      <a href="/branding" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', textDecoration: 'none', color: '#0f172a' }}>
         <KCIcon icon={FileText} variant="neutral" size={20} />
         <span>Documentation</span>
         <KCIcon icon={ExternalLink} variant="neutral" size={16} />
@@ -307,7 +333,7 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
   <div>
     <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', color: '#64748b' }}>Dark Theme</div>
     <div style={{ padding: '1rem', background: '#0f172a', border: '1px solid #1e293b', borderRadius: '0.5rem' }}>
-      <a href="/branding/lucide-icons" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', textDecoration: 'none', color: '#f8fafc' }}>
+      <a href="/branding" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', textDecoration: 'none', color: '#f8fafc' }}>
         <KCIcon icon={FileText} variant="neutral" size={20} />
         <span>Documentation</span>
         <KCIcon icon={ExternalLink} variant="neutral" size={16} />
@@ -335,8 +361,8 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
       <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
         <KCIcon icon={CheckCircle} variant="success" size={24} />
         <div>
-          <strong style={{ color: '#166534' }}>Success!</strong>
-          <div style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#166534' }}>Your changes have been saved.</div>
+          <strong style={{ color: '#166534' }}>Opgeslagen</strong>
+          <div style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#166534' }}>Je wijzigingen zijn opgeslagen.</div>
         </div>
       </div>
     </div>
@@ -347,8 +373,8 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
       <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
         <KCIcon icon={CheckCircle} variant="success" size={24} />
         <div>
-          <strong style={{ color: '#d1fae5' }}>Success!</strong>
-          <div style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#d1fae5' }}>Your changes have been saved.</div>
+          <strong style={{ color: '#d1fae5' }}>Opgeslagen</strong>
+          <div style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', color: '#d1fae5' }}>Je wijzigingen zijn opgeslagen.</div>
         </div>
       </div>
     </div>
@@ -359,8 +385,8 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
 <div className="alert alert-success">
   <KCIcon icon={CheckCircle} variant="success" size={24} />
   <div>
-    <strong>Success!</strong>
-    <p>Your changes have been saved.</p>
+    <strong>Opgeslagen</strong>
+    <p>Je wijzigingen zijn opgeslagen.</p>
   </div>
 </div>
 ```
@@ -379,7 +405,7 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
       </div>
       <div style={{ padding: '1rem' }}>
         <div style={{ margin: 0, fontSize: '0.875rem', color: '#64748b' }}>
-          HubSpot Analytics tracking.
+          Hoe we met je gegevens omgaan.
         </div>
       </div>
     </div>
@@ -393,7 +419,7 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
       </div>
       <div style={{ padding: '1rem' }}>
         <div style={{ margin: 0, fontSize: '0.875rem', color: '#cbd5e1' }}>
-          HubSpot Analytics tracking.
+          Hoe we met je gegevens omgaan.
         </div>
       </div>
     </div>
@@ -587,15 +613,14 @@ Elk documentatie platform gebruikt een eigen accent kleur voor `variant="primary
   </div>
 </div>
 
-### Behoud Emoji (voor informele content)
+### Wanneer géén Lucide
 
-| Emoji | Context | Waarom |
-|-------|---------|--------|
-| 🎉 | Launch announcements | Celebratory, marketing |
-| 💡 | "Aha" moments | Informal, friendly |
-| 🚀 | Releases, new features | Excitement, momentum |
-| ❤️ | Appreciation, passion | Personal, emotional |
-| 🔥 | Hot topics | Marketing, emphasis |
+- **Branding**: gebruik het Kroescontrol-logo en de brand assets
+- **Illustraties**: gebruik SVG-illustraties
+- **Diagrammen**: gebruik Mermaid of een diagramtool
+- **Alleen decoratie**: elk icoon moet iets betekenen
+
+Welke emoji's we wél houden, staat onder [Special Emoji's](#special-emojis-behouden).
 
 ## Documentatie Instances
 
@@ -606,7 +631,7 @@ Elk docs platform gebruikt eigen accent kleur voor `variant="primary"`:
 | Public Docs | <FileText size={24} style={{ color: '#c22757' }} /> | Crimson Magenta | `#c22757` |
 | Internal Docs | <Users size={24} style={{ color: '#2050a3' }} /> | Royal Blue | `#2050a3` |
 | Operations Docs | <Settings size={24} style={{ color: '#1c9c8e' }} /> | Teal | `#1c9c8e` |
-| Finance Docs | <DollarSign size={24} style={{ color: '#f59e0b' }} /> | Amber | `#f59e0b` |
+| Finance Docs (gereserveerd) | <DollarSign size={24} style={{ color: '#f59e0b' }} /> | Amber | `#f59e0b` |
 
 **Gebruik:** `variant="primary"` past zich automatisch aan per instance. Geen handmatige kleur configuratie nodig!
 
@@ -884,13 +909,6 @@ import { KCIcon } from '@/components/icons/KCIcon'
 | `className` | `string` | `''` | Additional CSS classes |
 | `aria-label` | `string` | - | Accessibility label (verplicht voor standalone icons) |
 
-## Meer Informatie
-
-**Icon library:**
-[lucide.dev/icons](https://lucide.dev/icons) - Browse 1000+ icons
-
 ---
 
-**Laatste update:** 2025-10-18
-**Versie:** 1.1
 **Eigenaar:** Serge Kroes

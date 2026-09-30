@@ -4,11 +4,7 @@ const meta = {
   beeldmerk: "Beeldmerk",
   kleuren: "Kleuren",
   downloads: "Downloads",
-  visualisatie: "Visualisatie-template",
-  "icon-guidelines": "Icon Guidelines",
-  "lucide-icons": {
-    display: "hidden"
-  }
+  "icon-guidelines": "Icon Guidelines"
 }
 
 export default meta
