@@ -55,6 +55,21 @@ export default withNextra({
         permanent: true // 301 redirect for SEO
       },
       {
+        source: '/kennismaking/engineer-hub',
+        destination: '/kennismaking/budgetten',
+        permanent: true // 308: beschreef de budgetspreadsheet van mei 2025 (opschoonronde prd541, 2026-09)
+      },
+      {
+        source: '/branding/lucide-icons',
+        destination: '/branding/icon-guidelines',
+        permanent: true // 308: samengevoegd in icon-guidelines (opschoonronde prd541, 2026-09)
+      },
+      {
+        source: '/branding/visualisatie',
+        destination: 'https://internal.docs.kroescontrol.nl/tools/visualisatie',
+        permanent: true // 308: agent-tooling, verhuisd naar internal; de template zelf blijft hier staan (opschoonronde prd541, 2026-09)
+      },
+      {
         source: '/sna-keurmerk',
         destination: '/juridisch/sna-keurmerk',
         permanent: true // 301 redirect for SEO
