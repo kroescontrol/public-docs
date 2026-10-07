@@ -263,11 +263,57 @@ def toets(repo, basis="origin/main"):
 # alleen als LET OP-regel, nooit rood (wp_content: mensen schrijven soms bewust anders).
 GEDACHTESTREEP = re.compile(r"\w \u2014 \w|\w \u2013 \w")
 
+# Persoonsgegevens (teststrategie stap 4, lijsten van wp_content 07-10-2026). Alleen aan als het
+# instellingenbestand de sleutel draagt, dus alleen in operations-docs. Mechanisch, met een eerlijke grens:
+#  - een IBAN met een geldig controlegetal dat niet op de lijst staat is ROOD. Het controlegetal houdt
+#    willekeurige codes buiten de toets; de lijst staat alleen die ene waarde toe, nooit "elk IBAN";
+#  - een e-mailadres buiten de eigen domeinen is alleen LET OP, en alleen als het geen functieadres is
+#    (info@, facturen@, ...). Een script kan een persoon niet zeker van een functie onderscheiden;
+#  - namen toetst dit niet. Dat blijft oordeel.
+IBAN_RX = re.compile(r"\b[A-Z]{2}[0-9]{2}(?: ?[A-Z0-9]{4}){2,7}(?: ?[A-Z0-9]{1,4})?\b")
+EMAIL_RX = re.compile(r"\b[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+)\b")
+FUNCTIEADRES = re.compile(r"^(_?no-?reply|info|support|service|helpdesk|contact|hello|admin|administratie|"
+                          r"facturen?|factuur|billing|invoices?|debiteuren|crediteuren|finance|finadmin|accounts?|"
+                          r"accounting[\w.-]*|payments?[\w.-]*|klantenservice|backoffice|recruitment|vacatures?|"
+                          r"inkoop[\w.-]*|inhuurdesk|leverancier[\w.-]*|premie[\w.-]*|acceptatie|git|"
+                          r"notifications?|security|privacy|hr|salaris|planning|office|team|sales)$", re.I)
 
-def toets_algemeen(repo, basis="origin/main", tldr_vanaf=False):
+
+def iban_geldig(kandidaat):
+    k = kandidaat.replace(" ", "").upper()
+    if not 15 <= len(k) <= 34:
+        return False
+    getal = "".join(str(int(c, 36)) for c in k[4:] + k[:4])
+    return int(getal) % 97 == 1
+
+
+def persoonsgegevens(regels, inst):
+    """Geeft (rood, let_op) voor toegevoegde regels, volgens de instellingen."""
+    rood, let_op = [], []
+    if "toegestane_iban" in inst:
+        mag = {x.replace(" ", "").upper() for x in inst["toegestane_iban"]}
+        for r in regels:
+            for m in IBAN_RX.finditer(r):
+                k = m.group(0).replace(" ", "").upper()
+                if iban_geldig(k) and k not in mag:
+                    rood.append("IBAN %s...%s staat niet op de lijst eigen gegevens" % (k[:4], k[-2:]))
+    if "eigen_email_domeinen" in inst:
+        eigen = {d.lower() for d in inst["eigen_email_domeinen"]}
+        for r in regels:
+            for m in EMAIL_RX.finditer(r):
+                lokaal = m.group(0).split("@", 1)[0]
+                if m.group(1).lower() not in eigen and not FUNCTIEADRES.match(lokaal):
+                    let_op.append("e-mailadres van een persoon? %s" % m.group(0))
+    return rood, let_op
+
+
+def toets_algemeen(repo, basis="origin/main", tldr_vanaf=False, inst=None):
     """Geeft (rood: [str], let_op: [str], bestanden: int). Leest de PR alleen als data."""
+    if inst is None:
+        inst = instellingen()
     if tldr_vanaf is False:
-        tldr_vanaf = instellingen().get("tldr_vanaf_regels", 0)
+        tldr_vanaf = inst.get("tldr_vanaf_regels", 0)
+    woorden = [w.lower() for w in inst.get("verboden_woorden", [])]
     rood, let_op = [], []
     regels = git(repo, "diff", "--name-status", "-z", "%s...HEAD" % basis).decode("utf-8", "surrogateescape").split("\0")
     regels = [x for x in regels if x != ""]
@@ -311,6 +357,15 @@ def toets_algemeen(repo, basis="origin/main", tldr_vanaf=False):
                 let_op.append("%s: gedachtestreep als zinsverbinder in een nieuwe regel" % pad)
             if tldr_vanaf is not None and len(tekst.splitlines()) > tldr_vanaf and "tldr" not in tekst.lower():
                 let_op.append("%s: geen TLDR gevonden" % pad)
+            r_pg, l_pg = persoonsgegevens(toegevoegd, inst)
+            rood.extend("%s: %s" % (pad, x) for x in r_pg)
+            let_op.extend("%s: %s" % (pad, x) for x in l_pg)
+        if woorden and pad.startswith(("pages/", "src/")) and pad.endswith((".md", ".mdx", ".njk", ".html")):
+            nieuw = git(repo, "diff", "-U0", "%s...HEAD" % basis, "--", pad).decode("utf-8", "replace")
+            for r in (r[1:].lower() for r in nieuw.splitlines() if r.startswith("+") and not r.startswith("+++")):
+                for w in woorden:
+                    if w in r:
+                        let_op.append("%s: woord uit de woordenlijst publiek: %s" % (pad, w))
     if mdx_paden:
         rood.extend(mdx_toets(repo, mdx_paden))
     return rood, let_op, len(wijz)
@@ -428,7 +483,7 @@ def zelftest():
     eis("een tekst na de dubbele punt wordt niet als pad gelezen", "@-" in melding_regel(["lege diff"]))
     eis("het woord password zonder waarde is groen", proef({"pages/a.md": "Het password-beleid staat elders.\n"}) == [])
     # algemene variant
-    def alg(bestanden, verwijder=(), tldr_vanaf=0):
+    def alg(bestanden, verwijder=(), tldr_vanaf=0, inst=None):
         with tempfile.TemporaryDirectory() as d:
             def g(*a):
                 subprocess.run(["git", "-C", d, "-c", "core.hooksPath=/dev/null", *a], check=True, capture_output=True,
@@ -442,7 +497,7 @@ def zelftest():
             for pad in verwijder:
                 os.remove(os.path.join(d, pad))
             g("add", "-A"); g("commit", "-qm", "wijziging")
-            return toets_algemeen(d, "basis", tldr_vanaf)
+            return toets_algemeen(d, "basis", tldr_vanaf, inst if inst is not None else {})
     r, l, _ = alg({"scripts/x.py": "print(1)\n"})
     eis("algemeen: een script buiten pages/ is groen", r == [])
     r, l, _ = alg({"scripts/x.sh": "t=ghp_" + "a" * 36 + "\n"})
@@ -462,6 +517,28 @@ def zelftest():
     r, l, _ = alg({"pages/a.md": lang}, tldr_vanaf=None)
     eis("tldr nooit: een lange pagina zonder TLDR is stil", r == [] and l == [])
     eis("instellingen zijn leesbaar", "tldr_vanaf_regels" in instellingen())
+    # persoonsgegevens (stap 4). Voorbeeld-IBAN NL91ABNA0417164300 is de bekende geldige testwaarde.
+    pg = {"toegestane_iban": ["NL82 ABNA 0535 7312 48"], "eigen_email_domeinen": ["kroescontrol.nl"]}
+    cak = "# CAK\n\nTLDR: x.\n\nRekening: `NL82 ABNA 0535 7312 48`\n"
+    r, l, _ = alg({"pages/hr/cak.md": cak}, inst=pg)
+    eis("pg: de CAK-rekening op de lijst is stil", r == [] and l == [])
+    r, l, _ = alg({"pages/hr/cak.md": cak + "Klant: NL91 ABNA 0417 1643 00\n"}, inst=pg)
+    eis("pg: een verzonnen IBAN op dezelfde pagina is rood", len(r) == 1 and "NL91" in r[0])
+    eis("pg: de melding noemt het IBAN niet voluit", "0417" not in r[0])
+    r, l, _ = alg({"pages/a.md": "TLDR\nNL91ABNA0417164300\n"}, inst=pg)
+    eis("pg: een IBAN zonder spaties is ook rood", len(r) == 1)
+    r, l, _ = alg({"pages/a.md": "TLDR\nNL91ABNA0417164399\n"}, inst=pg)
+    eis("pg: een code met een fout controlegetal is geen IBAN", r == [])
+    r, l, _ = alg({"pages/a.md": "TLDR\nNL91ABNA0417164300\n"}, inst={})
+    eis("pg: zonder instelling geen IBAN-toets", r == [])
+    r, l, _ = alg({"pages/a.md": "TLDR\nmail serge@kroescontrol.nl of info@klant.nl\n"}, inst=pg)
+    eis("pg: eigen domein en functieadres zijn stil", r == [] and l == [])
+    r, l, _ = alg({"pages/a.md": "TLDR\nmail jan.jansen@klant.nl\n"}, inst=pg)
+    eis("pg: een persoonsadres buiten de eigen domeinen is LET OP, niet rood", r == [] and len(l) == 1)
+    r, l, _ = alg({"src/index.njk": "<p>Onze synergie</p>\n"}, inst={"verboden_woorden": ["synergie"]})
+    eis("woordenlijst: treffer in src/ geeft LET OP", r == [] and len(l) == 1)
+    r, l, _ = alg({"src/index.njk": "<p>Onze synergie</p>\n"}, inst={})
+    eis("woordenlijst: zonder lijst stil", r == [] and l == [])
     if fouten:
         print("self-test STUK: %d" % len(fouten)); return 1
     print("self-test OK"); return 0
