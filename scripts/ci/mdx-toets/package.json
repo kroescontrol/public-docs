@@ -1,0 +1,19 @@
+{
+  "name": "mdx-toets",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Toets op MDX van een agent-taak (task849): ontleedt zoals de build en laat alleen een kleine lijst toe. Voert niets uit.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "remark-mdx": "3.1.1",
+    "remark-parse": "11.0.0",
+    "unified": "11.0.5",
+    "unist-util-visit": "5.0.0"
+  },
+  "overrides": {
+    "acorn": "8.15.0"
+  }
+}
