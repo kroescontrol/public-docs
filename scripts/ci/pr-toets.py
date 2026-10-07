@@ -303,7 +303,8 @@ def persoonsgegevens(regels, inst):
             for m in EMAIL_RX.finditer(r):
                 lokaal = m.group(0).split("@", 1)[0]
                 if m.group(1).lower() not in eigen and not FUNCTIEADRES.match(lokaal):
-                    let_op.append("e-mailadres van een persoon? %s" % m.group(0))
+                    # Niet voluit in de log: dat is precies het gegeven dat we beschermen (security 07-10).
+                    let_op.append("e-mailadres van een persoon? %s…@%s" % (lokaal[:1], m.group(1)))
     return rood, let_op
 
 
@@ -535,6 +536,7 @@ def zelftest():
     eis("pg: eigen domein en functieadres zijn stil", r == [] and l == [])
     r, l, _ = alg({"pages/a.md": "TLDR\nmail jan.jansen@klant.nl\n"}, inst=pg)
     eis("pg: een persoonsadres buiten de eigen domeinen is LET OP, niet rood", r == [] and len(l) == 1)
+    eis("pg: de LET OP noemt het adres niet voluit", "jansen" not in l[0] and "j\u2026@klant.nl" in l[0])
     r, l, _ = alg({"src/index.njk": "<p>Onze synergie</p>\n"}, inst={"verboden_woorden": ["synergie"]})
     eis("woordenlijst: treffer in src/ geeft LET OP", r == [] and len(l) == 1)
     r, l, _ = alg({"src/index.njk": "<p>Onze synergie</p>\n"}, inst={})
