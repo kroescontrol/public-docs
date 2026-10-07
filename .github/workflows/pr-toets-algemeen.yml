@@ -1,0 +1,73 @@
+# Kleine toets op elke PR die geen job/-tak van de agent-keten is (teststrategie stap 1, afspraak wp_content en
+# security 05-10-2026, items 30317c31 en e0d451cb). Zet alleen een status `pr-toets-algemeen`; merget nooit.
+#
+# Kopie van internal-docs en operations-docs (teststrategie stap 2, 07-10-2026). Script en workflow zijn gelijk aan daar; wat per repo
+# verschilt staat in scripts/ci/pr-toets-instellingen.json (hier: geen TLDR-regel). Ook dat bestand komt van main.
+#
+# Deze repo is PUBLIEK. Een PR vanuit een fork start de job niet (de if hieronder: head.repo moet deze repo zijn),
+# dus vreemde inhoud komt nooit bij een runner met schrijfrecht op statussen.
+#
+# pull_request_target is het bekende gevaarlijke patroon (geheime rechten plus PR-inhoud). Daarom, eisen van security:
+#  1. niets uit de PR wordt UITGEVOERD: script, package-lock en node_modules komen van main (npm ci --ignore-scripts
+#     in de map van main); de PR staat in een eigen map en wordt alleen als data gelezen;
+#  2. geen npm, node of python in de map van de PR, en geen config uit de PR geladen;
+#  3. git op de PR-map alleen met core.hooksPath=/dev/null (pr-toets.py doet dat in elke aanroep);
+#  4. rechten: contents read, pull-requests read, statuses write; geen secrets, geen queue-sleutel;
+#  5. een eigen statusnaam, zodat niemand hem verwart met `pr-toets` van de agent-keten.
+name: pr-toets-algemeen
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: write
+concurrency:
+  group: pr-toets-algemeen-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  toets:
+    # De agent-keten heeft zijn eigen pr-toets; die takken slaan we hier over.
+    if: ${{ !startsWith(github.event.pull_request.head.ref, 'job/') && github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SHA: ${{ github.event.pull_request.head.sha }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: main ophalen (daar staan script en toetsgereedschap)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: main
+          path: main
+          persist-credentials: false
+      - name: de PR ophalen (alleen data)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr
+          fetch-depth: 0
+          persist-credentials: false
+      - name: MDX-toets klaarzetten (van main, zonder install-scripts)
+        run: |
+          set -euo pipefail
+          cd main/scripts/ci/mdx-toets
+          npm ci --ignore-scripts --no-audit --no-fund
+      - name: de toets (script van main, PR als data)
+        id: toets
+        env:
+          MDX_TOETS_CMD: node ${{ github.workspace }}/main/scripts/ci/mdx-toets/toets.mjs
+        run: |
+          set -uo pipefail
+          set +e
+          python3 main/scripts/ci/pr-toets.py --self-test >/dev/null 2>&1 || { echo "::error::zelftest van de toets is rood: niet gemeten"; exit 2; }
+          python3 main/scripts/ci/pr-toets.py --algemeen pr --basis origin/main
+      - name: uitkomst op de commit zetten (status pr-toets-algemeen)
+        if: always()
+        env:
+          UITKOMST: ${{ steps.toets.outcome }}
+        run: |
+          state=failure; [ "$UITKOMST" = success ] && state=success
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$SHA" -f state="$state" -f context="pr-toets-algemeen" \
+            -f description="kleine toets op deze PR: $UITKOMST (alleen status, geen merge)" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
