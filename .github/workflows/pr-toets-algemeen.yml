@@ -60,7 +60,9 @@ jobs:
         run: |
           set -uo pipefail
           set +e
-          python3 main/scripts/ci/pr-toets.py --self-test >/dev/null 2>&1 || { echo "::error::zelftest van de toets is rood: niet gemeten"; exit 2; }
+          python3 main/scripts/ci/pr-toets.py --self-test > "$RUNNER_TEMP/zelftest.txt" 2>&1 || {
+            grep -E 'STUK|Traceback|Error' "$RUNNER_TEMP/zelftest.txt" | head -20
+            echo "::error::zelftest van de toets is rood: niet gemeten"; exit 2; }
           python3 main/scripts/ci/pr-toets.py --algemeen pr --basis origin/main
       - name: uitkomst op de commit zetten (status pr-toets-algemeen)
         if: always()
