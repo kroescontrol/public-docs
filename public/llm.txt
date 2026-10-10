@@ -1,0 +1,18 @@
+# Kroescontrol
+
+> Kroescontrol bouwt en beheert software, en legt de werkwijze vast in publieke documentatie.
+
+De publieke documentatie is te doorzoeken en te lezen via de docs-MCP.
+
+## MCP
+
+- Adres: https://docs-mcp.kroescontrol.nl/public (zonder login)
+- Gereedschappen: zoeken, lezen, recent, wie_ben_ik, definitie
+- Uitleg en instelling: https://docs.kroescontrol.nl/docs-mcp
+
+## Pagina's
+
+- https://docs.kroescontrol.nl/ — Welkom
+- https://docs.kroescontrol.nl/over-kroescontrol — Over Kroescontrol
+- https://docs.kroescontrol.nl/werken-bij — Werken bij
+- https://docs.kroescontrol.nl/contact — Contact

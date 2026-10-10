@@ -8,6 +8,7 @@ const meta = {
   kantoor: "Kantoor",
   branding: "Huisstijl & Branding",
   juridisch: "Juridisch",
+  "docs-mcp": "Docs-MCP (AI-assistent)",
   contact: "Contact",
   en: {
     display: "hidden"
