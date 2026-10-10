@@ -2,17 +2,53 @@
 
 > Kroescontrol is een detacheringsbureau voor Cloud Native engineering.
 
-De publieke documentatie is te doorzoeken en te lezen via de docs-MCP.
+De publieke documentatie is te doorzoeken en te lezen met de docs-MCP.
 
 ## MCP
 
 - Adres: https://docs-mcp.kroescontrol.nl/public (zonder login)
 - Gereedschappen: zoeken, lezen, recent, wie_ben_ik
-- Uitleg en instelling: https://docs.kroescontrol.nl/docs-mcp
+- Uitleg en kopieerbare prompt: https://docs.kroescontrol.nl/docs-mcp
 
 ## Pagina's
 
-- https://docs.kroescontrol.nl/ — Welkom
-- https://docs.kroescontrol.nl/over-kroescontrol — Over Kroescontrol
-- https://docs.kroescontrol.nl/werken-bij — Werken bij
-- https://docs.kroescontrol.nl/contact — Contact
+- [Bezoekers](https://docs.kroescontrol.nl/bezoekers)
+- [Beeldmerk](https://docs.kroescontrol.nl/branding/beeldmerk)
+- [Downloads](https://docs.kroescontrol.nl/branding/downloads)
+- [Huisstijl & Branding](https://docs.kroescontrol.nl/branding)
+- [Kleurenpalet](https://docs.kroescontrol.nl/branding/kleuren)
+- [Logo](https://docs.kroescontrol.nl/branding/logo)
+- [Contact](https://docs.kroescontrol.nl/contact)
+- [Community Days](https://docs.kroescontrol.nl/cultuur/community-days)
+- [Cultuur](https://docs.kroescontrol.nl/cultuur)
+- [Informatieorganisatie](https://docs.kroescontrol.nl/cultuur/informatieorganisatie)
+- [Docs-MCP: de publieke documentatie in je AI-assistent](https://docs.kroescontrol.nl/docs-mcp)
+- [Welkom bij Kroescontrol](https://docs.kroescontrol.nl/)
+- [Algemene Voorwaarden](https://docs.kroescontrol.nl/juridisch/algemene-voorwaarden)
+- [Bedrijfsgegevens](https://docs.kroescontrol.nl/juridisch/bedrijfsgegevens)
+- [pages/juridisch/cookies.mdx](https://docs.kroescontrol.nl/juridisch/cookies)
+- [Juridisch](https://docs.kroescontrol.nl/juridisch)
+- [Notice and Takedown Procedure](https://docs.kroescontrol.nl/juridisch/notice-and-takedown)
+- [Privacy Verklaring](https://docs.kroescontrol.nl/juridisch/privacy)
+- [SNA Keurmerk](https://docs.kroescontrol.nl/juridisch/sna-keurmerk)
+- [Anti-Spam Beleid](https://docs.kroescontrol.nl/juridisch/spam)
+- [Amsterdam](https://docs.kroescontrol.nl/kantoor/amsterdam)
+- [Faciliteiten](https://docs.kroescontrol.nl/kantoor/faciliteiten)
+- [Kantoor Etiquette](https://docs.kroescontrol.nl/kantoor/gebruik)
+- [Kantoor](https://docs.kroescontrol.nl/kantoor)
+- [Klarenbeek](https://docs.kroescontrol.nl/kantoor/klarenbeek)
+- [Productief Werken](https://docs.kroescontrol.nl/kantoor/productief-werken)
+- [Vergaderruimtes](https://docs.kroescontrol.nl/kantoor/vergaderruimtes)
+- [Budgetstructuren](https://docs.kroescontrol.nl/kennismaking/budgetten)
+- [Kroescontrol Engineer](https://docs.kroescontrol.nl/kennismaking)
+- [Projectvoorbeelden](https://docs.kroescontrol.nl/kennismaking/projecten)
+- [Over Kroescontrol](https://docs.kroescontrol.nl/over-kroescontrol)
+- [Management Team](https://docs.kroescontrol.nl/over-kroescontrol/management-team)
+- [Ons Verhaal](https://docs.kroescontrol.nl/over-kroescontrol/ons-verhaal)
+- [Wat We Doen](https://docs.kroescontrol.nl/over-kroescontrol/wat-we-doen)
+- [Bedrijfscultuur](https://docs.kroescontrol.nl/werken-bij/bedrijfscultuur)
+- [Werken bij Kroescontrol](https://docs.kroescontrol.nl/werken-bij)
+- [Pensioenregeling](https://docs.kroescontrol.nl/werken-bij/pensioenregelingen)
+- [Vacatures](https://docs.kroescontrol.nl/werken-bij/vacatures)
+- [Voordelen](https://docs.kroescontrol.nl/werken-bij/voordelen)
+- [Voorzieningen](https://docs.kroescontrol.nl/werken-bij/voorzieningen)
