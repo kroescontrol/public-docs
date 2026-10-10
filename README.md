@@ -6,6 +6,10 @@ Publieke documentatie van Kroescontrol — te vinden op **[docs.kroescontrol.nl]
 
 Bedrijfsinformatie, juridische documenten, branding richtlijnen, cultuur en alles wat we openbaar delen met engineers, klanten en partners.
 
+## AI-assistent
+
+Deze documentatie is te doorzoeken met de publieke docs-MCP: `https://docs-mcp.kroescontrol.nl/public` (geen login). Uitleg en een kopieerbare prompt staan op [docs.kroescontrol.nl/docs-mcp](https://docs.kroescontrol.nl/docs-mcp). Een korte beschrijving voor AI-tools staat in [llm.txt](https://docs.kroescontrol.nl/llm.txt).
+
 ## Waarom op GitHub?
 
 Publiek, transparant en verifieerbaar.
