@@ -1,0 +1,47 @@
+---
+title: 'Docs-MCP: de publieke documentatie in je AI-assistent'
+description: 'Zo koppel je de publieke docs van Kroescontrol aan je AI-assistent, met één klik of één prompt.'
+last_verified: 2026-10-10
+---
+
+# Docs-MCP: de publieke documentatie in je AI-assistent
+
+## TLDR
+
+Met de docs-MCP kan je AI-assistent de publieke documentatie van Kroescontrol doorzoeken en lezen. Je hoeft er niets te installeren. Je voegt één adres toe, en daarna kan de assistent antwoorden op basis van onze pagina's. De MCP leest alleen. Hij kan niets aanpassen en heeft geen toegang tot interne documentatie of de Hub.
+
+## Wat je nodig hebt
+
+- Een AI-assistent die MCP-servers ondersteunt, zoals Claude of Codex.
+- Het adres van de publieke ingang: `https://docs-mcp.kroescontrol.nl/public`
+
+Je hebt geen login nodig.
+
+## Instellen in één stap
+
+Kopieer deze prompt en plak hem in je AI-assistent:
+
+```text
+Voeg de MCP-server "kroescontrol-docs" toe met het adres https://docs-mcp.kroescontrol.nl/public.
+Gebruik die server om vragen over Kroescontrol te beantwoorden. Noem bij elk antwoord de pagina waar het staat.
+```
+
+## Handmatig instellen
+
+1. Open de instellingen van je AI-assistent, bij het onderdeel MCP of connectors.
+2. Voeg een nieuwe server toe met de naam `kroescontrol-docs`.
+3. Vul het adres in: `https://docs-mcp.kroescontrol.nl/public`.
+4. Sla op en controleer dat de server verbonden is.
+
+## Wat je kunt vragen
+
+- Wat Kroescontrol doet en voor wie.
+- Hoe het werken bij Kroescontrol in elkaar zit.
+- Wat er op deze website en in de publieke handboeken staat.
+
+De assistent antwoordt alleen op basis van de publieke pagina's. Voor vragen over interne processen is deze MCP niet bedoeld.
+
+## Wat er níet in zit
+
+- Interne documentatie (internal) en procedures (operations). Die zijn alleen voor medewerkers, met een login.
+- Gegevens uit de Hub.

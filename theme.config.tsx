@@ -28,6 +28,10 @@ const config: DocsThemeConfig = {
     content: (
       <span>
         Kroescontrol Public Documentation •{' '}
+        <a href="/docs-mcp" style={{ textDecoration: 'underline' }}>
+          Gebruik met je AI-assistent
+        </a>
+        {' '}•{' '}
         <a href="/opt-out" style={{ textDecoration: 'underline' }}>
           Analytics opt-out
         </a>
@@ -68,6 +72,9 @@ const config: DocsThemeConfig = {
         {/* Performance: DNS prefetch for HubSpot */}
         <link rel="dns-prefetch" href="//js-na1.hs-scripts.com" />
         <link rel="preconnect" href="https://js-na1.hs-scripts.com" crossOrigin="anonymous" />
+
+        {/* AI-indexbestand: verwijst naar publieke info en de docs-MCP */}
+        <link rel="alternate" type="text/plain" href="/llm.txt" title="llm.txt" />
 
         {/* Basic Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

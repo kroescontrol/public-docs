@@ -1,0 +1,15 @@
+# Kroescontrol — volledige publieke documentatie
+
+Dit bestand is de samenvatting voor AI-assistenten. Voor de volledige tekst van een pagina: gebruik de docs-MCP of open de pagina zelf.
+
+## Docs-MCP
+
+De docs-MCP leest de publieke documentatie van Kroescontrol. Hij is alleen-lezen en vraagt geen login voor de publieke ingang.
+
+- Adres publieke ingang: https://docs-mcp.kroescontrol.nl/public
+- Gereedschappen: zoeken (zoekt in de publieke pagina's), lezen (leest één pagina), recent (wat er onlangs veranderde), wie_ben_ik (welke ingang en rol je hebt).
+- Interne documentatie en procedures zijn niet beschikbaar via deze ingang.
+
+## Instellen
+
+Voeg in je AI-assistent een MCP-server toe met het adres https://docs-mcp.kroescontrol.nl/public. Uitleg: https://docs.kroescontrol.nl/docs-mcp
