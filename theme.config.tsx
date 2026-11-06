@@ -121,10 +121,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kroescontrol - Publieke Documentatie" />
         <meta name="twitter:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben." />
-        <meta name="twitter:image" content="https://docs.kroescontrol.nl/logo-icon-512.png" />
-
-        {/* Open Graph - PNG for chat app compatibility */}
-        <meta property="og:image" content="https://docs.kroescontrol.nl/logo-icon-512.png" />
+        <meta name="twitter:image" content="https://docs.kroescontrol.nl/og-image.png" />
 
         {/* Favicon - Magenta accent (public docs) */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
