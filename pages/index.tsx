@@ -14,10 +14,10 @@ const HomePage: NextPage = () => {
         {/* Open Graph / Social Media Preview (PNG for compatibility) */}
         <meta property="og:title" content="Kroescontrol - Publieke Documentatie" />
         <meta property="og:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben" />
-        <meta property="og:image" content="https://docs.kroescontrol.nl/logo-icon-512.png" />
+        <meta property="og:image" content="https://docs.kroescontrol.nl/og-image.png" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:image" content="https://docs.kroescontrol.nl/logo-icon-512.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://docs.kroescontrol.nl/og-image.png" />
 
         {/* Favicon - Magenta accent (public docs) */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
