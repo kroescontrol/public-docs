@@ -368,8 +368,45 @@ def toets_algemeen(repo, basis="origin/main", tldr_vanaf=False, inst=None):
                     if w in r:
                         let_op.append("%s: woord uit de woordenlijst publiek: %s" % (pad, w))
     if mdx_paden:
-        rood.extend(mdx_toets(repo, mdx_paden))
+        rood.extend(mdx_alleen_nieuw(repo, basis, mdx_paden))
     return rood, let_op, len(wijz)
+
+
+def mdx_alleen_nieuw(repo, basis, paden):
+    """MDX-toets op de tak, min wat dezelfde toets al vond in de versie op de basis (verzoek wp_content
+    via het loket, 10-11, PR 24). Een PR die alleen frontmatter van een bestaande pagina raakt, erft anders
+    elke bestaande component van die pagina als rood. Telling per bestand per melding: een tweede <KCIcon>
+    erbij is dus wel rood. Een nieuw bestand (niet op de basis) wordt volledig getoetst. De basisversie
+    komt uit git (main, al gemerged), niet uit de PR."""
+    import collections
+    tak = mdx_toets(repo, paden)
+    if not tak:
+        return []
+    with tempfile.TemporaryDirectory() as d:
+        oude = []
+        for pad in paden:
+            r = subprocess.run(["git", "-C", repo, "cat-file", "-p", "%s:%s" % (basis, pad)], capture_output=True)
+            if r.returncode != 0:
+                continue          # nieuw bestand: geen basis, alles telt
+            doel = os.path.join(d, pad)
+            os.makedirs(os.path.dirname(doel), exist_ok=True)
+            with open(doel, "wb") as f:
+                f.write(r.stdout)
+            oude.append(pad)
+        if not oude:
+            return tak
+        basis_uit = mdx_toets(d, oude)
+    # "kan niet meten" op de basis mag niets wegstrepen: dan telt de tak volledig.
+    if any("kan niet meten" in x for x in basis_uit):
+        return tak
+    al = collections.Counter(basis_uit)
+    rest = []
+    for x in tak:
+        if al[x] > 0:
+            al[x] -= 1
+        else:
+            rest.append(x)
+    return rest
 
 
 def zelftest():
