@@ -1,5 +1,5 @@
 import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import { LanguageToggle } from './components/LanguageToggle'
 import { HeadingIcons } from '@/components/HeadingIcons'
@@ -50,6 +50,19 @@ const config: DocsThemeConfig = {
     const baseUrl = 'https://docs.kroescontrol.nl'
     const url = `${baseUrl}${asPath}`
 
+    // Titel en beschrijving per pagina: frontmatter title/description, anders de paginatitel van
+    // Nextra. De startpagina (pages/index.tsx) zet haar eigen kop; daar blijven de site-teksten staan.
+    const { frontMatter, title: paginaTitel } = useConfig()
+    const siteTitel = 'Kroescontrol - Publieke Documentatie'
+    const siteOmschrijving = 'Publieke documentatie van Kroescontrol - informatie over werken bij ons, bedrijfscultuur, kantoor en alles wat je moet weten.'
+    const siteOgOmschrijving = 'Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben.'
+    const isStart = asPath === '/' || asPath.startsWith('/?') || asPath.startsWith('/#')
+    const eigenTitel = (frontMatter?.title as string | undefined) || paginaTitel
+    const titel = !isStart && eigenTitel ? `${eigenTitel} - Kroescontrol` : siteTitel
+    const eigenOmschrijving = !isStart ? (frontMatter?.description as string | undefined) : undefined
+    const omschrijving = eigenOmschrijving || siteOmschrijving
+    const ogOmschrijving = eigenOmschrijving || siteOgOmschrijving
+
     // Hreflang map: NL ↔ EN paths (ONLY juridisch pages with translations)
     const hreflangMap: Record<string, string> = {
       '/juridisch/algemene-voorwaarden': '/en/legal/terms-and-conditions',
@@ -78,7 +91,8 @@ const config: DocsThemeConfig = {
 
         {/* Basic Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Publieke documentatie van Kroescontrol - informatie over werken bij ons, bedrijfscultuur, kantoor en alles wat je moet weten." />
+        {!isStart && <title>{titel}</title>}
+        <meta name="description" content={omschrijving} />
         <meta name="keywords" content="Kroescontrol, documentatie, werken bij, software development, Amsterdam, Rotterdam" />
         <meta name="author" content="Kroescontrol" />
 
@@ -110,8 +124,8 @@ const config: DocsThemeConfig = {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content="Kroescontrol Docs" />
-        <meta property="og:title" content="Kroescontrol - Publieke Documentatie" />
-        <meta property="og:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben." />
+        <meta property="og:title" content={titel} />
+        <meta property="og:description" content={ogOmschrijving} />
         <meta property="og:image" content="https://docs.kroescontrol.nl/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -119,8 +133,8 @@ const config: DocsThemeConfig = {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kroescontrol - Publieke Documentatie" />
-        <meta name="twitter:description" content="Ontdek alles over werken bij Kroescontrol, onze bedrijfscultuur en wat we te bieden hebben." />
+        <meta name="twitter:title" content={titel} />
+        <meta name="twitter:description" content={ogOmschrijving} />
         <meta name="twitter:image" content="https://docs.kroescontrol.nl/og-image.png" />
 
         {/* Favicon - Magenta accent (public docs) */}
