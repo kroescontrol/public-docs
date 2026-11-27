@@ -131,7 +131,7 @@
   background: var(--landing-bg-primary);
   border-radius: var(--kc-radius-lg);
   box-shadow: var(--kc-shadow-md);
-  transition: all 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .kc-card:hover {
@@ -145,7 +145,7 @@
   padding: var(--kc-spacing-3) var(--kc-spacing-6);
   border-radius: var(--kc-radius-md);
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   border: none;
   cursor: pointer;
 }
@@ -172,7 +172,7 @@
   border: 1px solid #e2e8f0;
   border-radius: var(--kc-radius-lg);
   box-shadow: var(--kc-shadow-md);
-  transition: all 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .landing-card:hover {
